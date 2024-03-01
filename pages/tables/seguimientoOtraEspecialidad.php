@@ -575,6 +575,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                             $documento = $row['documento'];
                             $autorizacion =  $row['autorizacion'];
                             $cantidad = $row['cantidadautorizada'];
+                                  
+                              
                                                  
                                                          
                             $buscaragenda = "SELECT *  from agendaotras where autorizacion = '$autorizacion'";
@@ -582,8 +584,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                             while($roww = mysqli_fetch_array($result1)):
                             $fechaagenda = $roww['fechaagenda'];
                             $estado = $roww['estado'];
+                            
                             $nosesion = $roww['nosesion'];
-                            $bitacorasesion = $roww['bitacora'];                        
+                            $bitacorasesion = $roww['bitacora']; 
+                            
+                            
+                            
 
                         ?>
                         <tr>
@@ -644,6 +650,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                     if($cantidadprogramada == $sesiones){
                     }else{
                     ?>
+                    
+                    
+
+                    
+                    
                     <a href="#crear_<?php echo $row['id']; ?>" class="btn btn-sm btn-info btn-flat pull-left" data-toggle="modal">Agregar sesión</a>
                     <?php include('crearSesionOtraEspecialidad.php');?>
                     <?php
