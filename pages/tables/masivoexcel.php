@@ -410,11 +410,12 @@ $allowedFileType = ['application/vnd.ms-excel','text/xls','text/xlsx','applicati
                                              
                                              <?php
                                              $gestiono= $_SESSION["username"];
-    $sqlSelect = "SELECT * FROM app_cargue where estadocargue = 'sinsubir' ";
-    $result = mysqli_query($connection, $sqlSelect);
-
+                                            $sqlSelect = "SELECT * FROM app_cargue where estadocargue = 'sinsubir' ";
+                                            $result = mysqli_query($connection, $sqlSelect);
+    
+    
 if (mysqli_num_rows($result) > 0)
-{
+{  
 ?>
        	
     <table class="table table-responsive-xl" >
@@ -448,9 +449,61 @@ if (mysqli_num_rows($result) > 0)
             <td><?php  echo $row['cantidadautorizada']; ?></td>
             
 
-        </tr>
+        </tr> 
+        
+        
 <?php
-    }
+
+     // validar duplicados que est¨¦n en otras especialidades
+     
+     $autorizacionValidaDuplicados = $row['autorizacion'];
+     $documentoValidaDuplicados = $row['documento'];
+                            $sqlValidaDuplicado = "SELECT 
+                                    CASE
+                                        WHEN EXISTS (
+                                            SELECT 1
+                                            FROM otrasespecialidades
+                                            WHERE autorizacion = '$autorizacionValidaDuplicados'
+                                        ) THEN 1
+                                        ELSE 0
+                                    END AS hay_registros_con_autorizacion ";
+                        
+                            $resultValidaDuplicado = mysqli_query($connection, $sqlValidaDuplicado);
+                            $rowValidaDuplicado = mysqli_fetch_array($resultValidaDuplicado);
+                            $ValidaHayRegistrosDuplicados = $rowValidaDuplicado['hay_registros_con_autorizacion'];
+                           
+                            
+                            
+                           if($ValidaHayRegistrosDuplicados == '1'){
+                                echo '<script language="JavaScript" type="text/javascript">
+                                    swal({
+                                        title: "Las siguientes autorizaciones ya existen",
+                                        text: "Nro. '.$autorizacionValidaDuplicados.'",
+                                        imageUrl: "http://www.cirec.org/solucioncovid19/particulares/img/iconoazul.png",
+                                        imageHeight: 20,
+                                        imageAlt: "A tall image",
+                                    },
+                                    function(isConfirm) {
+                                        if (isConfirm) {
+                                            window.location.href = "eliminaDuplicado.php?idEliminaDuplicado=' . $autorizacionValidaDuplicados . '&documento=' . $documentoValidaDuplicados . '";
+                                        } else {
+                                            window.location.href = "eliminaDuplicado.php?idEliminaDuplicado=' . $autorizacionValidaDuplicados . '&documento=' . $documentoValidaDuplicados . '";
+                                        }
+                                    });
+                                </script>';
+                            }//FIN VALIDA DUPLICADOS
+                            else{
+                                //echo "Archivos correcto";
+                            }//fin else valida duplicados
+
+
+
+
+
+
+    }//fin while que muestra datos antes de cargar
+   
+    
 ?>
         </tbody>
     </table>
@@ -502,6 +555,8 @@ if (mysqli_num_rows($result) > 0)
                                     
 <?php
   if($_GET['accion'] == "importar" ){ 
+  
+      
       
       ?>
                                     

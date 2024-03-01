@@ -76,3 +76,12 @@
 [01-Mar-2024 13:05:03 America/Bogota] PHP Notice:  Undefined index: bitacora in /home/fundac87/public_html/cicirecservicios/pages/tables/crearSeguiminetoOtraEspecialidad.php on line 15
 [01-Mar-2024 13:06:10 America/Bogota] PHP Notice:  Undefined index: bitacora in /home/fundac87/public_html/cicirecservicios/pages/tables/crearSeguiminetoOtraEspecialidad.php on line 15
 [01-Mar-2024 13:06:15 America/Bogota] PHP Notice:  Undefined index: bitacora in /home/fundac87/public_html/cicirecservicios/pages/tables/crearSeguiminetoOtraEspecialidad.php on line 15
+[01-Mar-2024 13:11:04 America/Bogota] PHP Notice:  Undefined index: bitacora in /home/fundac87/public_html/cicirecservicios/pages/tables/crearSeguiminetoOtraEspecialidad.php on line 15
+[01-Mar-2024 13:16:33 America/Bogota] PHP Notice:  Undefined index: bitacora in /home/fundac87/public_html/cicirecservicios/pages/tables/crearSeguiminetoOtraEspecialidad.php on line 15
+[01-Mar-2024 13:16:53 America/Bogota] PHP Notice:  Undefined index: bitacora in /home/fundac87/public_html/cicirecservicios/pages/tables/crearSeguiminetoOtraEspecialidad.php on line 15
+[01-Mar-2024 13:16:59 America/Bogota] PHP Notice:  Undefined index: bitacora in /home/fundac87/public_html/cicirecservicios/pages/tables/crearSeguiminetoOtraEspecialidad.php on line 15
+[01-Mar-2024 13:17:06 America/Bogota] PHP Notice:  Undefined index: bitacora in /home/fundac87/public_html/cicirecservicios/pages/tables/crearSeguiminetoOtraEspecialidad.php on line 15
+[01-Mar-2024 13:17:12 America/Bogota] PHP Notice:  Undefined index: bitacora in /home/fundac87/public_html/cicirecservicios/pages/tables/crearSeguiminetoOtraEspecialidad.php on line 15
+[01-Mar-2024 16:36:48 America/Bogota] PHP Parse error:  syntax error, unexpected '$autorizacionValidaDuplicados' (T_VARIABLE), expecting ',' or ';' in /home/fundac87/public_html/cicirecservicios/pages/tables/masivoexcel.php on line 481
+[01-Mar-2024 16:48:43 America/Bogota] PHP Notice:  Undefined index: bitacora in /home/fundac87/public_html/cicirecservicios/pages/tables/crearSeguiminetoOtraEspecialidad.php on line 15
+[01-Mar-2024 16:48:49 America/Bogota] PHP Notice:  Undefined index: bitacora in /home/fundac87/public_html/cicirecservicios/pages/tables/crearSeguiminetoOtraEspecialidad.php on line 15
