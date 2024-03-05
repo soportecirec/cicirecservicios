@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 29-02-2024 a las 09:10:44
+-- Tiempo de generación: 05-03-2024 a las 08:48:26
 -- Versión del servidor: 5.7.44
 -- Versión de PHP: 8.1.27
 
@@ -45,91 +45,13 @@ CREATE TABLE `agendaotras` (
 --
 
 INSERT INTO `agendaotras` (`id`, `nosesion`, `autorizacion`, `fechaagenda`, `documento`, `creacionagenda`, `gestiono`, `estado`, `bitacora`, `estadoagenda`) VALUES
-(130, 'Sesión No1', '123456', '23-05-2021 02:02:17', '80114616', '', 'alex.nino@cirec.org', 'Asistio', 'Sin novedad', ''),
-(131, 'Sesión No2', '123456', '23-05-2021 02:02:53', '80114616', '', 'alex.nino@cirec.org', 'No Asistio', 'sdasd', ''),
-(132, 'Sesión No3', '123456', '23-05-2021 02:03:17', '80114616', '', 'alex.nino@cirec.org', 'Asistio', 'ssad', ''),
-(138, '1', '12345', '16-06-2021 07:47:43', '1019075976', '', 'agente.cirec@cirec.org', 'Asistio', 'CALAMIDAD PERSONAL', ''),
-(139, '1', '2910', '16-06-2021 07:53:08', '1019075976', '', 'agente.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(145, 'SesiÃ³n No. 1', '7845878', '24-06-2021 12:44:47', '789', '', 'lider.cirec@cirec.org', 'Asistio', 'SALUD', ''),
-(146, 'SesiÃ³n No. 1', '7845878', '24-06-2021 12:44:53', '789', '', 'lider.cirec@cirec.org', 'No Asistio', 'TRANSPORTE', ''),
-(147, 'SesiÃ³n No. 4', '7845878', '24-06-2021 12:45:00', '789', '', 'lider.cirec@cirec.org', 'Asistio', 'CRUCE CON CITA EXTERNA', ''),
-(149, 'SesiÃ³n No. 1', '9999', '25-06-2021 07:01:09', '333966', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(150, 'SesiÃ³n No. 2', '9999', '25-06-2021 07:01:16', '333966', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(151, 'SesiÃ³n No. 1', '9999', '25-06-2021 07:01:25', '333966', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(152, 'SesiÃ³n No. 2', '2910', '25-06-2021 07:05:10', '1019075976', '', 'lider.cirec@cirec.org', 'Asistio', 'TRANSPORTE', ''),
-(153, 'SesiÃ³n No. 1', '5656', '14-07-2021 04:29:19', '2910', '', 'agente.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(155, 'SesiÃ³n No. 1', '15545SSASDFS', '09-08-2021 04:13:57', '1022392399', '', 'agente.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(156, 'SesiÃ³n No. 1', '1256585', '21-07-2023 11:19:38', '4444', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(157, 'SesiÃ³n No. 1', '585945', '03-08-2023 08:43:58', '111111', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(158, 'SesiÃ³n No. 2', '585945', '03-08-2023 08:44:16', '111111', '', 'lider.cirec@cirec.org', 'No Asistio', 'TRANSPORTE', ''),
-(159, 'SesiÃ³n No. 3', '585945', '03-08-2023 08:44:36', '111111', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(160, 'SesiÃ³n No. 1', '12522', '03-08-2023 10:12:41', '1019075976', '', 'lider.cirec@cirec.org', 'Asistio', 'TRANSPORTE', ''),
-(162, 'SesiÃ³n No. 1', '8285', '03-08-2023 10:33:09', '1023941774', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(163, 'SesiÃ³n No. 2', '8285', '03-08-2023 10:33:22', '1023941774', '', 'lider.cirec@cirec.org', 'No Asistio', 'CALAMIDAD PERSONAL', ''),
-(164, 'SesiÃ³n No. 3', '8285', '03-08-2023 10:33:57', '1023941774', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(167, 'SesiÃ³n No. 1', '7879965', '03-08-2023 10:44:19', '1023941774', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(168, 'SesiÃ³n No. 1', '7879965', '03-08-2023 10:44:44', '1023941774', '', 'lider.cirec@cirec.org', 'No Asistio', 'ORDEN PUBLICO', ''),
-(169, 'SesiÃ³n No. 3', '7879965', '03-08-2023 10:45:25', '1023941774', '', 'lider.cirec@cirec.org', 'Asistio', 'ORDEN PUBLICO', ''),
-(170, 'SesiÃ³n No. 4', '7879965', '03-08-2023 10:45:32', '1023941774', '', 'lider.cirec@cirec.org', 'Asistio', 'ORDEN PUBLICO', ''),
-(171, 'SesiÃ³n No. 5', '7879965', '03-08-2023 10:45:38', '1023941774', '', 'lider.cirec@cirec.org', 'Asistio', 'ORDEN PUBLICO', ''),
-(172, 'SesiÃ³n No. 6', '7879965', '03-08-2023 10:45:49', '1023941774', '', 'lider.cirec@cirec.org', 'Asistio', 'ORDEN PUBLICO', ''),
-(173, 'SesiÃ³n No. 7', '7879965', '03-08-2023 10:45:54', '1023941774', '', 'lider.cirec@cirec.org', 'Asistio', 'TRANSPORTE', ''),
-(174, 'SesiÃ³n No. 8', '7879965', '03-08-2023 10:46:01', '1023941774', '', 'lider.cirec@cirec.org', 'Asistio', 'TRANSPORTE', ''),
-(175, 'SesiÃ³n No. 9', '7879965', '03-08-2023 10:46:11', '1023941774', '', 'lider.cirec@cirec.org', 'Asistio', 'TRANSPORTE', ''),
-(176, 'SesiÃ³n No. 10', '7879965', '03-08-2023 10:46:17', '1023941774', '', 'lider.cirec@cirec.org', 'Asistio', 'CALAMIDAD PERSONAL', ''),
-(177, 'SesiÃ³n No. 1', '333', '25-08-2023 03:27:13', '1018453370', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(178, 'SesiÃ³n No. 2', '333', '25-08-2023 03:27:57', '1018453370', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(179, 'SesiÃ³n No. 1', '99999', '29-08-2023 11:03:48', '1018453370', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(180, 'SesiÃ³n No. 1', '1111111', '18-09-2023 12:29:39', '1018453370', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(181, 'SesiÃ³n No. 2', '1111111', '18-09-2023 12:29:55', '1018453370', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(182, 'SesiÃ³n No. 3', '1111111', '18-09-2023 12:32:11', '1018453370', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(183, 'SesiÃ³n No. 4', '1111111', '18-09-2023 12:35:07', '1018453370', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(184, 'SesiÃ³n No. 5', '1111111', '18-09-2023 12:35:14', '1018453370', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(185, 'SesiÃ³n No. 1', '987654', '02-10-2023 03:54:05', '1018453370', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(186, 'SesiÃ³n No. 2', '987654', '02-10-2023 03:54:58', '1018453370', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(187, 'SesiÃ³n No. 1', '1111', '05-10-2023 02:57:12', '1018453370', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(188, 'SesiÃ³n No. 5', '223333', '22-02-2024 07:34:49', '333966', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(189, 'SesiÃ³n No. 5', '223333', '22-02-2024 10:32:57', '333966', '', 'lider.cirec@cirec.org', 'Asistio', 'ORDEN PUBLICO', ''),
-(190, 'SesiÃ³n No. 4', '223333', '22-02-2024 10:46:51', '333966', '', 'lider.cirec@cirec.org', 'AsistiÃ³', 'CALAMIDAD PERSONAL', ''),
-(191, 'SesiÃ³n No. 1', '589652', '22-02-2024 02:41:34', '1002710209', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(192, 'SesiÃ³n No. 2', '589652', '22-02-2024 02:41:51', '1002710209', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(193, 'SesiÃ³n No. 3', '589652', '22-02-2024 02:42:08', '1002710209', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(194, 'SesiÃ³n No. 4', '589652', '22-02-2024 02:42:17', '1002710209', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(195, 'SesiÃ³n No. 5', '589652', '22-02-2024 02:42:25', '1002710209', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(196, 'SesiÃ³n No. 6', '589652', '22-02-2024 02:42:32', '1002710209', '', 'lider.cirec@cirec.org', 'No Asistio', 'NO APLICA', ''),
-(197, 'SesiÃ³n No. 7', '589652', '22-02-2024 02:43:14', '1002710209', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(198, 'SesiÃ³n No. 1', '420202', '27-02-2024 08:43:05', '27022024', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(199, 'SesiÃ³n No. 2', '420202', '27-02-2024 08:45:37', '27022024', '', 'lider.cirec@cirec.org', 'No Asistio', 'ORDEN PUBLICO', ''),
-(200, 'SesiÃ³n No. 3', '420202', '27-02-2024 08:45:53', '27022024', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(201, 'SesiÃ³n No. 4', '420202', '27-02-2024 08:46:06', '27022024', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(202, 'SesiÃ³n No. 1', '809', '27-02-2024 09:14:20', '852123', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(203, 'SesiÃ³n No. 2', '809', '27-02-2024 09:18:29', '852123', '', 'lider.cirec@cirec.org', 'AsistiÃ³', 'CALAMIDAD PERSONAL', ''),
-(204, 'SesiÃ³n No. 3', '809', '27-02-2024 09:38:49', '852123', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(205, 'SesiÃ³n No. 1', '852', '27-02-2024 10:36:42', '963369', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(207, 'SesiÃ³n No. 3', '852', '27-02-2024 10:38:51', '963369', '', 'lider.cirec@cirec.org', 'Asistio', 'TRANSPORTE', ''),
-(209, 'SesiÃ³n No. 3', '852', '27-02-2024 10:52:57', '963369', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(210, 'SesiÃ³n No. 9', '852', '27-02-2024 10:53:11', '963369', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(211, 'SesiÃ³n No. 1', '753', '27-02-2024 04:43:21', '8787', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(212, 'SesiÃ³n No. 2', '753', '27-02-2024 04:43:33', '8787', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(213, 'SesiÃ³n No. 1', '753', '27-02-2024 06:02:00', '8787', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(214, 'SesiÃ³n No. 7', '753', '27-02-2024 06:02:20', '8787', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(215, 'SesiÃ³n No. 1', '2802', '28-02-2024 08:33:53', '1213456789', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(216, 'SesiÃ³n No. 1', '123456789', '28-02-2024 09:30:17', '1002710208', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(217, 'SesiÃ³n No. 2', '123456789', '28-02-2024 09:41:03', '1002710208', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(218, 'SesiÃ³n No. 1', '963', '28-02-2024 10:31:50', '1002710208', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(219, 'SesiÃ³n No. 1', '852369', '28-02-2024 11:08:41', '1002710208', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(220, 'SesiÃ³n No. 1', '878787', '28-02-2024 11:15:08', '1002710208', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(221, 'SesiÃ³n No. 2', '878787', '28-02-2024 11:15:20', '1002710208', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(223, 'SesiÃ³n No. 1', '6789', '28-02-2024 03:39:34', '88552222', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(224, 'SesiÃ³n No. 2', '6789', '28-02-2024 03:39:39', '88552222', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(225, 'SesiÃ³n No. 3', '6789', '28-02-2024 03:39:50', '88552222', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(226, 'SesiÃ³n No. 4', '6789', '28-02-2024 03:39:58', '88552222', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(227, 'SesiÃ³n No. 5', '6789', '28-02-2024 03:40:05', '88552222', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(228, 'SesiÃ³n No. 1', '96', '28-02-2024 03:53:52', '12365', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(229, 'SesiÃ³n No. 2', '96', '29-02-2024 06:53:56', '12365', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(230, 'SesiÃ³n No. 3', '96', '29-02-2024 06:54:02', '12365', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(231, 'SesiÃ³n No. 4', '96', '29-02-2024 06:54:10', '12365', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(232, 'SesiÃ³n No. 1', '7878', '29-02-2024 07:25:39', '12365', '', 'agente.cirec@cirec.org', 'Asistio', '', '');
+(1, 'Sesion No. 1', '456789', '04-03-2024 12:48:11', '100245698', '', 'Sesion No. 4', 'Asistio', '', ''),
+(2, 'Sesion No. 2', '456789', '04-03-2024 12:48:17', '100245698', '', 'Sesion No. 4', 'Asistio', '', ''),
+(3, 'Sesion No. 3', '456789', '04-03-2024 12:48:23', '100245698', '', 'Sesion No. 4', 'Asistio', '', ''),
+(4, 'Sesion No. 1', '41', '05-03-2024 07:23:02', '432', '', 'Sesion No. 4', 'Asistio', '', ''),
+(5, 'Sesion No. 2', '41', '05-03-2024 07:23:15', '432', '', 'Sesion No. 4', 'Asistio', '', ''),
+(6, 'Sesion No. 3', '41', '05-03-2024 07:23:20', '432', '', 'Sesion No. 4', 'Asistio', '', ''),
+(7, 'Sesion No. 4', '41', '05-03-2024 07:23:24', '432', '', 'Sesion No. 4', 'Asistio', '', '');
 
 -- --------------------------------------------------------
 
@@ -170,8 +92,8 @@ CREATE TABLE `app_cargue` (
 --
 
 INSERT INTO `app_cargue` (`id`, `documento`, `autorizacion`, `codigoServicio`, `numCodServ`, `fechasolicitud`, `nombre`, `telefono`, `entidad`, `fechaautorizacion`, `tipodocumento`, `valorautorizado`, `identificador`, `especialidad`, `cantidadautorizada`, `cantidadprogramada`, `fechalimiteejecucion`, `estadogeneral`, `bitacoraasitio`, `bitacoranoasistio`, `fechacontacto`, `fechanocontacto`, `solicitudespecial`, `gestiono`, `estadocargue`) VALUES
-(13, 'documento', 'autorizacion', 'Noimbreservicio', 'Codservicio', 'fechasolicitud', 'nombre', 'telefono', 'entidad', 'fechaautorizacion', 'tipodocumento', 'valorautorizado', 'identificador', 'especialidad', 'cantidadautorizada', 'cantidadprogramada', 'fechalimiteejecucion', 'estadogeneral', 'bitacoraasitio', 'bitacoranoasistio', 'fechacontacto', 'fechanocontacto', 'solicitudespecial', 'lider.cirec@cirec.org', 'subido'),
-(14, '432', '2', 'TERAPIA FISICA INTEGRAL', '931001', '29-02-2024', 'Salome perez', '3232775808', 'POSITIVA', '29-02-2024', 'CC', '', '', '', '8', '4', '', 'AUTORIZADO', '', '', '', '', '', 'lider.cirec@cirec.org', 'subido');
+(11, '432', '41', 'TERAPIA FISICA INTEGRAL', '931001', '2024-03-05', 'Ramon perez', '3232775808', 'POSITIVA', '29-02-2024', 'CC', '', '', '', '8', '4', '', 'AUTORIZADO', '', '', '', '', '', 'lider.cirec@cirec.org', 'subido'),
+(12, '54212', '51', 'TERAPIA OCUPACIONAL INTEGRAL', '938303', '2024-03-05', 'Martha Ramirez', '452212322', 'SEGUROS BOLIVAR ARL', '1-03-2024', 'CC', '', '', '', '12', '5', '', 'AUTORIZADO', '', '', '', '', '', 'lider.cirec@cirec.org', 'subido');
 
 -- --------------------------------------------------------
 
@@ -217,74 +139,6 @@ CREATE TABLE `app_mensajes_prueba` (
   `fecha_cargue` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `app_mensajes_prueba`
---
-
-INSERT INTO `app_mensajes_prueba` (`id`, `fechasolicitud`, `gestiono`, `entidad`, `tipodocumento`, `documento`, `nombre`, `telefono`, `email`, `ciudad`, `estadocargue`, `estado_mensaje`, `fecha_cargue`) VALUES
-(30, '11/03/2021 16:58', 'lider.cirec@cirec.org', 'tres', 'cc', '333966', 'cirec1', '444', 'ingealex11@gmail.com', 'bogo', 'subido', 'Sin Enviar', '2023-08-24 15:59:17'),
-(31, '16/06/2021 19:44', 'lider.cirec@cirec.org', 'tres', 'CC', '1019075976', 'cirec2', '3105553380', '', 'BOGOTA', 'subido', 'Sin Enviar', '2023-08-24 15:59:17'),
-(32, '25/06/2021 07:37', 'lider.cirec@cirec.org', 'tres', 'CC', 'trt', 'cirec3', 'ert', '', 'BogotÃ¡', 'subido', 'Sin Enviar', '2023-08-24 15:59:17'),
-(33, '14/07/2021 16:27', 'lider.cirec@cirec.org', 'tres', 'CC', '2910', 'cirec4', '4901086', '', 'BogotÃ¡', 'subido', 'Sin Enviar', '2023-08-24 15:59:17'),
-(34, '11/03/2021 16:58', 'lider.cirec@cirec.org', 'tres', 'cc', '333966', 'cirec1', '444', 'ingealex11@gmail.com', 'bogo', 'subido', 'Sin Enviar', '2023-08-24 16:53:00'),
-(35, '16/06/2021 19:44', 'lider.cirec@cirec.org', 'tres', 'CC', '1019075976', 'cirec2', '3105553380', '', 'BOGOTA', 'subido', 'Sin Enviar', '2023-08-24 16:53:00'),
-(36, '25/06/2021 07:37', 'lider.cirec@cirec.org', 'tres', 'CC', 'trt', 'cirec3', 'ert', '', 'BogotÃ¡', 'subido', 'Sin Enviar', '2023-08-24 16:53:00'),
-(37, '14/07/2021 16:27', 'lider.cirec@cirec.org', 'tres', 'CC', '2910', 'cirec4', '4901086', '', 'BogotÃ¡', 'subido', 'Sin Enviar', '2023-08-24 16:53:00'),
-(38, '08/24/2023', 'lider.cirec@cirec.org', 'Nueva Eps', 'CC', '1018453370', 'Yesid Ortiz', '3145167485', 'tizid92@gmail.com', 'Bogota', 'subido', 'Sin Enviar', '2023-08-24 16:53:00'),
-(39, '11/03/2021 16:58', 'lider.cirec@cirec.org', 'tres', 'cc', '333966', 'cirec1', '444', 'ingealex11@gmail.com', 'bogo', 'subido', 'Sin Enviar', '2023-08-24 20:40:30'),
-(40, '16/06/2021 19:44', 'lider.cirec@cirec.org', 'tres', 'CC', '1019075976', 'cirec2', '3105553380', '', 'BOGOTA', 'subido', 'Sin Enviar', '2023-08-24 20:40:30'),
-(41, '25/06/2021 07:37', 'lider.cirec@cirec.org', 'tres', 'CC', 'trt', 'cirec3', 'ert', '', 'BogotÃ¡', 'subido', 'Sin Enviar', '2023-08-24 20:40:30'),
-(42, '14/07/2021 16:27', 'lider.cirec@cirec.org', 'tres', 'CC', '2910', 'cirec4', '4901086', '', 'BogotÃ¡', 'subido', 'Sin Enviar', '2023-08-24 20:40:30'),
-(43, '08/24/2023', 'lider.cirec@cirec.org', 'Nueva Eps', 'CC', '1018453370', 'Yesid Ortiz', '3145167485', 'tizid92@gmail.com', 'Bogota', 'subido', 'Sin Enviar', '2023-08-24 20:40:30'),
-(44, 'Andrea Bernal', '237125', '3245956', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:42'),
-(45, 'Andrea Arango Ruiz', '125850', '3542249', 'Particular', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:42'),
-(46, 'Andrea Carolina Garcia Torres', '339259', '6466043', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:42'),
-(47, 'Andrea del Mar Romero', '842952', '2953246', 'Compensar', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:42'),
-(48, 'Andrea del Pilar Moreno Barbosa', '634882', '5809118', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:42'),
-(49, 'Andrea Duque Caicedo', '331889', '9035474', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:42'),
-(50, 'Andrea Duran', '655353', '6733915', 'Compensar', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:42'),
-(51, 'Andrea Elizabeth Suspe Garcia', '359920', '5938339', 'Particular', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:42'),
-(52, 'Andrea Esperanza Camargo Bautista', '256850', '1869758', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:42'),
-(53, 'Andres Camilo Castro Lemus', '454897', '8234289', 'Particular', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:42'),
-(54, 'Andres PeÃ±a', '606681', '9950841', 'Compensar', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:42'),
-(55, 'Andres Raul Silva Alzate', '821726', '8169804', 'Compensar', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:42'),
-(56, 'Andrea Bernal', '237125', '3245956', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:47'),
-(57, 'Andrea Arango Ruiz', '125850', '3542249', 'Particular', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:47'),
-(58, 'Andrea Carolina Garcia Torres', '339259', '6466043', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:47'),
-(59, 'Andrea del Mar Romero', '842952', '2953246', 'Compensar', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:47'),
-(60, 'Andrea del Pilar Moreno Barbosa', '634882', '5809118', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:47'),
-(61, 'Andrea Duque Caicedo', '331889', '9035474', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:47'),
-(62, 'Andrea Duran', '655353', '6733915', 'Compensar', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:47'),
-(63, 'Andrea Elizabeth Suspe Garcia', '359920', '5938339', 'Particular', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:47'),
-(64, 'Andrea Esperanza Camargo Bautista', '256850', '1869758', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:47'),
-(65, 'Andres Camilo Castro Lemus', '454897', '8234289', 'Particular', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:47'),
-(66, 'Andres PeÃ±a', '606681', '9950841', 'Compensar', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:47'),
-(67, 'Andres Raul Silva Alzate', '821726', '8169804', 'Compensar', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:47'),
-(68, 'Andrea Bernal', '237125', '3245956', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:54'),
-(69, 'Andrea Arango Ruiz', '125850', '3542249', 'Particular', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:54'),
-(70, 'Andrea Carolina Garcia Torres', '339259', '6466043', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:54'),
-(71, 'Andrea del Mar Romero', '842952', '2953246', 'Compensar', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:54'),
-(72, 'Andrea del Pilar Moreno Barbosa', '634882', '5809118', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:54'),
-(73, 'Andrea Duque Caicedo', '331889', '9035474', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:54'),
-(74, 'Andrea Duran', '655353', '6733915', 'Compensar', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:54'),
-(75, 'Andrea Elizabeth Suspe Garcia', '359920', '5938339', 'Particular', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:54'),
-(76, 'Andrea Esperanza Camargo Bautista', '256850', '1869758', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:54'),
-(77, 'Andres Camilo Castro Lemus', '454897', '8234289', 'Particular', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:54'),
-(78, 'Andres PeÃ±a', '606681', '9950841', 'Compensar', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:54'),
-(79, 'Andres Raul Silva Alzate', '821726', '8169804', 'Compensar', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:54'),
-(80, 'Andrea Bernal', '237125', '3245956', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:23:26'),
-(81, 'Andrea Arango Ruiz', '125850', '3542249', 'Particular', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:23:26'),
-(82, 'Andrea Carolina Garcia Torres', '339259', '6466043', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:23:26'),
-(83, 'Andrea del Mar Romero', '842952', '2953246', 'Compensar', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:23:26'),
-(84, 'Andrea del Pilar Moreno Barbosa', '634882', '5809118', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:23:26'),
-(85, 'Andrea Duque Caicedo', '331889', '9035474', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:23:26'),
-(86, 'Andrea Duran', '655353', '6733915', 'Compensar', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:23:26'),
-(87, 'Andrea Elizabeth Suspe Garcia', '359920', '5938339', 'Particular', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:23:26'),
-(88, 'Andrea Esperanza Camargo Bautista', '256850', '1869758', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:23:26'),
-(89, 'Andres Camilo Castro Lemus', '454897', '8234289', 'Particular', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:23:26'),
-(90, 'Andres PeÃ±a', '606681', '9950841', 'Compensar', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:23:26'),
-(91, 'Andres Raul Silva Alzate', '821726', '8169804', 'Compensar', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:23:26');
-
 -- --------------------------------------------------------
 
 --
@@ -319,13 +173,6 @@ CREATE TABLE `contacto` (
   `gestiono` varchar(100) NOT NULL,
   `tiposeguimiento` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `contacto`
---
-
-INSERT INTO `contacto` (`id`, `autorizacion`, `fecha`, `bitacora`, `gestiono`, `tiposeguimiento`) VALUES
-(1, '96', '28-02-2024 03:54:18', 'ATIENDE FAMILIAR Y ENTIENDE LA INFORMACION', 'lider.cirec@cirec.org', 'Usuario Contactado');
 
 -- --------------------------------------------------------
 
@@ -380,11 +227,14 @@ CREATE TABLE `otrasespecialidades` (
 --
 
 INSERT INTO `otrasespecialidades` (`id`, `documento`, `autorizacion`, `codigoServicio`, `numCodServ`, `fechasolicitud`, `nombre`, `telefono`, `entidad`, `fechaautorizacion`, `tipodocumento`, `valorautorizado`, `identificador`, `especialidad`, `cantidadautorizada`, `cantidadprogramada`, `fechalimiteejecucion`, `estadogeneral`, `bitacoraasitio`, `bitacoranoasistio`, `fechacontacto`, `fechanocontacto`, `solicitudespecial`, `gestiono`, `estadocargue`) VALUES
-(2, '12365', '96', 'TERAPIA FISICA INTEGRAL', '931001', '29-02-2024', 'Mateo Kawak', '3232775808', 'POSITIVA', '29-02-2024', 'CC', '', '', '', '8', '4', '', 'EN PROCESO', '', '', '', '', '', 'lider.cirec@cirec.org', 'sinsubir'),
-(3, '12365', '7878', 'TERAPIA OCUPACIONAL INTEGRAL', '938303', '28-02-2024', 'Mateo Kawak', '3232775808', 'POSITIVA', '2024-02-28', 'CC', '', '123', 'NULL', '20', '10', 'NULL', 'AUTORIZADO', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'lider.cirec@cirec.org', 'NULL '),
-(5, 'documento', 'autorizacion', 'Noimbreservicio', 'Codservicio', 'fechasolicitud', 'nombre', 'telefono', 'entidad', 'fechaautorizacion', 'tipodocumento', 'valorautorizado', 'identificador', 'especialidad', 'cantidadautorizada', 'cantidadprogramada', 'fechalimiteejecucion', 'estadogeneral', 'bitacoraasitio', 'bitacoranoasistio', 'fechacontacto', 'fechanocontacto', 'solicitudespecial', 'lider.cirec@cirec.org', 'sinsubir'),
-(6, '5555', '96', 'TERAPIA FISICA INTEGRAL', '931001', '29-02-2024', 'Salome perez', '3232775808', 'POSITIVA', '29-02-2024', 'CC', '', '', '', '8', '4', '', 'AUTORIZADO', '', '', '', '', '', 'lider.cirec@cirec.org', 'sinsubir'),
-(13, 'documento', 'autorizacion', 'Noimbreservicio', 'Codservicio', 'fechasolicitud', 'nombre', 'telefono', 'entidad', 'fechaautorizacion', 'tipodocumento', 'valorautorizado', 'identificador', 'especialidad', 'cantidadautorizada', 'cantidadprogramada', 'fechalimiteejecucion', 'estadogeneral', 'bitacoraasitio', 'bitacoranoasistio', 'fechacontacto', 'fechanocontacto', 'solicitudespecial', 'lider.cirec@cirec.org', 'sinsubir');
+(1, '100245698', '456789', 'TERAPIA FISICA INTEGRAL', '931001', '2024-03-04', 'Salome Perez', '3232775808', 'POSITIVA', '29-02-2024', 'CC', '', '', '', '8', '4', '', 'AUTORIZADO', '', '', '', '', '', 'lider.cirec@cirec.org', 'sinsubir'),
+(2, 'documento', 'autorizacion23', 'Noimbreservicio', 'Codservicio', '2024-03-04', 'nombre', 'telefono', 'entidad', 'fechaautorizacion', 'tipodocumento', 'valorautorizado', 'identificador', 'especialidad', 'cantidadautorizada', 'cantidadprogramada', 'fechalimiteejecucion', 'estadogeneral', 'bitacoraasitio', 'bitacoranoasistio', 'fechacontacto', 'fechanocontacto', 'solicitudespecial', 'lider.cirec@cirec.org', 'sinsubir'),
+(3, '432', '44', 'TERAPIA FISICA INTEGRAL', '931001', '2024-03-04', 'Ramon perez', '3232775808', 'POSITIVA', '29-02-2024', 'CC', '', '', '', '8', '4', '', 'AUTORIZADO', '', '', '', '', '', 'lider.cirec@cirec.org', 'sinsubir'),
+(4, '54212', '55', 'TERAPIA OCUPACIONAL INTEGRAL', '938303', '2024-03-04', 'Martha Ramirez', '452212322', 'SEGUROS BOLIVAR ARL', '1-03-2024', 'CC', '', '', '', '12', '5', '', 'AUTORIZADO', '', '', '', '', '', 'lider.cirec@cirec.org', 'sinsubir'),
+(11, '432', '41', 'TERAPIA FISICA INTEGRAL', '931001', '2024-03-05', 'Ramon perez', '3232775808', 'POSITIVA', '29-02-2024', 'CC', '', '', '', '8', '4', '', 'EN PROCESO', '', '', '', '', '', 'lider.cirec@cirec.org', 'sinsubir'),
+(12, '54212', '51', 'TERAPIA OCUPACIONAL INTEGRAL', '938303', '2024-03-05', 'Martha Ramirez', '452212322', 'SEGUROS BOLIVAR ARL', '1-03-2024', 'CC', '', '', '', '12', '5', '', 'AUTORIZADO', '', '', '', '', '', 'lider.cirec@cirec.org', 'sinsubir'),
+(13, '100245698', '123', 'TERAPIA FISICA INTEGRAL', '931001', '05-03-2024', 'Salome Perez', '3232775808', 'POSITIVA', '2024-03-05', 'CC', '', '123', 'NULL', '5', '5', 'NULL', 'AUTORIZADO', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'lider.cirec@cirec.org', 'NULL '),
+(14, '432', '7878', 'TERAPIA FISICA INTEGRAL', '931001', '05-03-2024', 'Ramon perez', '3232775808', 'POSITIVA', '2024-03-05', 'CC', '', '123', 'NULL', '10', '2', 'NULL', 'SUSPENDIDO', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'lider.cirec@cirec.org', 'NULL ');
 
 -- --------------------------------------------------------
 
@@ -698,13 +548,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `agendaotras`
 --
 ALTER TABLE `agendaotras`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=233;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `app_cargue`
 --
 ALTER TABLE `app_cargue`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `app_cargue_copia`
@@ -716,7 +566,7 @@ ALTER TABLE `app_cargue_copia`
 -- AUTO_INCREMENT de la tabla `app_mensajes_prueba`
 --
 ALTER TABLE `app_mensajes_prueba`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `autorizacion_prueba`
@@ -728,7 +578,7 @@ ALTER TABLE `autorizacion_prueba`
 -- AUTO_INCREMENT de la tabla `contacto`
 --
 ALTER TABLE `contacto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `nocontacto`
