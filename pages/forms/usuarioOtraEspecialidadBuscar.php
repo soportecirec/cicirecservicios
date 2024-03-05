@@ -281,7 +281,7 @@
                       if($resultado!=""){
                       ?>
                         
-                    <a  class="btn-descargar-doc btn btn-default" href = "https://fundacioncirec.org/version2covid/pages/forms/<?php echo $resultado; ?>" target = "blank"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                    <a  class="btn-descargar-doc btn btn-default" href = "../forms/<?php echo $resultado; ?>" target = "blank"><i class="fa fa-eye" aria-hidden="true"></i></a>
                     <?php } else{
                     ?>
                     

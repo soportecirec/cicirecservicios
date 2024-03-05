@@ -1,6 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> </title>
+</head>
+<body>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"/></script>
+
+
+
 <?php
 error_reporting(0);
 session_start();
+$fecha = date('d-m-Y');
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: ../../login/index.php");
     exit;
@@ -14,20 +29,45 @@ include_once "../../api/conexion.php";
       echo ($active_menu == $menu? "class='active'": "");
   }
   error_reporting(0);
-  date_default_timezone_set('America/Bogota');
-  $fecha = date('d-m-Y');
-  $documento = $_GET['documento'];
-  $sesion= $_SESSION["username"];
-  $sql = "SELECT *  from otrasespecialidades where documento = '$documento'";
-      $result = mysqli_query($connection, $sql);
-      $row = mysqli_fetch_array($result);
-        $nombres = $row['nombre'];
-        $tipodocumento = $row['tipodocumento'];       
-        $telefono = $row['telefono'];
-        $entidad = $row['entidad'];
-        
-        
 
+$documento = $_GET['documento'];
+
+  try
+{
+
+$usuario = "BDCIREC";
+$password = "C1r3c2020";
+$nombredb = "SCSE";
+
+
+//para oracle el tipo es oci
+$conn =new PDO("oci:dbname".$nombredb,$usuario,$password);
+
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch ( PDOException $e )
+{  
+    echo "Error: ".$e->getMessage( );  
+
+}
+
+$consulta = "Select * from abpac where pacide = '$documento'";
+$result = $conn->query($consulta);
+if (!$result) {
+
+    print "    <p class=\"aviso\">Error en la consulta.</p>\n";
+} else {
+
+
+    $row = $result->fetch();
+
+        $nombres = $row['PACNOM'].' '.$row['PACAP1'].' '.$row['PACAP2'];
+        $tipodocumento = $row['PACTID'];       
+        $telefono = $row['PACTEL'];
+        $entidad = "POSTIVA";
+
+        
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -242,14 +282,50 @@ include_once "../../api/conexion.php";
                 </div> 
                  
                 <!-- nuevos camnpos -->
+                
 
                 <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Autorización No:</label>
-
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="ciudad_usuario" name = "autorizacion" >
-                  </div>
+                    <label for="autorizacion" class="col-sm-2 control-label">Autorización No:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="autorizacion" name="autorizacion" onChange="validarAutorizacion()">
+                    </div>
                 </div>
+                
+                <script>
+                    function validarAutorizacion() {
+                        var autorizacionInput = document.getElementById("autorizacion");
+                        var autorizacion = autorizacionInput.value;
+                    
+                        // Realizar la validación mediante una petición AJAX
+                        var xhr = new XMLHttpRequest();
+                        xhr.onreadystatechange = function() {
+                            if (this.readyState == 4 && this.status == 200) {
+                                var response = JSON.parse(this.responseText);
+                                if (response.existe) {
+                                    autorizacionInput.style.borderColor = "red";
+                    
+                                    // Mostrar modal de SweetAlert
+                                    swal({
+                                        title: "Autorización existente",
+                                        text: "La autorización ya existe en la base de datos.",
+                                        type: "error",
+                                        confirmButtonText: "Continuar"
+                                    }, function() {
+                                        // Limpiar el input de autorización
+                                        autorizacionInput.value = "";
+                                        autorizacionInput.style.borderColor = "";
+                                    });
+                                } else {
+                                    autorizacionInput.style.borderColor = "green";
+                                }
+                            }
+                        };
+                        xhr.open("POST", "validar_autorizacion.php", true);
+                        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                        xhr.send("autorizacion=" + autorizacion);
+                    }
+
+                </script>
                 
                 
                 <div class="form-group">
@@ -499,3 +575,20 @@ include_once "../../api/conexion.php";
   
   </body>
 </html>
+
+
+
+
+
+
+
+   
+
+
+
+
+?>
+
+</body>
+</html>
+

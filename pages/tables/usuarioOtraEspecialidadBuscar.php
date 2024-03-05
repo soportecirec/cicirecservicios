@@ -41,6 +41,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       $result3 = mysqli_query($connection, $sql3);
        $row3 = mysqli_fetch_array($result3);
       $nombres = $row3['nombre'];
+      $documento = $row3['documento'];
      
      
 ?>
@@ -113,7 +114,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
           <ul class="treeview-menu">          
 
             <li <?php isActive("boxed") ?>>
-              <a href="http://fundacioncirec.org/cicirecservicios/pages/tables/gestionUsuarios.php"><i class="fa fa-circle-o"></i> Gestión pacientes</a>
+              <a href="../tables/gestionUsuarios.php"><i class="fa fa-circle-o"></i> Gestión pacientes</a>
             </li>
 
             <!--<li <?php isActive("collapsed_sidebar") ?>>
@@ -136,19 +137,19 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             
 
             <li <?php isActive("boxed") ?>>
-              <a href="http://fundacioncirec.org/cicirecservicios/pages/forms/usuarioOtraEspecialidad.php"><i class="fa fa-circle-o"></i> Buscar paciente</a>
+              <a href="../forms/usuarioOtraEspecialidad.php"><i class="fa fa-circle-o"></i> Buscar paciente</a>
             </li>
             
             <li <?php isActive("boxed") ?>>
-              <a href="http://fundacioncirec.org/cicirecservicios/pages/tables/masivoexcel.php"><i class="fa fa-circle-o"></i> Cargar Masivo</a>
+              <a href="../tables/masivoexcel.php"><i class="fa fa-circle-o"></i> Cargar Masivo</a>
             </li>
 
             <li <?php isActive("collapsed_sidebar") ?>>
-              <a href="http://fundacioncirec.org/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php"><i class="fa fa-circle-o"></i> Descargar Excel </a>
+              <a href="../forms/excelTodosOtrasEspecialidades.php"><i class="fa fa-circle-o"></i> Descargar Excel </a>
             </li>
           </ul>
         </li>        
-        <li><a href="http://fundacioncirec.org/cicirecservicios/logout.php"><i class="fa fa-book"></i> <span>Cerrar sesión</span></a></li>
+        <li><a href=".././logout.php"><i class="fa fa-book"></i> <span>Cerrar sesión</span></a></li>
 
       </ul>
     </section>
@@ -209,8 +210,19 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             <div class="box-header">
               <h3 class="box-title">Datos del usuario</h3>
                <!--<a role="button" class="btn btn-info pull-right margin" href="../forms/crearNuevoPaciente.php"  title="Crear usuario!">Nuevo paciente</a>--> 
-
-               <a role="button" class="btn btn-success pull-right margin" href="../forms/crearNuevoProceso.php?documento=<?php echo $usuario;?>"  title="Crear proceso!">Nuevo proceso</a> 
+               <?php
+               if($nombres != ''){
+                ?>
+                <a role="button" class="btn btn-success pull-right margin" href="../forms/crearNuevoProceso.php?documento=<?php echo $usuario;?>"  title="Crear proceso!">Nuevo proceso</a>
+               <?php 
+                }
+             else{
+              ?>
+              <a role="button" class="btn btn-success pull-right margin" href="../forms/crearNuevoProcesoServinte.php?documento=<?php echo $usuario;?>"  title="Crear proceso!">Nuevo proceso servinte</a>
+              <?php 
+             }
+                
+               ?>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -280,10 +292,28 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                      <td>
                       <?php                   
                         if($perfil == 'administrador'){
+                            
+                            
+                            
+                             //validar sesiones para cambiar cantidfades               
+                        	include_once "../../api/conexion.php"; 
+                        			
+                        
+                        			$sql = "SELECT COUNT(*) AS total_autorizacion_asistio FROM 
+                        			agendaotras WHERE estado = 'Asistio' AND autorizacion = $autorizacion;";
+                        			mysqli_query($connection, $sql);
+                        			//if-else statement in executing our query
+                        			
+                        			echo "" . $total_autorizacion_asistio;
+                            
+                            
+                            
+                            
                       ?>
 
                       
-                            <!--<a href="#edit_<?php echo $id; ?>" class="btn btn-warning btn-sm" data-toggle="modal"><span class="glyphicon glyphicon-edit"></span></a>-->
+                            <a href="#editCantidad_<?php echo $id; ?>" class="btn btn-warning btn-sm" data-toggle="modal"><span class="glyphicon glyphicon-edit"></span></a>
+                            <?php include('editarCantidadesAutorizacion.php'); ?>
 
                             <script>
                                 $(document).ready(function(){
