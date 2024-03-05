@@ -65,7 +65,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["username"] = $username;                            
                             
                             // Redirect user to welcome page
-                            header("location: ../index.php");
+                            header("location: ../pages/tables/masivoexcel.php");
                         } else{
                             // Display an error message if password is not valid
                             $password_err = "Contraseña incorrecta.";

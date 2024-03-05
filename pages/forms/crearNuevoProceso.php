@@ -242,14 +242,50 @@ include_once "../../api/conexion.php";
                 </div> 
                  
                 <!-- nuevos camnpos -->
+                
 
                 <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Autorización No:</label>
-
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="ciudad_usuario" name = "autorizacion" >
-                  </div>
+                    <label for="autorizacion" class="col-sm-2 control-label">Autorización No:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="autorizacion" name="autorizacion" onChange="validarAutorizacion()">
+                    </div>
                 </div>
+                
+                <script>
+                    function validarAutorizacion() {
+                        var autorizacionInput = document.getElementById("autorizacion");
+                        var autorizacion = autorizacionInput.value;
+                    
+                        // Realizar la validación mediante una petición AJAX
+                        var xhr = new XMLHttpRequest();
+                        xhr.onreadystatechange = function() {
+                            if (this.readyState == 4 && this.status == 200) {
+                                var response = JSON.parse(this.responseText);
+                                if (response.existe) {
+                                    autorizacionInput.style.borderColor = "red";
+                    
+                                    // Mostrar modal de SweetAlert
+                                    swal({
+                                        title: "Autorización existente",
+                                        text: "La autorización ya existe en la base de datos.",
+                                        type: "error",
+                                        confirmButtonText: "Continuar"
+                                    }, function() {
+                                        // Limpiar el input de autorización
+                                        autorizacionInput.value = "";
+                                        autorizacionInput.style.borderColor = "";
+                                    });
+                                } else {
+                                    autorizacionInput.style.borderColor = "green";
+                                }
+                            }
+                        };
+                        xhr.open("POST", "validar_autorizacion.php", true);
+                        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                        xhr.send("autorizacion=" + autorizacion);
+                    }
+
+                </script>
                 
                 
                 <div class="form-group">

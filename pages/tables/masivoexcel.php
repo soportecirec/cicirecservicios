@@ -170,6 +170,8 @@ $allowedFileType = ['application/vnd.ms-excel','text/xls','text/xlsx','applicati
                 
 
                 if (!empty($nombre) || !empty($documento) || !empty($telefono) || !empty($autorizacion)) {
+                    
+                    $fechaActual = date('Y-m-d'); // Obtiene la fecha actual
 
                     $insertarpaciente = "INSERT INTO app_cargue VALUES (
                          null, 
@@ -177,7 +179,7 @@ $allowedFileType = ['application/vnd.ms-excel','text/xls','text/xlsx','applicati
                         '$autorizacion', 
                         '$codigoServicio', 
                         '$numCodServ',
-                        '$fechasolicitud', 
+                        '$fechaActual', 
                         '$nombre', 
                         '$telefono',
                         '$entidad', 
