@@ -276,7 +276,7 @@
                   <td> 
 
 
-                    <a href='../forms/misResultados.php?id_auto=<?php echo $row[id];?>' class='btn-descargar-doc btn btn-info' role='button' ><i class='fa fa-upload bigfonts' aria-hidden='true'></i></a> 
+                    <a href='../forms/misResultados.php?id_auto=<?php echo $row['id'];?>' class='btn-descargar-doc btn btn-info' role='button' ><i class='fa fa-upload bigfonts' aria-hidden='true'></i></a> 
                      <?php
                       if($resultado!=""){
                       ?>

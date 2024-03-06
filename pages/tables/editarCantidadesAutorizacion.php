@@ -1,13 +1,10 @@
 <?php
-
 error_reporting(0);
 session_start();
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: ../../login/index.php");
+    header("location: login/index.php");
     exit;
 }
-
-
  include_once "../../api/conexion.php"; 
   function isActive($menu, $mode="full"){
     global $active_menu;
@@ -16,14 +13,21 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     else
       echo ($active_menu == $menu? "class='active'": "");
   }
-  $sesion= $_SESSION["username"];
   $host= $_SERVER["HTTP_HOST"];
   $url= $_SERVER["REQUEST_URI"];
+  $sesion= $_SESSION["username"];
   $link = "https://" . $host . $url;
     error_reporting(0);
-    date_default_timezone_set('America/Bogota');
+    date_default_timezone_set('America/Bogota');    
+    $fecha = date('d-m-Y');
     $buscar = $_POST['buscar'];
+    $nombrePaciente = $_GET['nombrePaciente'];
+    $autorizacionGet = $_GET['autorizacion'];
+    $cantidadAutorizada = $_GET['cantidadAutorizada'];
+    $cantidadProgramada = $_GET['cantidadProgramada'];
+    $PendientesProgramar = $_GET['PendientesProgramar'];
     $criterio = $_GET['criterio'];
+
 
 
                  if($criterio == ''){
@@ -33,20 +37,27 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                     $usuario = $criterio;
 
                  }
-    // validar rol
+   // validar rol
     $sql2 = "SELECT *  from users where correo = '$sesion'";
     $result2 = mysqli_query($connection, $sql2);
     $row2 = mysqli_fetch_array($result2);
     $perfil = $row2['sintomas'];
     
+     $sql3 = "SELECT *  from otrasespecialidades where documento = '$usuario'" ;
+      $result3 = mysqli_query($connection, $sql3);
+       $row3 = mysqli_fetch_array($result3);
+      $nombres = $row3['nombre'];
+      $documento = $row3['documento'];
 
+     
+     
 ?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>CICIREC SERVICIOS | CIREC</title>
+     <title>CICIREC SERVICIOS | CIREC</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
@@ -73,8 +84,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   </head>
   <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
-
-       <header class="main-header">
+  <header class="main-header">
         <!-- Logo -->
         <a href="http://192.168.0.122/cicirecservicios/index.php" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
@@ -92,76 +102,149 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         </nav>
       </header>
       <!-- Left side column. contains the logo and sidebar -->
- <aside class="main-sidebar">
-    <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar">
+      <?php include("../../layout.php"); ?>
      
-      <ul class="sidebar-menu">
-        <li class="header"><?php echo $sesion;?></li>        
-
-        <li class="treeview">
-          <!--
-            <a href="#">
-            <i class="fa fa-user"></i> <span>Pacientes</span>
-             <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>          
-            </a>
-            -->
-          <ul class="treeview-menu">          
-
-            <li <?php isActive("boxed") ?>>
-              <a href="http://fundacioncirec.org/cicirecservicios/pages/tables/gestionUsuarios.php"><i class="fa fa-circle-o"></i> Gestión pacientes</a>
-            </li>
-            
-
-            <!--<li <?php isActive("collapsed_sidebar") ?>>
-              <a href="pages/forms/excelTodosParticular.php"><i class="fa fa-circle-o"></i> Descargar Excel </a>
-            </li>-->
-
-            
-
-          </ul>
-        </li>
-
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-users"></i> <span>Otras especialidades</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            
-
-            <li <?php isActive("boxed") ?>>
-              <a href="http://fundacioncirec.org/cicirecservicios/pages/forms/usuarioOtraEspecialidad.php"><i class="fa fa-circle-o"></i> Buscar paciente</a>
-            </li>
-            
-            <li <?php isActive("boxed") ?>>
-              <a href="http://fundacioncirec.org/cicirecservicios/pages/tables/masivoexcel.php"><i class="fa fa-circle-o"></i> Cargar Masivo</a>
-            </li>
-
-            <li <?php isActive("collapsed_sidebar") ?>>
-              <a href="http://fundacioncirec.org/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php"><i class="fa fa-circle-o"></i> Descargar Excel </a>
-            </li>
-          </ul>
-        </li>        
-        <li><a href="http://fundacioncirec.org/cicirecservicios/logout.php"><i class="fa fa-book"></i> <span>Cerrar sesión</span></a></li>
-
-      </ul>
-    </section>
-    <!-- /.sidebar -->
-  </aside>
-
+      <!-- Left side column. contains the logo and sidebar -->
+  
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
         <!-- Content Header (Page header) -->
          <section class="content-header">
-      <h1>
-        Información pacientes
-        <small>Cicirec servicios</small>
-      </h1>     
+      
+      
+      
+      
+      <style>
+      @keyframes zoom {
+        0% { transform: scale(1.2); }
+        10% { transform: scale(1); }
+        20% { transform: scale(1); }
+        }
+        
+        .panel {
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 2);
+            animation: zoom 20s infinite alternate;
+        }
+
+      </style>
+      
+      <div class="panel panel-default">
+    <div class="panel-heading"><strong>Información autorización</strong></div>
+    <div class="panel-body">
+        <h3 style="margin: -1px">
+            Paciente: <strong><?php echo $nombrePaciente;?></strong><br>
+            Nro. autorizacion: <strong><?php echo $autorizacionGet;?></strong><br>
+        </h3><br><br><br>
+
+
+
+
+<form method="POST" action="" id="editarCantidadSesiones_<?php echo $id; ?>">
+    <div class="row form-group">
+        <div class="col-sm-4">
+            <label class="control-label" style="position:relative; top:7px;">Cantidad Autorizada :</label>
+        </div>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" name="cantidad" value="<?php echo $cantidadAutorizada; ?>" disabled>
+            <input type="hidden" class="form-control" name="documento" value="<?php echo $usuario; ?>">
+        </div>
+    </div>
+
+    <div class="row form-group">
+        <div class="col-sm-4">
+            <label class="control-label" style="position:relative; top:7px;">Cantidad ya programada :</label>
+        </div>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" name="sesionesProgramadas" value="<?php echo $cantidadProgramada; ?>" disabled>
+        </div>
+    </div>
+
+    <div class="row form-group">
+        <div class="col-sm-4">
+            <label class="control-label" style="position:relative; top:7px;">Cantidad pendiente por programar :</label>
+        </div>
+        <div class="col-sm-8">
+            <?php if ($PendientesProgramar == 0): ?>
+                <input type="text" class="form-control" name="cantidadPendienteProgramar" value="<?php echo $PendientesProgramar; ?>" disabled><br>
+
+                <label style="color: red;">Ya se programaron todas las sesiones autorizadas</label><br>
+
+                <button type="button" class="btn btn-primary" onclick="window.history.back();">Volver</button>
+            <?php else: ?>
+                <input type="text" class="form-control" name="cantidadPendienteProgramar" value="<?php echo $PendientesProgramar; ?>" min="0" max="<?php echo $PendientesProgramar; ?>">
+                <input type="submit" name="submit" class="btn btn-success pull-right margin" value="Actualizar" id="actualizarBtn">
+            <?php endif; ?>
+        </div>
+    </div>
+</form>
+
+<script>
+    document.getElementById('editarCantidadSesiones_<?php echo $id; ?>').addEventListener('submit', function(e) {
+        var cantidadPendienteProgramar = parseInt(document.getElementsByName('cantidadPendienteProgramar')[0].value);
+        var cantidadIngresada = parseInt(document.getElementsByName('cantidadPendienteProgramar')[0].value);
+        
+        if (cantidadIngresada > cantidadPendienteProgramar) {
+            e.preventDefault(); // Evita que se envíe el formulario
+            alert('La cantidad ingresada es mayor que la cantidad pendiente por programar.');
+        }
+    });
+</script>
+
+
+
+
+
+
+    </div>
+</div>
+      
+    
+
+
+<?php
+
+    $cantidadPendienteProgramar = $_POST['cantidadPendienteProgramar'];
+
+  $insertarCantidadNueva = $cantidadPendienteProgramar + $cantidadProgramada;
+  //echo $insertarCantidadNueva;
+
+  //echo $autorizacionGet;
+
+  if(isset($_POST['submit'])){
+
+
+  
+  $sql = "UPDATE `otrasespecialidades` SET `cantidadprogramada` = '$insertarCantidadNueva' WHERE `otrasespecialidades`.`autorizacion` = '$autorizacionGet';";
+  if (mysqli_query($connection, $sql)) {
+    // Redirige automáticamente a la página especificada
+        echo "<script>window.location.href = 'usuarioOtraEspecialidadBuscar.php?criterio=$criterio&actualizaCantidad=s';</script>";
+        exit();
+  } else {
+    echo "Error al actualizar: " . mysqli_error($connection);
+  }
+
+
+  }
+
+
+
+
+?>
+
+
+
+             
+
+
+
+
+      
+      
+      
+      
+      
+      
+      
     </section>
 
         <!-- Main content -->
@@ -169,83 +252,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       <div class="row">
         <div class="col-xs-12">
         
-          <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Datos del usuario</h3>
-               <a role="button" class="btn btn-info pull-right" href="../forms/crearNuevoPaciente.php"  title="Crear usuario!" >Nuevo paciente</a> 
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
+          
 
-              <table id="example2" class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                 
-                  <th>Nombres</th>
-                  <th>Documento</th>
-                  <th>Telefono</th>
-                  <th>Entidad</th>
-                  <th>Ciudad</th>
-                  <th>Acciones</th>
-                 
-                  
-                </tr>
-                </thead>
-                <tbody>
-                  <?php
-                  error_reporting(0);
-                        //$buscar = $_POST['buscar'];
-                                                                     
-                        $sql = "SELECT *  from paciente 
-                          order by id desc ";
-                          $result = mysqli_query($connection, $sql);
-                            while($row = mysqli_fetch_array($result)):
-                              $nombres = $row['nombre'];
-                              $tipodocumento = $row['tipodocumento'];
-                              $documento = $row['documento'];
-                              $telefono = $row['telefono'];
-                              $entidad = $row['entidad'];
-                              $ciudad = $row['ciudad'];                          
 
-                    ?>  
-
-                  <tr>
-                  
-                    <td><?php echo  $nombres;?></td>
-                    <td><?php echo $tipodocumento. "-".$documento;?></td>
-                    <td><?php echo $telefono; ?></td>
-                    <td><?php echo $entidad?></td>
-                    <td><?php echo $ciudad;?></td>
-                   
-                    <!--permisos-->
-                    
-                     <td>
-                     <?php                   
-                    if($perfil == 'administrador'){
-                    ?>
-                      <a href="#edit_<?php echo $documento; ?>" class="btn btn-warning btn-sm" data-toggle="modal"><span class="glyphicon glyphicon-edit"></span> Editar</a>
-                      <a href="#delete_<?php echo $documento; ?>" class="btn btn-danger btn-sm" data-toggle="modal"><span class="glyphicon glyphicon-trash"></span> Borrar</a>
-                    <?php
-                      }else{
-                    ?>
-                     <a href="#edit_<?php echo $documento; ?>" class="btn btn-warning btn-sm" data-toggle="modal"><span class="glyphicon glyphicon-edit"></span> Editar</a>
-                     <?php
-                     }
-                     ?>
-                    </td>
-                    <?php include('BorrarEditarModal.php'); ?>
-                </tr>
-                <?php
-                endwhile;
-                ?>
-                
-                </tbody>
-               
-              </table>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
         </div>
         <!-- /.col -->
       </div>
@@ -316,5 +325,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   if (parent[0] != undefined)
     $(parent[0]).addClass("active");
 </script>
+
   </body>
 </html>

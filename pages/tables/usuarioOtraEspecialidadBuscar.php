@@ -22,6 +22,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     $fecha = date('d-m-Y');
     $buscar = $_POST['buscar'];
     $criterio = $_GET['criterio'];
+    $actualizaCantidad = $_GET['actualizaCantidad'];
 
 
                  if($criterio == ''){
@@ -41,6 +42,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       $result3 = mysqli_query($connection, $sql3);
        $row3 = mysqli_fetch_array($result3);
       $nombres = $row3['nombre'];
+<<<<<<< Updated upstream
+=======
+      $documento = $row3['documento'];
+
+>>>>>>> Stashed changes
      
      
 ?>
@@ -78,7 +84,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <div class="wrapper">
   <header class="main-header">
         <!-- Logo -->
-        <a href="http://fundacioncirec.org/cicirecservicios/index.php" class="logo">
+        <a href="http://192.168.0.122/cicirecservicios/index.php" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>CI</b>REC</span>
           <!-- logo for regular state and mobile devices -->
@@ -94,6 +100,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         </nav>
       </header>
       <!-- Left side column. contains the logo and sidebar -->
+<<<<<<< Updated upstream
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
@@ -154,6 +161,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     </section>
     <!-- /.sidebar -->
   </aside>
+=======
+      <?php include("../../layout.php"); ?>
+>>>>>>> Stashed changes
      
       <!-- Left side column. contains the logo and sidebar -->
   
@@ -191,7 +201,23 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       
       
       
-      
+     <?php
+//inicio if valida si se actualizaron sesiones
+
+if($actualizaCantidad == 's'){
+
+  ?>
+<div class="alert alert-success alert-dismissible">
+                    <h4><i class="icon fa fa-check"></i>Se editaron las sesiones</h4>
+                    CANTIDADES ACTUALIZADAS
+                     </div>
+
+<?php
+//fin if valida si se actualizaron sesiones
+}
+
+
+?> 
       
       
       
@@ -202,6 +228,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
         <!-- Main content -->
         <section class="content">
+
+
+
       <div class="row">
         <div class="col-xs-12">
         
@@ -234,36 +263,36 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                 </tr>
                 </thead>
                 <tbody>
-                  <?php
-                  error_reporting(0);
-                        //$buscar = $_POST['buscar'];
-                                                                     
-                        $sql = "SELECT *  from otrasespecialidades where documento = '$usuario' 
-                          order by id desc ";
-                          $result = mysqli_query($connection, $sql);
-                            while($row = mysqli_fetch_array($result)):
-                              $id = $row['id'];
-                              $autorizacion = $row['autorizacion'];
-                              //corregir caracteres especiales en codigoServicio
-                              $nombreSinAcentosCodSrv = mb_convert_encoding($row['codigoServicio'], 'UTF-8', 'ASCII');
-                              
+    <?php
+    error_reporting(0);
+    //$buscar = $_POST['buscar'];
+    //echo $usuario;
 
-                              $fechasolicitud = $row['fechasolicitud'];
-                              $fechaautorizacion = $row['fechaautorizacion'];
-                              $cantidadautorizada = $row['cantidadautorizada'];
-                              $entidad = $row['entidad'];
-                              $fechalimiteejecucion = $row['fechalimiteejecucion'];
-                              $entidad = $row['entidad'];
-                              $estado = $row['estadogeneral'];
+    $sql = "SELECT *  from otrasespecialidades where documento = '$usuario' order by id desc ";
+    $result = mysqli_query($connection, $sql);
+    while ($row = mysqli_fetch_array($result)) :
+        $id = $row['id'];
+        $autorizacion = $row['autorizacion'];
+        $documentoEditCantidad = $row['documento'];
+        //corregir caracteres especiales en codigoServicio
+        $nombreSinAcentosCodSrv = mb_convert_encoding($row['codigoServicio'], 'UTF-8', 'ASCII');
 
+        $fechasolicitud = $row['fechasolicitud'];
+        $fechaautorizacion = $row['fechaautorizacion'];
+        $cantidadautorizada = $row['cantidadautorizada'];
+        $entidad = $row['entidad'];
+        $fechalimiteejecucion = $row['fechalimiteejecucion'];
+        $entidad = $row['entidad'];
+        $estado = $row['estadogeneral'];
 
+        $nuevafecha = strtotime('+30 day', strtotime($fechasolicitud));
+        $nuevafecha = date('d-m-Y', $nuevafecha);
 
-                              $nuevafecha = strtotime ( '+30 day' , strtotime ( $fechasolicitud ) ) ;
-                              $nuevafecha = date ( 'd-m-Y' , $nuevafecha );
-                              
- 
-                    ?>  
+        // Realizar la consulta adicional sin sobrescribir $result
+        $sql_autorizacion = "SELECT COUNT(*) AS total_autorizacion_asistio FROM agendaotras WHERE estado = 'Asistio' AND autorizacion = '$autorizacion';";
+        $result_autorizacion = mysqli_query($connection, $sql_autorizacion);
 
+<<<<<<< Updated upstream
                   <tr>
                   
                     <td> <?php echo $autorizacion;?></td>
@@ -319,8 +348,47 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                 ?>
                 
                 </tbody>
+=======
+        // Verifica si la consulta se ejecutó correctamente
+        if ($result_autorizacion) {
+            $row_autorizacion = mysqli_fetch_assoc($result_autorizacion);
+            $total_autorizacion_asistio = $row_autorizacion['total_autorizacion_asistio'];
+        } else {
+            echo "Error al ejecutar la consulta: " . mysqli_error($connection);
+        }
+    ?>
+        <tr>
+            <td><?php echo $autorizacion; ?></td>
+            <td><?php echo $nombreSinAcentosCodSrv; ?></td>
+            <td><label style="color:red;"><?php echo $estado; ?></label></td>
+            <td><?php echo $fechaautorizacion; ?></td>
+            <td><?php echo $fechasolicitud; ?></td>
+            <td><?php echo $nuevafecha; ?></td>
+            <td><?php echo $cantidadautorizada; ?></td>
+            <td><?php echo $entidad; ?></td>
+            <td>
+                <?php include('accionesSeguimiento.php'); ?>
+            </td>
+            <?php include('BorrarEditarAutorizacionOtraEspecilidad.php'); ?>
+        </tr>
+    <?php
+    endwhile;
+    ?>
+</tbody>
+
+>>>>>>> Stashed changes
                
               </table>
+
+
+
+
+
+
+
+
+
+
 
             </div>
             <!-- /.box-body -->
@@ -396,5 +464,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   if (parent[0] != undefined)
     $(parent[0]).addClass("active");
 </script>
+
   </body>
 </html>

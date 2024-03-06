@@ -1,6 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> </title>
+</head>
+<body>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"/></script>
+
+
+
 <?php
 error_reporting(0);
 session_start();
+$fecha = date('d-m-Y');
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: ../../login/index.php");
     exit;
@@ -14,20 +29,50 @@ include_once "../../api/conexion.php";
       echo ($active_menu == $menu? "class='active'": "");
   }
   error_reporting(0);
-  date_default_timezone_set('America/Bogota');
-  $fecha = date('d-m-Y');
-  $documento = $_GET['documento'];
-  $sesion= $_SESSION["username"];
-  $sql = "SELECT *  from otrasespecialidades where documento = '$documento'";
-      $result = mysqli_query($connection, $sql);
-      $row = mysqli_fetch_array($result);
-        $nombres = $row['nombre'];
-        $tipodocumento = $row['tipodocumento'];       
-        $telefono = $row['telefono'];
-        $entidad = $row['entidad'];
-        
-        
 
+$documento = $_GET['documento'];
+
+  try
+{
+
+$usuario = "BDCIREC";
+$password = "C1r3c2020";
+$nombredb = "SCSE";
+
+
+//para oracle el tipo es oci
+$conn =new PDO("oci:dbname".$nombredb,$usuario,$password);
+
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch ( PDOException $e )
+{  
+    echo "Error: ".$e->getMessage( );  
+
+}
+
+$consulta = "Select * from abpac where pacide = '$documento'";
+$result = $conn->query($consulta);
+if (!$result) {
+
+    print "    <p class=\"aviso\">Error en la consulta.</p>\n";
+} else {
+
+
+    $row = $result->fetch();
+
+    
+
+        $nombres = $row['PACNOM'].' '.$row['PACAP1'].' '.$row['PACAP2'];
+        $apellido1 = $row['PACAP1'];
+        $nomSinAcentos = strtoupper(iconv('UTF-8', 'ASCII//TRANSLIT', $apellido1));
+        
+        $tipodocumento = $row['PACTID'];       
+        $telefono = $row['PACTEL'];
+        $entidad = "POSTIVA";
+
+        
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -105,68 +150,7 @@ include_once "../../api/conexion.php";
       </header>
       <!-- Left side column. contains the logo and sidebar -->
  <aside class="main-sidebar">
-    <!-- sidebar: style can be found in sidebar.less -->
-<<<<<<< Updated upstream
-    <section class="sidebar">
-     
-      <ul class="sidebar-menu">
-        <li class="header"><?php echo $sesion;?></li>        
-
-        <li class="treeview">
-          <!--
-            <a href="#">
-            <i class="fa fa-user"></i> <span>Pacientes</span>
-             <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>          
-            </a>
-            -->
-          <ul class="treeview-menu">          
-
-            <li <?php isActive("boxed") ?>>
-              <a href="http://fundacioncirec.org/cicirecservicios/pages/tables/gestionUsuarios.php"><i class="fa fa-circle-o"></i> Gestión pacientes</a>
-            </li>
-
-            <!--<li <?php isActive("collapsed_sidebar") ?>>
-              <a href="pages/forms/excelTodosParticular.php"><i class="fa fa-circle-o"></i> Descargar Excel </a>
-            </li>-->
-
-            
-
-          </ul>
-        </li>
-
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-users"></i> <span>Otras especialidades</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            
-
-            <li <?php isActive("boxed") ?>>
-              <a href="http://fundacioncirec.org/cicirecservicios/pages/forms/usuarioOtraEspecialidad.php"><i class="fa fa-circle-o"></i> Buscar paciente</a>
-            </li>
-            
-            <li <?php isActive("boxed") ?>>
-              <a href="http://fundacioncirec.org/cicirecservicios/pages/tables/masivoexcel.php"><i class="fa fa-circle-o"></i> Cargar Masivo</a>
-            </li>
-
-            <li <?php isActive("collapsed_sidebar") ?>>
-              <a href="http://fundacioncirec.org/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php"><i class="fa fa-circle-o"></i> Descargar Excel </a>
-            </li>
-          </ul>
-        </li>        
-        <li><a href="http://fundacioncirec.org/cicirecservicios/logout.php"><i class="fa fa-book"></i> <span>Cerrar sesión</span></a></li>
-
-      </ul>
-    </section>
-=======
-    <?php include("../../layout.php"); ?>
->>>>>>> Stashed changes
-    <!-- /.sidebar -->
+<?php  include('../../layout.php');  ?>
   </aside>
 
       <!-- Content Wrapper. Contains page content -->
@@ -241,9 +225,36 @@ include_once "../../api/conexion.php";
                   <label for="inputEmail3" class="col-sm-2 control-label">Entidad:</label>
 
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" id = "entidad_usuario" name = "entidad" value = "<?php echo $entidad;?>" readonly >
+                  <input list="entidades" class="form-control" name="entidad" id="entidad_usuario">
+                    <datalist id="entidades">
+                        <option value="ALIANSALUD EPS">ALIANSALUD EPS</option>
+                        <option value="ALLIANZ SEGUROS DE VIDA S A">ALLIANZ SEGUROS DE VIDA S A</option>
+                        <option value="ASEGURADORA DE VIDA COLSEGUROS">ASEGURADORA DE VIDA COLSEGUROS</option>
+                        <option value="AXA COLPATRIA SEGUROS DE VIDA S A">AXA COLPATRIA SEGUROS DE VIDA S A</option>
+                        <option value="BBVA SEGUROS DE VIDA COLOMBIA S A">BBVA SEGUROS DE VIDA COLOMBIA S A</option>
+                        <option value="CAJA DE COMPENSACION FAMILIAR CAFAM">CAJA DE COMPENSACION FAMILIAR CAFAM</option>
+                        <option value="COLMEDICA MEDICINA PREPAGADA S A">COLMEDICA MEDICINA PREPAGADA S A</option>
+                        <option value="COMPA&Ntilde;IA DE SEGUROS BOLIVAR S A">COMPA&Ntilde;IA DE SEGUROS BOLIVAR S A</option>
+                        <option value="COMPA&Ntilde;IA DE SEGUROS DE VIDA COLMENA S A">COMPA&Ntilde;IA DE SEGUROS DE VIDA COLMENA S A</option>
+                        <option value="COMPENSAR S.A">COMPENSAR S.A</option>
+                        <option value="EPS FAMISANAR SAS">EPS FAMISANAR SAS</option>
+                        <option value="LA EQUIDAD SEGUROS DE VIDA">LA EQUIDAD SEGUROS DE VIDA</option>
+                        <option value="MAPFRE COLOMBIA VIDA SEGUROS S A">MAPFRE COLOMBIA VIDA SEGUROS S A</option>
+                        <option value="NUEVA EMPRESA PROMOTORA DE SALUD S A">NUEVA EMPRESA PROMOTORA DE SALUD S A</option>
+                        <option value="POSITIVA"></option>
+                        <option value="SALUD TOTAL S A  E P S"></option>
+                        <option value="SEGUROS DE VIDA ALFA S.A.">SEGUROS DE VIDA ALFA S.A.</option>
+                        <option value="SEGUROS DE VIDA SURAMERICANA S.A.">SEGUROS DE VIDA SURAMERICANA S.A.</option>
+                        <option value="UNIVERSIDAD NACIONAL DE COLOMBIA">UNIVERSIDAD NACIONAL DE COLOMBIA</option>
+                    </datalist>
                   </div>
                 </div> 
+
+
+
+                
+
+
                  
                 <!-- nuevos camnpos -->
                 
@@ -302,7 +313,6 @@ include_once "../../api/conexion.php";
                       <input list="browsers" id="myBrowser" name="servicios" class="form-control" oninput="actualizarCodigoServicio()">
                     <datalist id="browsers">
                         <?php
-                        //SE LLEVA EL CODIGO EN UN INPUT OCULTO
                         $sqlLista = "SELECT * FROM servicios";
                         $resultlista = mysqli_query($connection, $sqlLista);
                     
@@ -316,7 +326,6 @@ include_once "../../api/conexion.php";
                     <input type='hidden' name="codigoServicioSeleccionado" id="codigoServicioSeleccionado">
                     
                     <script>
-                      //FUNCIÓN PARA AGREGAR EL CODIGO EN EL INPUT OCULTO
                         function actualizarCodigoServicio() {
                             var input = document.getElementById('myBrowser');
                             var codigoInput = document.getElementById('codigoServicioSeleccionado');
@@ -541,3 +550,20 @@ include_once "../../api/conexion.php";
   
   </body>
 </html>
+
+
+
+
+
+
+
+   
+
+
+
+
+?>
+
+</body>
+</html>
+

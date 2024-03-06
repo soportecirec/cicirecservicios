@@ -25,14 +25,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     $criterio = $_GET['criterio'];
     $autorizacion = $_GET['autorizacion'];
    
-
-
                  if($criterio == ''){
                     $usuario = $buscar;
-
                  }else{
                     $usuario = $criterio;
-
                  }
     $sql2 = "SELECT *  from users where correo = '$sesion'";
     $result2 = mysqli_query($connection, $sql2);
@@ -62,7 +58,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.0/css/buttons.dataTables.min.css">
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -72,7 +67,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   </head>
   <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
-
       <header class="main-header">
         <!-- Logo -->
         <a href="../../index.php" class="logo">
@@ -94,6 +88,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         </nav>
       </header>
       <!-- Left side column. contains the logo and sidebar -->
+<<<<<<< Updated upstream
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
@@ -154,15 +149,16 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     </section>
     <!-- /.sidebar -->
   </aside>
+=======
+      <?php include("../../layout.php"); ?>
+>>>>>>> Stashed changes
   
   
   
   
   
   
-
       <!-- Content Wrapper. Contains page content -->    
-
       <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         
@@ -173,8 +169,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
    
         <section class="content-header">
               
-
-
 <div class="panel panel-default">
     <div class="panel-heading"><strong>Información del paciente</strong></div>
     <div class="panel-body">
@@ -191,6 +185,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             $id = $row['id'];
             $entidadMayus = strtoupper($row['entidad']);
             $numCodServ = $row['numCodServ'];
+            $autfilrofactura = $row['autorizacion'];
             ?>
             Paciente: <strong><?php echo $nombre; ?></strong><br>
             Nro. documento: <strong><?php echo $documento; ?></strong><br>
@@ -200,6 +195,64 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             <p><strong>Servicio:</strong> <?php echo $numCodServ; ?> - <?php echo $nombreSinAcentosCodServicio; ?></p>
             <p><strong>Entidad:</strong> <?php echo $entidadMayus; ?></p>
             <p><strong>Estado:</strong> <?php echo $estadoautorizado; ?></p>
+            <?php
+            //validacion facturacion
+            //select tabla facturacion filtrada por autorizacion
+            $buscarFacturacion = "SELECT * FROM facturacion WHERE autorizacion = '$autfilrofactura'";
+            $resultFacturacion = mysqli_query($connection, $buscarFacturacion);
+            $rowFacturacion = mysqli_fetch_array($resultFacturacion);
+            //validar si la consulta trajo datos
+            $num_rows = mysqli_num_rows($resultFacturacion);
+            
+            if($num_rows > 0){
+              $autorizacionFacturacion = $rowFacturacion['autorizacion'];
+                $numerofactura = $rowFacturacion['numerofactura'];
+                $fechaFactura = $rowFacturacion['fechafactura'];
+                $formulario='';
+                
+            }
+            //si no trae datos
+            else{
+              $autorizacionFacturacion = "No facturado";
+                
+                $formulario = '
+                <div class="box box-info">
+                    <div class="box-header with-border">
+                    <h3 class="box-title">Ingrese los datos de la factura</h3>
+                    </div>
+                    <form class="form-horizontal" action="Datosfactura.php" method="POST">
+                    <div class="box-body">
+                    <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Número factura</label>
+                    <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputEmail3" name = "nofactura" placeholder="XX-XXXXXX" required>
+                    </div>
+                    </div>
+                    <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">Fecha Factura</label>
+                    <div class="col-sm-10">
+                    <input type="date" class="form-control" id="inputPassword3" name = "fechafactura" placeholder="Password" required>
+                    <input type="hidden" class="form-control" id="inputEmail3" name = "autorizacion" value = "'.$autorizacion.' ">
+                    <input type="hidden" class="form-control" id="inputEmail3" name = "documento" value = " '.$documento.' ">
+                    <input type="hidden" class="form-control" id="inputEmail3" name = "valor" value = "'.$tarifaFinalFormat.' ">
+                    <input type="hidden" class="form-control" id="inputEmail3" name = "sesion" value = "'.$sesion.' ">
+                    </div>
+                    </div>                    
+                    </div>
+                    <div class="box-footer">                    
+                    <button type="submit" class="btn btn-info pull-right">Enviar</button>
+                    </div>
+                    </form>
+                    </div>
+                ';
+                
+            }
+
+            
+
+            ?>
+            <p><strong>Numero factura:</strong> <?php echo $numerofactura; ?></p>
+            <p><strong>Fecha factura:</strong> <?php echo $fechaFactura; ?></p>
             <br>
             <?php include('BorrarEditarAutorizacionOtraEspecilidad.php'); ?>
             <a href="#edit_<?php echo $id; ?>" class="btn btn-warning btn-sm" data-toggle="modal">
@@ -211,8 +264,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         </div>
     </div>
 </div>
-
-
   
          
                
@@ -246,10 +297,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             </div><!-- /.col -->
             <!-- No asistencias-->
             
-
             <!-- fix for small devices only -->
             <div class="clearfix visible-sm-block"></div>
-
             <!--pendientes-->
             <?php
             $buscarpaciente1111 = "SELECT *  from otrasespecialidades
@@ -272,7 +321,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                 </div><!-- /.info-box-content -->
               </div><!-- /.info-box -->
             </div><!-- /.col -->
-
             <!-- total ejecucion -->
             <?php                       
               $total = ($asistio/$cantidadprogramada)*100;
@@ -313,9 +361,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
               </div><!-- /.info-box -->
             </div><!-- /.col -->
             
-            
+              
             
             <?php
+            
             //cáclculos para facturación botón
             
             
@@ -511,25 +560,29 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                   <span class="info-box-number">$<?php echo $tarifaFinalFormat;?></span>
                 </div><!-- /.info-box-content -->
               </div><!-- /.info-box -->
-            </div><!-- /.col -->
-            
+            </div><!-- /.col -->   
         
+           <?php 
            
-            
-            
-            
-            
+
+           ?>
           </div><!-- /.row -->
           
         <!-- validacion para imprimir vista de proceso terminado --> 
             <?php
-                    if($asistio == $cantidadprogramada){
+            
+                    if($asistio == $cantidadautorizada){
                         $facturacion = "PROCESO LISTO PARA FACTURAR";
                     ?>
                     <div class="alert alert-success alert-dismissible">
                     <h4><i class="icon fa fa-check"></i>Servicio Finalizado</h4>
-                    PROCESO LISTO PARA FACTURAR
-                    </div>
+                    PROCESO FACTURADO
+                     </div>
+
+                     <?php 
+                     echo $formulario;
+                     ?>
+                     
                     <?php
                     }
                     else{
@@ -546,9 +599,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             <div class="col-md-12">
               <!-- MAP & BOX PANE -->           
              
-
               <!-- TABLE: LATEST ORDERS -->
-              <div class="box box-info" style="padding: 20px; width: #;">
+              <div class="box box-info" style="padding: 20px; width: '';">
                 <div class="box-header with-border">
                   <h3 class="box-title"><strong>Seguimiento Sesiones</strong></h3>
                   
@@ -583,8 +635,15 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                             $fechaagenda = $roww['fechaagenda'];
                             $estado = $roww['estado'];
                             $nosesion = $roww['nosesion'];
+<<<<<<< Updated upstream
                             $bitacorasesion = $roww['bitacora'];                        
 
+=======
+                            $bitacorasesion = $roww['bitacora']; 
+                            
+                            
+                            
+>>>>>>> Stashed changes
                         ?>
                         <tr>
                           <td><?php echo $nosesion;?></td>
@@ -619,9 +678,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                           <?php 
                           }
                           ?>
-
-
-
                             
                             <?php include('BorrarEditarModalSesionOtraEspecialidad.php');?>
                                    
@@ -640,10 +696,18 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                     $contar = "SELECT count(id)  from agendaotras where autorizacion = '$autorizacion'";
                     $result2=mysqli_query($connection,  $contar);
                     $rowww = mysqli_fetch_array($result2);
-                    $sesiones = $rowww[0];                                                
+                    $sesiones = $rowww[0];  
+                    //poner $cantidad cuando juan acabe de corregir                                              
                     if($cantidadprogramada == $sesiones){
                     }else{
                     ?>
+<<<<<<< Updated upstream
+=======
+                    
+                    
+                    
+                    
+>>>>>>> Stashed changes
                     <a href="#crear_<?php echo $row['id']; ?>" class="btn btn-sm btn-info btn-flat pull-left" data-toggle="modal">Agregar sesión</a>
                     <?php include('crearSesionOtraEspecialidad.php');?>
                     <?php
@@ -653,13 +717,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                 </div><!-- /.box-footer -->
               </div><!-- /.box -->
             </div><!-- /.col -->
-
            
           </div><!-- /.row -->
           <br>
-
           <div class="tab-content">
-
                   <?php
                     $buscarcontacto = "SELECT * from contacto where autorizacion = '$autorizacion'";
                     $result5 = mysqli_query($connection,  $buscarcontacto);
@@ -669,7 +730,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                       $gestionocontacto = $row5['gestiono'];
                       $tiposeguimientocontacto = $row5['tiposeguimiento'];
                       $idseguimiento = $row5['id'];
-
                   ?>
                   
                   <div class="tab-pane active" id="timeline">
@@ -691,11 +751,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                           <h3 class="timeline-header"><a href="#">Tipo seguimiento: </a><?php echo $tiposeguimientocontacto; ?></h3>
                           <div class="timeline-body">
                             <?php echo $bitacoracontacto; ?>
-
                             <?php                   
                             if($perfil == 'administrador'){
                             ?>
-
                              <a href="#borrarseguimientosesion_<?php echo $idseguimiento; ?>" class="btn btn-danger btn-xs pull-right" data-toggle="modal">Borrar</a>
                              <?php include('crearSeguimientoSesionOtraEspecialidad.php');?>
                             <?php 
@@ -703,7 +761,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                            }
                           ?>
                           </div>
-
                         </div>
                        
                       </li>
@@ -716,7 +773,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                            
                             <?php include('crearSeguimientoSesionOtraEspecialidad.php');?>
                         </div>
-
                       </li>
                    
                       <li>
@@ -738,14 +794,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         </div>
         <strong>Copyright &copy; 2021 <a href=#>CIREC</a>.</strong> Desarrolloado por el Departamento de Sistemas CIREC..
       </footer>
-
       <!-- Control Sidebar -->
     
       <!-- Add the sidebar's background. This div must be placed
            immediately after the control sidebar -->
       <div class="control-sidebar-bg"></div>
     </div><!-- ./wrapper -->
-
     <!-- jQuery 2.1.4 -->
     <script src="../../plugins/jQuery/jQuery-2.1.4.min.js"></script>
     <!-- Bootstrap 3.3.5 -->
@@ -768,7 +822,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.print.min.js"></script>
-
     <!-- page script -->
     <script>
       $(function () {
