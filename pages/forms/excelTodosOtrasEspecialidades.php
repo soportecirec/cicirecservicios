@@ -24,11 +24,12 @@ $salida .= "
             <th>Tipo Programa</th>
             <th>Valor Autorizado</th>
             <th>Cantidad autorizada</th>
+            <th>Cantidad programada</th>
             <th>Fecha Solicitud</th>
             <th>Fecha Autorizacion</th>
             <th>Estado</th>
             <th>Asistencias</th>
-            <th>No Asistencias</th>
+            <!--<th>No Asistencias</th>-->
             <th>Pendientes</th>
             <th>ejecución</th>
             <th>Total a facturar</th>
@@ -65,12 +66,23 @@ $salida .= "
             where autorizacion = '$autorizacion' ";                                     
             $result1111=mysqli_query($connection, $buscarpaciente1111);
             $row1111 = mysqli_fetch_array($result1111);                                            
+<<<<<<< Updated upstream
             $cantidadautorizada = $row1111['cantidadautorizada'];
+=======
+            $cantidadautorizada = intval($row1111['cantidadautorizada']);
+            $cantidadprogramada = intval($row1111['cantidadprogramada']);
+>>>>>>> Stashed changes
             $valorautorizado = $row1111['valorautorizado'];
             $pendientes = $cantidadautorizada-($asistio+$noasistio);
         //porcentaje
         
+<<<<<<< Updated upstream
          $total = ($asistio/$cantidadautorizada)*100;
+=======
+        
+            //porcentaje
+         $total = ($asistio/$cantidadprogramada)*100;
+>>>>>>> Stashed changes
          $porcentaje = number_format($total, 2, ",", ".");
          
          //total a facturar
@@ -89,11 +101,12 @@ $salida .= "
             <td>".$row['tipoprograma']."</td>
             <td>".$row['valorautorizado']."</td>
             <td>".$row['cantidadautorizada']."</td>
+            <td>".$row['cantidadprogramada']."</td>
             <td>".$row['fechasolicitud']."</td>
             <td>".$row['fechaautorizacion']."</td>
             <td>".$row['estadogeneral']."</td>
             <td>".$asistio."</td>
-            <td>".$noasistio."</td>
+            <!--<td>".$noasistio."</td>-->
             <td>".$pendientes."</td>
             <td>".$porcentaje."</td>
              <td>".$totalf."</td>
