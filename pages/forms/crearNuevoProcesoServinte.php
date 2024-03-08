@@ -1,6 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> </title>
+</head>
+<body>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"/></script>
+
+
+
 <?php
 error_reporting(0);
 session_start();
+$sesion= $_SESSION["username"];
+$fecha = date('d-m-Y');
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: ../../login/index.php");
     exit;
@@ -14,20 +30,50 @@ include_once "../../api/conexion.php";
       echo ($active_menu == $menu? "class='active'": "");
   }
   error_reporting(0);
-  date_default_timezone_set('America/Bogota');
-  $fecha = date('d-m-Y');
-  $documento = $_GET['documento'];
-  $sesion= $_SESSION["username"];
-  $sql = "SELECT *  from otrasespecialidades where documento = '$documento'";
-      $result = mysqli_query($connection, $sql);
-      $row = mysqli_fetch_array($result);
-        $nombres = $row['nombre'];
-        $tipodocumento = $row['tipodocumento'];       
-        $telefono = $row['telefono'];
-        $entidad = $row['entidad'];
-        
-        
 
+$documento = $_GET['documento'];
+
+  try
+{
+
+$usuario = "BDCIREC";
+$password = "C1r3c2020";
+$nombredb = "SCSE";
+
+
+//para oracle el tipo es oci
+$conn =new PDO("oci:dbname".$nombredb,$usuario,$password);
+
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch ( PDOException $e )
+{  
+    echo "Error: ".$e->getMessage( );  
+
+}
+
+$consulta = "Select * from abpac where pacide = '$documento'";
+$result = $conn->query($consulta);
+if (!$result) {
+
+    print "    <p class=\"aviso\">Error en la consulta.</p>\n";
+} else {
+
+
+    $row = $result->fetch();
+
+    
+
+        $nombres = $row['PACNOM'].' '.$row['PACAP1'].' '.$row['PACAP2'];
+        $apellido1 = $row['PACAP1'];
+        $nomSinAcentos = strtoupper(iconv('UTF-8', 'ASCII//TRANSLIT', $apellido1));
+        
+        $tipodocumento = $row['PACTID'];       
+        $telefono = $row['PACTEL'];
+        $entidad = "POSTIVA";
+
+        
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -88,7 +134,7 @@ include_once "../../api/conexion.php";
 
         <header class="main-header">
         <!-- Logo -->
-        <a href="http://fundacioncirec.org/cicirecservicios/index.php" class="logo">
+        <a href="http://192.168.0.122/cicirecservicios/index.php" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>CI</b>REC</span>
           <!-- logo for regular state and mobile devices -->
@@ -105,69 +151,9 @@ include_once "../../api/conexion.php";
       </header>
       <!-- Left side column. contains the logo and sidebar -->
  <aside class="main-sidebar">
-    <!-- sidebar: style can be found in sidebar.less -->
-<<<<<<< Updated upstream
-    <section class="sidebar">
-     
-      <ul class="sidebar-menu">
-        <li class="header"><?php echo $sesion;?></li>        
-
-        <li class="treeview">
-          <!--
-            <a href="#">
-            <i class="fa fa-user"></i> <span>Pacientes</span>
-             <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>          
-            </a>
-            -->
-          <ul class="treeview-menu">          
-
-            <li <?php isActive("boxed") ?>>
-              <a href="http://fundacioncirec.org/cicirecservicios/pages/tables/gestionUsuarios.php"><i class="fa fa-circle-o"></i> Gestión pacientes</a>
-            </li>
-
-            <!--<li <?php isActive("collapsed_sidebar") ?>>
-              <a href="pages/forms/excelTodosParticular.php"><i class="fa fa-circle-o"></i> Descargar Excel </a>
-            </li>-->
-
-            
-
-          </ul>
-        </li>
-
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-users"></i> <span>Otras especialidades</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            
-
-            <li <?php isActive("boxed") ?>>
-              <a href="http://fundacioncirec.org/cicirecservicios/pages/forms/usuarioOtraEspecialidad.php"><i class="fa fa-circle-o"></i> Buscar paciente</a>
-            </li>
-            
-            <li <?php isActive("boxed") ?>>
-              <a href="http://fundacioncirec.org/cicirecservicios/pages/tables/masivoexcel.php"><i class="fa fa-circle-o"></i> Cargar Masivo</a>
-            </li>
-
-            <li <?php isActive("collapsed_sidebar") ?>>
-              <a href="http://fundacioncirec.org/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php"><i class="fa fa-circle-o"></i> Descargar Excel </a>
-            </li>
-          </ul>
-        </li>        
-        <li><a href="http://fundacioncirec.org/cicirecservicios/logout.php"><i class="fa fa-book"></i> <span>Cerrar sesión</span></a></li>
-
-      </ul>
-    </section>
-=======
-    <?php include("../../layout.php"); ?>
->>>>>>> Stashed changes
-    <!-- /.sidebar -->
+<?php  include("../../layout.php");  ?>
   </aside>
+
 
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
@@ -241,19 +227,82 @@ include_once "../../api/conexion.php";
                   <label for="inputEmail3" class="col-sm-2 control-label">Entidad:</label>
 
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" id = "entidad_usuario" name = "entidad" value = "<?php echo $entidad;?>" readonly >
+                  <input list="entidades" class="form-control" name="entidad" id="entidad_usuario">
+                    <datalist id="entidades">
+                        <option value="ALIANSALUD EPS">ALIANSALUD EPS</option>
+                        <option value="ALLIANZ SEGUROS DE VIDA S A">ALLIANZ SEGUROS DE VIDA S A</option>
+                        <option value="ASEGURADORA DE VIDA COLSEGUROS">ASEGURADORA DE VIDA COLSEGUROS</option>
+                        <option value="AXA COLPATRIA SEGUROS DE VIDA S A">AXA COLPATRIA SEGUROS DE VIDA S A</option>
+                        <option value="BBVA SEGUROS DE VIDA COLOMBIA S A">BBVA SEGUROS DE VIDA COLOMBIA S A</option>
+                        <option value="CAJA DE COMPENSACION FAMILIAR CAFAM">CAJA DE COMPENSACION FAMILIAR CAFAM</option>
+                        <option value="COLMEDICA MEDICINA PREPAGADA S A">COLMEDICA MEDICINA PREPAGADA S A</option>
+                        <option value="COMPA&Ntilde;IA DE SEGUROS BOLIVAR S A">COMPA&Ntilde;IA DE SEGUROS BOLIVAR S A</option>
+                        <option value="COMPA&Ntilde;IA DE SEGUROS DE VIDA COLMENA S A">COMPA&Ntilde;IA DE SEGUROS DE VIDA COLMENA S A</option>
+                        <option value="COMPENSAR S.A">COMPENSAR S.A</option>
+                        <option value="EPS FAMISANAR SAS">EPS FAMISANAR SAS</option>
+                        <option value="LA EQUIDAD SEGUROS DE VIDA">LA EQUIDAD SEGUROS DE VIDA</option>
+                        <option value="MAPFRE COLOMBIA VIDA SEGUROS S A">MAPFRE COLOMBIA VIDA SEGUROS S A</option>
+                        <option value="NUEVA EMPRESA PROMOTORA DE SALUD S A">NUEVA EMPRESA PROMOTORA DE SALUD S A</option>
+                        <option value="POSITIVA"></option>
+                        <option value="SALUD TOTAL S A  E P S"></option>
+                        <option value="SEGUROS DE VIDA ALFA S.A.">SEGUROS DE VIDA ALFA S.A.</option>
+                        <option value="SEGUROS DE VIDA SURAMERICANA S.A.">SEGUROS DE VIDA SURAMERICANA S.A.</option>
+                        <option value="UNIVERSIDAD NACIONAL DE COLOMBIA">UNIVERSIDAD NACIONAL DE COLOMBIA</option>
+                    </datalist>
                   </div>
                 </div> 
+
+
+
+                
+
+
                  
                 <!-- nuevos camnpos -->
+                
 
                 <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Autorización No:</label>
-
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="ciudad_usuario" name = "autorizacion" >
-                  </div>
+                    <label for="autorizacion" class="col-sm-2 control-label">Autorización No:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="autorizacion" name="autorizacion" onChange="validarAutorizacion()">
+                    </div>
                 </div>
+                
+                <script>
+                    function validarAutorizacion() {
+                        var autorizacionInput = document.getElementById("autorizacion");
+                        var autorizacion = autorizacionInput.value;
+                    
+                        // Realizar la validación mediante una petición AJAX
+                        var xhr = new XMLHttpRequest();
+                        xhr.onreadystatechange = function() {
+                            if (this.readyState == 4 && this.status == 200) {
+                                var response = JSON.parse(this.responseText);
+                                if (response.existe) {
+                                    autorizacionInput.style.borderColor = "red";
+                    
+                                    // Mostrar modal de SweetAlert
+                                    swal({
+                                        title: "Autorización existente",
+                                        text: "La autorización ya existe en la base de datos.",
+                                        type: "error",
+                                        confirmButtonText: "Continuar"
+                                    }, function() {
+                                        // Limpiar el input de autorización
+                                        autorizacionInput.value = "";
+                                        autorizacionInput.style.borderColor = "";
+                                    });
+                                } else {
+                                    autorizacionInput.style.borderColor = "green";
+                                }
+                            }
+                        };
+                        xhr.open("POST", "validar_autorizacion.php", true);
+                        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                        xhr.send("autorizacion=" + autorizacion);
+                    }
+
+                </script>
                 
                 
                 <div class="form-group">
@@ -428,12 +477,11 @@ include_once "../../api/conexion.php";
                                  
                                   $insertarpaciente = "INSERT INTO `otrasespecialidades` (`id`, `documento`, `autorizacion`, `codigoServicio`, `numCodServ`, `fechasolicitud`, `nombre`, `telefono`, `entidad`, `fechaautorizacion`, `tipodocumento`, `valorautorizado`, `identificador`, `especialidad`, `cantidadautorizada`, `cantidadprogramada`, `fechalimiteejecucion`, `estadogeneral`, `bitacoraasitio`, `bitacoranoasistio`, `fechacontacto`, `fechanocontacto`, `solicitudespecial`, `gestiono`, `estadocargue`) VALUES (NULL, '$documento', '$autorizacion', '$servicios', '$codigoServicioSeleccionado', '$fechasolicitud', '$nombres', '$telefono', '$entidad', '$fechaautorizacion', '$tipodocumento', '$valorautorizado', '123', 'NULL', '$cantidad', '$cantidad_programada', 'NULL', 'AUTORIZADO', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '$sesion', 'NULL ');";
                                  
-                                  mysqli_query($connection, $insertarpaciente);
+                                   mysqli_query($connection, $insertarpaciente);
 
-                                  //echo $insertarpaciente;
-
+                                   //echo $insertarpaciente;
                                            
-                                            
+                                            /*
                                             ?>
                                
                                              <script language="JavaScript" type="text/javascript">
@@ -443,12 +491,12 @@ include_once "../../api/conexion.php";
                                                 confirmButtonText: "Continuar" },
                                                 function () {
 
-                                                 window.location.href = '../tables/seguimientoOtraEspecialidad.php?criterio=<?php echo $autorizacion ?>&autorizacion=<?php echo $autorizacion ?>';
+                                                 window.location.href = '../tables/usuarioOtraEspecialidadBuscar.php?criterio=<?php echo $documento;?>';
                                                  });
 
                                             </script>
                                           
-                                            <?php 
+                                            <?php */
                        
                                 }
                                 }
@@ -471,10 +519,9 @@ include_once "../../api/conexion.php";
     </section>
 
       </div><!-- /.content-wrapper -->
-
       
-      <!--Include footer -->
-      <?php include("../../footer.php"); ?>
+        <!--Include footer -->
+        <?php include("../../footer.php"); ?>
       <!-- /.Include footer -->
 
       <!-- Control Sidebar -->
@@ -482,8 +529,8 @@ include_once "../../api/conexion.php";
       <!-- Add the sidebar's background. This div must be placed
            immediately after the control sidebar -->
       <div class="control-sidebar-bg"></div>
-    </div><!-- ./wrapper -->
-
+    
+      </div><!-- ./wrapper -->
     <!-- jQuery 2.1.4 -->
     
     <!-- Bootstrap 3.3.5 -->
@@ -504,3 +551,10 @@ include_once "../../api/conexion.php";
   
   </body>
 </html>
+
+
+
+
+</body>
+</html>
+

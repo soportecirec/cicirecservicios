@@ -6,6 +6,7 @@
 </head>
 <body>
   <?php
+  error_reporting(0);
   include_once "../../api/conexion.php"; 
   
                                                  
@@ -49,7 +50,9 @@ $salida .= "
         where autorizacion = '$autorizacion'  and estado = 'Asistio'";                                
         $result11=mysqli_query($connection, $buscarpaciente11);
         $row11 = mysqli_fetch_array($result11);
-        $asistio = $row11['si'];
+        $asistio = intval($row11['si']);
+
+        
         
         //no asistio
         
@@ -65,19 +68,37 @@ $salida .= "
             where autorizacion = '$autorizacion' ";                                     
             $result1111=mysqli_query($connection, $buscarpaciente1111);
             $row1111 = mysqli_fetch_array($result1111);                                            
+<<<<<<< Updated upstream
             $cantidadautorizada = $row1111['cantidadautorizada'];
+=======
+            $cantidadautorizada = intval($row1111['cantidadautorizada']);
+            $cantidadprogramada = intval($row1111['cantidadprogramada']);
+>>>>>>> Stashed changes
             $valorautorizado = $row1111['valorautorizado'];
             $pendientes = $cantidadautorizada-($asistio+$noasistio);
-        //porcentaje
         
+<<<<<<< Updated upstream
          $total = ($asistio/$cantidadautorizada)*100;
+=======
+        
+            //porcentaje
+         $total = ($asistio/$cantidadprogramada)*100;
+>>>>>>> Stashed changes
          $porcentaje = number_format($total, 2, ",", ".");
+        
+
          
+            //si viene vacio el campo de valor autorizado
+            if($valorautorizado == ""){
+                $valorautorizado = 0;
+            }
+
+
          //total a facturar
-         
          $totalfacturado = ($valorautorizado / $cantidadautorizada) * $asistio;
          $totalf = number_format($totalfacturado, 2, ",", ".");
         
+
         $salida .="
         <tr>
             <td>".$row['autorizacion']."</td>

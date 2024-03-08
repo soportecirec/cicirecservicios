@@ -76,6 +76,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         </nav>
       </header>
       <!-- Left side column. contains the logo and sidebar -->
+<<<<<<< Updated upstream
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
@@ -136,6 +137,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     </section>
     <!-- /.sidebar -->
   </aside>
+=======
+      <?php include("layout.php"); ?>
+>>>>>>> Stashed changes
 
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
@@ -163,6 +167,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         
         <!-- consulta info para dash -->
 
+<<<<<<< Updated upstream
         <!-- Main content -->
         <section style = " visibility: hidden;" class="content">
           <!-- Small boxes (Stat box) -->
@@ -582,6 +587,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         </div>
         <strong>Copyright &copy; 2024 <a href=#>CIREC</a>.</strong> Desarrolloado por el Departamento de Sistemas CIREC..
       </footer>
+=======
+      <!--Include footer -->
+      <?php include('footer.php'); ?>
+      <!-- /.Include footer -->
+>>>>>>> Stashed changes
 
       <!-- Control Sidebar -->
       <aside class="control-sidebar control-sidebar-dark">

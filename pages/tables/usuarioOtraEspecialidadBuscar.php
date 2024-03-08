@@ -2,7 +2,7 @@
 error_reporting(0);
 session_start();
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: login/index.php");
+    header("location: ../../login/index.php");
     exit;
 }
  include_once "../../api/conexion.php"; 
@@ -22,25 +22,33 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     $fecha = date('d-m-Y');
     $buscar = $_POST['buscar'];
     $criterio = $_GET['criterio'];
+<<<<<<< Updated upstream
 
 
+=======
+    $actualizaCantidad = $_GET['actualizaCantidad'];
+>>>>>>> Stashed changes
                  if($criterio == ''){
                     $usuario = $buscar;
-
                  }else{
                     $usuario = $criterio;
-
                  }
    // validar rol
     $sql2 = "SELECT *  from users where correo = '$sesion'";
     $result2 = mysqli_query($connection, $sql2);
     $row2 = mysqli_fetch_array($result2);
-    $perfil = $row2['sintomas'];
+    $perfil = $row2[10];
+    
     
      $sql3 = "SELECT *  from otrasespecialidades where documento = '$usuario'" ;
       $result3 = mysqli_query($connection, $sql3);
        $row3 = mysqli_fetch_array($result3);
       $nombres = $row3['nombre'];
+<<<<<<< Updated upstream
+=======
+      $documento = $row3['documento'];
+      
+>>>>>>> Stashed changes
      
      
 ?>
@@ -66,7 +74,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.0/css/buttons.dataTables.min.css">
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -94,6 +101,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         </nav>
       </header>
       <!-- Left side column. contains the logo and sidebar -->
+<<<<<<< Updated upstream
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
@@ -154,6 +162,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     </section>
     <!-- /.sidebar -->
   </aside>
+=======
+      <?php include("../../layout.php"); ?>
+>>>>>>> Stashed changes
      
       <!-- Left side column. contains the logo and sidebar -->
   
@@ -176,7 +187,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 2);
             animation: zoom 20s infinite alternate;
         }
-
       </style>
       
       <div class="panel panel-default">
@@ -191,7 +201,22 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       
       
       
+<<<<<<< Updated upstream
       
+=======
+     <?php
+//inicio if valida si se actualizaron sesiones
+if($actualizaCantidad == 's'){
+  ?>
+<div class="alert alert-success alert-dismissible">
+                    <h4><i class="icon fa fa-check"></i>Se editaron las sesiones</h4>
+                    CANTIDADES ACTUALIZADAS
+                     </div>
+<?php
+//fin if valida si se actualizaron sesiones
+}
+?> 
+>>>>>>> Stashed changes
       
       
       
@@ -199,7 +224,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       
       
     </section>
-
         <!-- Main content -->
         <section class="content">
       <div class="row">
@@ -207,20 +231,63 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         
           <div class="box">
             <div class="box-header">
+              
               <h3 class="box-title">Datos del usuario</h3>
                <!--<a role="button" class="btn btn-info pull-right margin" href="../forms/crearNuevoPaciente.php"  title="Crear usuario!">Nuevo paciente</a>--> 
-
-               <a role="button" class="btn btn-success pull-right margin" href="../forms/crearNuevoProceso.php?documento=<?php echo $usuario;?>"  title="Crear proceso!">Nuevo proceso</a> 
+               <?php
+          
+               if ($perfil == 'administrador' ) {
+                
+               if($nombres != ''){
+                ?>
+                <a role="button" class="btn btn-success pull-right margin" href="../forms/crearNuevoProceso.php?documento=<?php echo $usuario;?>"  title="Crear proceso!">Nuevo proceso</a>
+               <?php 
+                }
+             else{
+              ?>
+              <a role="button" class="btn btn-success pull-right margin" href="../forms/crearNuevoProcesoServinte.php?documento=<?php echo $usuario;?>"  title="Crear proceso!">Nuevo proceso servinte</a>
+              <?php 
+              }}
+                
+               ?>
+              <?php
+               if ($perfil = 'lidercall') {
+                
+               if($nombres != ''){
+                ?>
+                <a role="button" class="btn btn-success pull-right margin" href="../forms/crearNuevoProceso.php?documento=<?php echo $usuario;?>"  title="Crear proceso!">Nuevo proceso</a>
+               <?php 
+                }
+             else{
+              ?>
+              <a role="button" class="btn btn-success pull-right margin" href="../forms/crearNuevoProcesoServinte.php?documento=<?php echo $usuario;?>"  title="Crear proceso!">Nuevo proceso servinte</a>
+              <?php 
+              }}
+                
+               ?>
+              <?php
+               if ($perfil == 'agentecall') {
+                
+               if($nombres != ''){
+                ?>
+                <a role="button" class="btn btn-success pull-right margin" href="../forms/crearNuevoProceso.php?documento=<?php echo $usuario;?>"  title="Crear proceso!">Nuevo proceso</a>
+               <?php 
+                }
+             else{
+              ?>
+              <a role="button" class="btn btn-success pull-right margin" href="../forms/crearNuevoProcesoServinte.php?documento=<?php echo $usuario;?>"  title="Crear proceso!">Nuevo proceso servinte</a>
+              <?php 
+             }}
+                
+               ?>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-
               <table id="example2" class="table table-bordered table-striped">
                 <thead>
                 <tr>
                  
                   <th style ="width: 10%;">Autorización</th>
-
                   <th style ="width: 10%;">Servicio</th>
                   <th style ="width: 10%;">Estado</th>
                   <th style ="width: 10%;">Fecha Autorización</th>
@@ -234,6 +301,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                 </tr>
                 </thead>
                 <tbody>
+<<<<<<< Updated upstream
                   <?php
                   error_reporting(0);
                         //$buscar = $_POST['buscar'];
@@ -322,6 +390,59 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                
               </table>
 
+=======
+    <?php
+    error_reporting(0);
+    //$buscar = $_POST['buscar'];
+    //echo $usuario;
+    $sql = "SELECT *  from otrasespecialidades where documento = '$usuario' order by id desc ";
+    $result = mysqli_query($connection, $sql);
+    while ($row = mysqli_fetch_array($result)) :
+        $id = $row['id'];
+        $autorizacion = $row['autorizacion'];
+        $documentoEditCantidad = $row['documento'];
+        //corregir caracteres especiales en codigoServicio
+        $nombreSinAcentosCodSrv = mb_convert_encoding($row['codigoServicio'], 'UTF-8', 'ASCII');
+        $fechasolicitud = $row['fechasolicitud'];
+        $fechaautorizacion = $row['fechaautorizacion'];
+        $cantidadautorizada = $row['cantidadautorizada'];
+        $entidad = $row['entidad'];
+        $fechalimiteejecucion = $row['fechalimiteejecucion'];
+        $entidad = $row['entidad'];
+        $estado = $row['estadogeneral'];
+        $nuevafecha = strtotime('+30 day', strtotime($fechasolicitud));
+        $nuevafecha = date('Y-m-d', $nuevafecha);
+        // Realizar la consulta adicional sin sobrescribir $result
+        $sql_autorizacion = "SELECT COUNT(*) AS total_autorizacion_asistio FROM agendaotras WHERE estado = 'Asistio' AND autorizacion = '$autorizacion';";
+        $result_autorizacion = mysqli_query($connection, $sql_autorizacion);
+        // Verifica si la consulta se ejecutó correctamente
+        if ($result_autorizacion) {
+            $row_autorizacion = mysqli_fetch_assoc($result_autorizacion);
+            $total_autorizacion_asistio = $row_autorizacion['total_autorizacion_asistio'];
+        } else {
+            echo "Error al ejecutar la consulta: " . mysqli_error($connection);
+        }
+    ?>
+        <tr>
+            <td><?php echo $autorizacion; ?></td>
+            <td><?php echo $nombreSinAcentosCodSrv; ?></td>
+            <td><label style="color:red;"><?php echo $estado; ?></label></td>
+            <td><?php echo $fechaautorizacion; ?></td>
+            <td><?php echo $fechasolicitud; ?></td>
+            <td><?php echo $nuevafecha; ?></td>
+            <td><?php echo $cantidadautorizada; ?></td>
+            <td><?php echo $entidad; ?></td>
+            <td>
+                <?php include('accionesSeguimiento.php'); ?>
+            </td>
+            <?php include('BorrarEditarAutorizacionOtraEspecilidad.php'); ?>
+        </tr>
+    <?php
+    endwhile;
+    ?>
+</tbody>               
+              </table>
+>>>>>>> Stashed changes
             </div>
             <!-- /.box-body -->
           </div>
@@ -332,20 +453,16 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       <!-- /.row -->
     </section>
       </div><!-- /.content-wrapper -->
-     <footer class="main-footer">
-        <div class="pull-right hidden-xs">
-          <b>Version</b> 1.2.0
-        </div>
-        <strong>Copyright &copy; 2021 <a href=#>CIREC</a>.</strong> Desarrolloado por el Departamento de Sistemas CIREC..
-      </footer>
-
+      
+<!--Include footer -->
+<?php include("../../footer.php"); ?>
+      <!-- /.Include footer -->
       <!-- Control Sidebar -->
     
       <!-- Add the sidebar's background. This div must be placed
            immediately after the control sidebar -->
       <div class="control-sidebar-bg"></div>
     </div><!-- ./wrapper -->
-
     <!-- jQuery 2.1.4 -->
     <script src="../../plugins/jQuery/jQuery-2.1.4.min.js"></script>
     <!-- Bootstrap 3.3.5 -->
@@ -368,7 +485,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.print.min.js"></script>
-
     <!-- page script -->
     <script>
       $(function () {
