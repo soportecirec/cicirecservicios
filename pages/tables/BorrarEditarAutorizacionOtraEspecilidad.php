@@ -1,4 +1,5 @@
 <!-- Ventana Editar Registros CRUD -->
+
 <div class="modal fade" id="edit_<?php echo $id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div style = "width: 600px;"class="modal-dialog">
         <div class="modal-content">
@@ -14,6 +15,10 @@
                     <div class="col-sm-4">
                         <label class="control-label" style="position:relative; top:7px;">Estado :</label>
                     </div>
+
+                    <?php
+                     if ($perfil == 'administrador') {
+                     ?>
                     <div class="col-sm-8">
                        <select class="form-control select2" id="example1" name="estados" value="algo">
                             <option value="<?php echo $estado;?>"><?php echo $estado;?></option>
@@ -28,40 +33,157 @@
                         </select>
                         <input type="hidden" class="form-control" name="documento" value="<?php echo $usuario; ?>">
                     </div>
-                </div>
-				
-				 <?php                   
-                        if($perfil == 'administrador'){
-                      ?>
-				
-				
-				<!--
-				<div class="row form-group">
-					<div class="col-sm-4">
-						<label class="control-label" style="position:relative; top:7px;">Cantidad Autorizada :</label>
-					</div>
-					<div class="col-sm-8">
-						<input type="text" class="form-control" name="cantidad" value="<?php echo $cantidadautorizada; ?>">
-						<input type="hidden" class="form-control" name="documento" value="<?php echo $usuario; ?>">
-					</div>
-				</div>
-				
-				<div class="row form-group">
-					<div class="col-sm-4">
-						<label class="control-label" style="position:relative; top:7px;">Valor Autorizado:</label>
-					</div>
-					<div class="col-sm-8">
-						<input type="text" class="form-control" name="valor" value="<?php echo $valorautorizado; ?>">
-					</div>
-				</div>
-				-->
-				
-				
-				<?php
-                        }
-                ?>
-				
-            </div> 
+                    <?php
+                    }
+                    ?>
+
+                    <?php
+                     if ($perfil == 'gestorseguimiento') {
+                     ?>
+                    <div class="col-sm-8">
+                       <select class="form-control select2" id="example1" name="estados" value="algo">
+                            <option value="<?php echo $estado;?>"><?php echo $estado;?></option>
+                            <option value="NO APTO">NO APTO</option>
+                            <option value="SIN PROCESO">SIN PROCESO</option>
+                            <option value="AGENDADO">AGENDADO</option>
+                            <option value="CONTACTO FALLIDO">CONTACTO FALLIDO</option>                            
+                            <option value="CANCELADO">CANCELADO</option>
+                            <option value="SEGUIMIENTO COMERCIAL">SEGUIMIENTO COMERCIAL</option>
+                            
+                        </select>
+                        <input type="hidden" class="form-control" name="documento" value="<?php echo $usuario; ?>">
+                    </div>
+                    <?php
+                    }
+                    ?>
+
+                    <?php
+                     if ($perfil == 'auxadmisiones') {
+                     ?>
+                    <div class="col-sm-8">
+                       <select class="form-control select2" id="example1" name="estados" value="algo">
+                            <option value="<?php echo $estado;?>"><?php echo $estado;?></option>                            
+                            <option value="EN PROCESO">EN PROCESO</option>
+                            <option value="CANCELADO">CANCELADO</option>                            
+                        </select>
+                        <input type="hidden" class="form-control" name="documento" value="<?php echo $usuario; ?>">
+                    </div>
+                    <?php
+                    }
+                    ?>
+
+                    <?php
+                     if ($perfil == 'lideradmisiones') {
+                     ?>
+                    <div class="col-sm-8">
+                       <select class="form-control select2" id="example1" name="estados" value="algo">
+                            <option value="<?php echo $estado;?>"><?php echo $estado;?></option>                            
+                            <option value="EN PROCESO">EN PROCESO</option>
+                            <option value="CANCELADO">CANCELADO</option>                            
+                        </select>
+                        <input type="hidden" class="form-control" name="documento" value="<?php echo $usuario; ?>">
+                    </div>
+                    <?php
+                    }
+                    ?>
+
+                    <?php
+                     if ($perfil == 'agentecall') {
+                     ?>
+                    <div class="col-sm-8">
+                       <select class="form-control select2" id="example1" name="estados" value="algo">
+                            <option value="<?php echo $estado;?>"><?php echo $estado;?></option>                            
+                            <option value="AGENDADO">AGENDADO</option>
+                            <option value="CONTACTO FALLIDO">CONTACTO FALLIDO</option>  
+                            <option value="SEGUIMIENTO COMERCIAL">SEGUIMIENTO COMERCIAL</option>                            
+                        </select>
+                        <input type="hidden" class="form-control" name="documento" value="<?php echo $usuario; ?>">
+                    </div>
+                    <?php
+                    }
+                    ?>
+
+                    <?php
+                     if ($perfil == 'comercial') {
+                     ?>
+                    <div class="col-sm-8">
+                       <select class="form-control select2" id="example1" name="estados" value="algo">
+                            <option value="<?php echo $estado;?>"><?php echo $estado;?></option>                            
+                            <option value="SIN PROCESO">SIN PROCESO</option>                            
+                            <option value="SEGUIMIENTO COMERCIAL">SEGUIMIENTO COMERCIAL</option>                            
+                        </select>
+                        <input type="hidden" class="form-control" name="documento" value="<?php echo $usuario; ?>">
+                    </div>
+                    <?php
+                    }
+                    ?>
+
+                    <?php
+                     if ($perfil == 'lidercall') {
+                     ?>
+                    <div class="col-sm-8">
+                       <select class="form-control select2" id="example1" name="estados" value="algo">
+                            <option value="<?php echo $estado;?>"><?php echo $estado;?></option>                            
+                            <option value="AGENDADO">AGENDADO</option>
+                            <option value="CONTACTO FALLIDO">CONTACTO FALLIDO</option>                              
+                            <option value="SEGUIMIENTO COMERCIAL">SEGUIMIENTO COMERCIAL</option>                            
+                        </select>
+                        <input type="hidden" class="form-control" name="documento" value="<?php echo $usuario; ?>">
+                    </div>
+                    <?php
+                    }
+                    ?>
+
+                    <?php
+                     if ($perfil == 'jefeexperiencia') {
+                     ?>
+                    <div class="col-sm-8">
+                       <select class="form-control select2" id="example1" name="estados" value="algo">
+                            <option value="<?php echo $estado;?>"><?php echo $estado;?></option>                            
+                            <option value="AGENDADO">AGENDADO</option>
+                            <option value="CONTACTO FALLIDO">CONTACTO FALLIDO</option>                              
+                            <option value="SEGUIMIENTO COMERCIAL">SEGUIMIENTO COMERCIAL</option>                            
+                        </select>
+                        <input type="hidden" class="form-control" name="documento" value="<?php echo $usuario; ?>">
+                    </div>
+                    <?php
+                    }
+                    ?>
+                    
+                    <?php
+                     if ($perfil == 'liderrehabilitacion') {
+                     ?>
+                    <div class="col-sm-8">
+                       <select class="form-control select2" id="example1" name="estados" value="algo">
+                            <option value="<?php echo $estado;?>"><?php echo $estado;?></option>                            
+                            <option value="NO APTO">NO APTO</option>                                                        
+                        </select>
+                        <input type="hidden" class="form-control" name="documento" value="<?php echo $usuario; ?>">
+                    </div>
+                    <?php
+                    }
+                    ?>
+
+                    <?php
+                     if ($perfil == 'facturacion') {
+                     ?>
+                    <div class="col-sm-8">
+                       <select class="form-control select2" id="example1" name="estados" value="algo">
+                            <option value="<?php echo $estado;?>"><?php echo $estado;?></option>                            
+                            <option value="PROCESO FACTURADO">PROCESO FACTURADO</option>                                                        
+                        </select>
+                        <input type="hidden" class="form-control" name="documento" value="<?php echo $usuario; ?>">
+                    </div>
+                    <?php
+                    }
+                    ?>
+
+
+
+
+
+                </div>			
+			</div> 
 			</div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
@@ -72,11 +194,6 @@
         </div>
     </div>
 </div>
-
-
-
-
-
 
 
 

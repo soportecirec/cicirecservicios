@@ -25,7 +25,25 @@ include_once "../../api/conexion.php";
         $tipodocumento = $row['tipodocumento'];       
         $telefono = $row['telefono'];
         $entidad = $row['entidad'];
+       
         
+
+        //conexión a servinte
+
+        try {
+
+          $usuario = "BDCIREC";
+          $password = "C1r3c2020";
+          $nombredb = "SCSE";
+      
+      
+          //para oracle el tipo es oci
+          $conn = new PDO("oci:dbname" . $nombredb, $usuario, $password);
+      
+          $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+          echo "Error: " . $e->getMessage();
+        }
         
 
 ?>
@@ -106,6 +124,7 @@ include_once "../../api/conexion.php";
       <!-- Left side column. contains the logo and sidebar -->
  <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
+<<<<<<< Updated upstream
     <section class="sidebar">
      
       <ul class="sidebar-menu">
@@ -162,6 +181,9 @@ include_once "../../api/conexion.php";
 
       </ul>
     </section>
+=======
+    <?php include("../../layout.php"); ?>
+>>>>>>> Stashed changes
     <!-- /.sidebar -->
   </aside>
 
@@ -237,8 +259,44 @@ include_once "../../api/conexion.php";
                   <label for="inputEmail3" class="col-sm-2 control-label">Entidad:</label>
 
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" id = "entidad_usuario" name = "entidad" value = "<?php echo $entidad;?>" readonly >
-                  </div>
+
+                  <input list="entidades" class="form-control" name="entidad" id="entidad_usuario" oninput="actualizarCodigoEntidad()">
+
+                        
+                        <datalist id="entidades">
+                        <?php
+                        //buscar entidad
+                        $consultaEntidad = "select * from intar";
+                        $resultEntidad = $conn->query($consultaEntidad);
+
+                        while($rowEntidad = $resultEntidad->fetch()){
+
+                        $codigoEntidad = $rowEntidad['TARCOD'];
+                        $nombreEntidad = $rowEntidad['TARNOM'];
+                        ?>
+                          <option value="<?php echo $nombreEntidad;?>" data-codigo="<?php echo $codigoEntidad; ?>"><?php echo $codigoEntidad;?></option>
+                          <?php
+                        }
+                        ?>
+                        </datalist>
+
+                        <input type='text' name="codigoEntidadSeleccionado" id="codigoEntidadSeleccionado">
+                    
+                    <script>
+                      //FUNCIÓN PARA AGREGAR EL CODIGO EN EL INPUT OCULTO
+                        function actualizarCodigoEntidad() {
+                            var input = document.getElementById('entidad_usuario');
+                            var codigoInput = document.getElementById('codigoEntidadSeleccionado');
+                            var option = document.querySelector('#entidades option[value="' + input.value + '"]');
+                            if (option) {
+                                codigoInput.value = option.getAttribute('data-codigo');
+                            } else {
+                                codigoInput.value = '';
+                            }
+                        }
+                    </script>
+
+                </div>
                 </div> 
                  
                 <!-- nuevos camnpos -->
@@ -385,7 +443,7 @@ include_once "../../api/conexion.php";
                                 $sesion= $_POST['sesion'];
                                 $servicios= $_POST['servicios'];
                                 $codigoServicioSeleccionado = $_POST['codigoServicioSeleccionado'];
-                                
+                                $codigoEntidadSeleccionado = $_POST['codigoEntidadSeleccionado'];
                                 
                                 $consutar= "SELECT autorizacion from otrasespecialidades where documento = '$documento' and autorizacion = '$autorizacion'";
                                 $result = mysqli_query($connection, $consutar);
@@ -422,9 +480,11 @@ include_once "../../api/conexion.php";
                                 else{
                             
                                  
-                                  $insertarpaciente = "INSERT INTO `otrasespecialidades` (`id`, `documento`, `autorizacion`, `codigoServicio`, `numCodServ`, `fechasolicitud`, `nombre`, `telefono`, `entidad`, `fechaautorizacion`, `tipodocumento`, `valorautorizado`, `identificador`, `especialidad`, `cantidadautorizada`, `cantidadprogramada`, `fechalimiteejecucion`, `estadogeneral`, `bitacoraasitio`, `bitacoranoasistio`, `fechacontacto`, `fechanocontacto`, `solicitudespecial`, `gestiono`, `estadocargue`) VALUES (NULL, '$documento', '$autorizacion', '$servicios', '$codigoServicioSeleccionado', '$fechasolicitud', '$nombres', '$telefono', '$entidad', '$fechaautorizacion', '$tipodocumento', '$valorautorizado', '123', 'NULL', '$cantidad', '$cantidad_programada', 'NULL', 'AUTORIZADO', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '$sesion', 'NULL ');";
+                                  $insertarpaciente = "INSERT INTO `otrasespecialidades` (`id`, `documento`, `autorizacion`, `codigoServicio`, `numCodServ`, `fechasolicitud`, `nombre`, `telefono`, `entidad`, `codEntidad`, `fechaautorizacion`, `tipodocumento`, `valorautorizado`, `identificador`, `especialidad`, `cantidadautorizada`, `cantidadprogramada`, `fechalimiteejecucion`, `estadogeneral`, `bitacoraasitio`, `bitacoranoasistio`, `fechacontacto`, `fechanocontacto`, `solicitudespecial`, `gestiono`, `estadocargue`) VALUES (NULL, '$documento', '$autorizacion', '$servicios', '$codigoServicioSeleccionado', '$fechasolicitud', '$nombres', '$telefono', '$entidad', '$codigoEntidadSeleccionado', '$fechaautorizacion', '$tipodocumento', '$valorautorizado', '123', 'NULL', '$cantidad', '$cantidad_programada', 'NULL', 'AUTORIZADO', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '$sesion', 'NULL ');";
                                  
-                                   mysqli_query($connection, $insertarpaciente);
+                                  mysqli_query($connection, $insertarpaciente);
+
+                                  //echo $insertarpaciente;
 
                                            
                                             
@@ -465,12 +525,11 @@ include_once "../../api/conexion.php";
     </section>
 
       </div><!-- /.content-wrapper -->
-      <footer class="main-footer">
-        <div class="pull-right hidden-xs">
-          <b>Version</b> 1.2.0
-        </div>
-        <strong>Copyright &copy; 2023 <a href=#>CIREC</a>.</strong> Desarrolloado por el Departamento de Sistemas CIREC..
-      </footer>
+
+      
+      <!--Include footer -->
+      <?php include("../../footer.php"); ?>
+      <!-- /.Include footer -->
 
       <!-- Control Sidebar -->
      

@@ -12,6 +12,8 @@ $sql = "INSERT INTO otrasespecialidades SELECT * FROM app_cargue WHERE estadocar
 
   $sqlSelect1 = "UPDATE app_cargue SET estadocargue = 'subido' where gestiono ='$sesion'";
     $result = mysqli_query($connection, $sqlSelect1);
+
+    
     
     header ('location: ../forms/usuarioOtraEspecialidad.php');
 
