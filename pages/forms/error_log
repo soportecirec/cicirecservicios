@@ -169,3 +169,223 @@
 [28-Feb-2024 08:43:08 America/Bogota] PHP Parse error:  syntax error, unexpected ';', expecting variable (T_VARIABLE) or '{' or '$' in /home/fundac87/public_html/cicirecservicios/pages/forms/crearNuevoProceso.php on line 267
 [28-Feb-2024 08:43:15 America/Bogota] PHP Parse error:  syntax error, unexpected ';', expecting variable (T_VARIABLE) or '{' or '$' in /home/fundac87/public_html/cicirecservicios/pages/forms/crearNuevoProceso.php on line 267
 [28-Feb-2024 10:46:44 America/Bogota] PHP Parse error:  syntax error, unexpected ''.$numCodServ.'' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/fundac87/public_html/cicirecservicios/pages/forms/crearNuevoProceso.php on line 278
+<<<<<<< Updated upstream
+=======
+[04-Mar-2024 09:02:04 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 70
+[04-Mar-2024 09:02:04 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 73
+[04-Mar-2024 09:02:04 America/Bogota] PHP Warning:  Division by zero in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 73
+[04-Mar-2024 09:02:04 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 09:02:04 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 09:02:04 America/Bogota] PHP Warning:  Division by zero in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 09:02:04 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 89
+[04-Mar-2024 09:02:04 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 09:02:04 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 89
+[04-Mar-2024 09:02:04 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 09:02:04 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 89
+[04-Mar-2024 09:02:04 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 70
+[04-Mar-2024 09:02:04 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 73
+[04-Mar-2024 09:02:04 America/Bogota] PHP Warning:  Division by zero in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 73
+[04-Mar-2024 09:02:04 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 09:02:04 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 09:02:04 America/Bogota] PHP Warning:  Division by zero in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 09:02:04 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 89
+[04-Mar-2024 09:02:04 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 09:02:04 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 89
+[04-Mar-2024 09:02:04 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 09:02:04 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 89
+[04-Mar-2024 09:22:29 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 70
+[04-Mar-2024 09:22:29 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 73
+[04-Mar-2024 09:22:29 America/Bogota] PHP Warning:  Division by zero in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 73
+[04-Mar-2024 09:22:29 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 09:22:29 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 09:22:29 America/Bogota] PHP Warning:  Division by zero in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 09:22:29 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 89
+[04-Mar-2024 09:22:29 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 09:22:29 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 89
+[04-Mar-2024 09:22:29 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 09:22:29 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 89
+[04-Mar-2024 09:22:29 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 70
+[04-Mar-2024 09:22:29 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 73
+[04-Mar-2024 09:22:29 America/Bogota] PHP Warning:  Division by zero in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 73
+[04-Mar-2024 09:22:29 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 09:22:29 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 09:22:29 America/Bogota] PHP Warning:  Division by zero in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 09:22:29 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 89
+[04-Mar-2024 09:22:29 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 09:22:29 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 89
+[04-Mar-2024 09:22:29 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 09:22:29 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 89
+[04-Mar-2024 12:28:59 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 70
+[04-Mar-2024 12:28:59 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 73
+[04-Mar-2024 12:28:59 America/Bogota] PHP Warning:  Division by zero in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 73
+[04-Mar-2024 12:28:59 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 12:28:59 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 12:28:59 America/Bogota] PHP Warning:  Division by zero in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 12:28:59 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 89
+[04-Mar-2024 12:28:59 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 12:28:59 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 89
+[04-Mar-2024 12:28:59 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 12:28:59 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 89
+[04-Mar-2024 12:28:59 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 70
+[04-Mar-2024 12:28:59 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 73
+[04-Mar-2024 12:28:59 America/Bogota] PHP Warning:  Division by zero in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 73
+[04-Mar-2024 12:28:59 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 12:28:59 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 12:28:59 America/Bogota] PHP Warning:  Division by zero in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 12:28:59 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 89
+[04-Mar-2024 12:28:59 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 12:28:59 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 89
+[04-Mar-2024 12:28:59 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 12:28:59 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 89
+[04-Mar-2024 12:28:59 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 70
+[04-Mar-2024 12:28:59 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 73
+[04-Mar-2024 12:28:59 America/Bogota] PHP Warning:  Division by zero in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 73
+[04-Mar-2024 12:28:59 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 12:28:59 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 12:28:59 America/Bogota] PHP Warning:  Division by zero in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 12:28:59 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 89
+[04-Mar-2024 12:28:59 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 12:28:59 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 89
+[04-Mar-2024 12:28:59 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 12:28:59 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 89
+[04-Mar-2024 12:40:56 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 71
+[04-Mar-2024 12:40:56 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 74
+[04-Mar-2024 12:40:56 America/Bogota] PHP Warning:  Division by zero in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 74
+[04-Mar-2024 12:40:56 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 79
+[04-Mar-2024 12:40:56 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 79
+[04-Mar-2024 12:40:56 America/Bogota] PHP Warning:  Division by zero in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 79
+[04-Mar-2024 12:40:56 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 90
+[04-Mar-2024 12:40:56 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 79
+[04-Mar-2024 12:40:56 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 90
+[04-Mar-2024 12:40:56 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 79
+[04-Mar-2024 12:40:56 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 90
+[04-Mar-2024 12:40:56 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 71
+[04-Mar-2024 12:40:56 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 74
+[04-Mar-2024 12:40:56 America/Bogota] PHP Warning:  Division by zero in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 74
+[04-Mar-2024 12:40:56 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 79
+[04-Mar-2024 12:40:56 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 79
+[04-Mar-2024 12:40:56 America/Bogota] PHP Warning:  Division by zero in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 79
+[04-Mar-2024 12:40:56 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 90
+[04-Mar-2024 12:40:56 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 79
+[04-Mar-2024 12:40:56 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 90
+[04-Mar-2024 12:40:56 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 79
+[04-Mar-2024 12:40:56 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 90
+[04-Mar-2024 12:40:56 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 71
+[04-Mar-2024 12:40:56 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 74
+[04-Mar-2024 12:40:56 America/Bogota] PHP Warning:  Division by zero in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 74
+[04-Mar-2024 12:40:56 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 79
+[04-Mar-2024 12:40:56 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 79
+[04-Mar-2024 12:40:56 America/Bogota] PHP Warning:  Division by zero in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 79
+[04-Mar-2024 12:40:56 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 90
+[04-Mar-2024 12:40:56 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 79
+[04-Mar-2024 12:40:56 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 90
+[04-Mar-2024 12:40:56 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 79
+[04-Mar-2024 12:40:56 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 90
+[04-Mar-2024 12:47:44 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 79
+[04-Mar-2024 12:47:44 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 90
+[04-Mar-2024 12:48:35 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 79
+[04-Mar-2024 12:48:35 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 90
+[04-Mar-2024 12:53:10 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 79
+[04-Mar-2024 12:53:10 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 90
+[04-Mar-2024 12:53:41 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 81
+[04-Mar-2024 12:53:41 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 92
+[04-Mar-2024 12:54:11 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 82
+[04-Mar-2024 12:54:11 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 93
+[04-Mar-2024 12:54:32 America/Bogota] PHP Notice:  Undefined variable: cantidadprogramada in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 77
+[04-Mar-2024 12:54:32 America/Bogota] PHP Warning:  Division by zero in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 77
+[04-Mar-2024 12:54:32 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 82
+[04-Mar-2024 12:54:32 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 93
+[04-Mar-2024 12:55:23 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 83
+[04-Mar-2024 12:55:23 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 94
+[04-Mar-2024 16:32:22 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 83
+[04-Mar-2024 16:32:22 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 94
+[04-Mar-2024 16:32:22 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 72
+[04-Mar-2024 16:32:22 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 16:32:22 America/Bogota] PHP Warning:  Division by zero in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 16:32:22 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 83
+[04-Mar-2024 16:32:22 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 83
+[04-Mar-2024 16:32:22 America/Bogota] PHP Warning:  Division by zero in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 83
+[04-Mar-2024 16:32:22 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 94
+[04-Mar-2024 16:32:22 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 83
+[04-Mar-2024 16:32:22 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 94
+[04-Mar-2024 16:32:22 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 83
+[04-Mar-2024 16:32:22 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 94
+[04-Mar-2024 16:32:30 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 83
+[04-Mar-2024 16:32:30 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 94
+[04-Mar-2024 16:32:30 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 72
+[04-Mar-2024 16:32:30 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 16:32:30 America/Bogota] PHP Warning:  Division by zero in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 78
+[04-Mar-2024 16:32:30 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 83
+[04-Mar-2024 16:32:30 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 83
+[04-Mar-2024 16:32:30 America/Bogota] PHP Warning:  Division by zero in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 83
+[04-Mar-2024 16:32:30 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 94
+[04-Mar-2024 16:32:30 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 83
+[04-Mar-2024 16:32:30 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 94
+[04-Mar-2024 16:32:30 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 83
+[04-Mar-2024 16:32:30 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 94
+[04-Mar-2024 16:33:07 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 81
+[04-Mar-2024 16:33:07 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 92
+[04-Mar-2024 16:33:07 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 72
+[04-Mar-2024 16:33:07 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 76
+[04-Mar-2024 16:33:07 America/Bogota] PHP Warning:  Division by zero in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 76
+[04-Mar-2024 16:33:07 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 81
+[04-Mar-2024 16:33:07 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 81
+[04-Mar-2024 16:33:07 America/Bogota] PHP Warning:  Division by zero in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 81
+[04-Mar-2024 16:33:07 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 92
+[04-Mar-2024 16:33:07 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 81
+[04-Mar-2024 16:33:07 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 92
+[04-Mar-2024 16:33:07 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 81
+[04-Mar-2024 16:33:07 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 92
+[05-Mar-2024 07:55:39 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:55:39 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:55:42 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:55:44 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:55:45 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:55:45 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:55:45 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:55:45 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:55:45 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:55:45 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:55:46 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:55:46 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:55:46 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:55:51 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:55:51 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:55:51 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:55:51 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:55:53 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:55:56 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:55:56 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:55:56 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:56:03 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:56:14 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:56:14 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:56:14 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:56:57 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:56:57 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:56:57 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:56:57 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:57:01 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:57:01 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:57:01 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:57:02 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:57:02 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:57:02 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:57:05 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:57:05 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:57:05 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:57:05 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:57:05 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:57:05 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 07:57:05 America/Bogota] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/fundac87/public_html/cicirecservicios/pages/forms/validar_autorizacion.php on line 15
+[05-Mar-2024 09:53:06 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 81
+[05-Mar-2024 09:53:06 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 92
+[05-Mar-2024 09:53:06 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 81
+[05-Mar-2024 09:53:06 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 92
+[05-Mar-2024 09:53:06 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 81
+[05-Mar-2024 09:53:06 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 92
+[05-Mar-2024 09:53:06 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 81
+[05-Mar-2024 09:53:06 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 92
+[05-Mar-2024 09:53:06 America/Bogota] PHP Warning:  A non-numeric value encountered in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 81
+[05-Mar-2024 09:53:06 America/Bogota] PHP Notice:  Undefined index: tipoprograma in /home/fundac87/public_html/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php on line 92
+>>>>>>> Stashed changes

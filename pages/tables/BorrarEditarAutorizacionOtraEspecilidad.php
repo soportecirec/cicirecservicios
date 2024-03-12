@@ -25,6 +25,7 @@
                             <option value="CANCELADO">CANCELADO</option>
                             <option value="SUSPENDIDO">SUSPENDIDO</option>
                             <option value="SEGUIMIENTO COMERCIAL">SEGUIMIENTO COMERCIAL</option>
+                            <option value="FACTURADO">FACTURADO</option>
                         </select>
                         <input type="hidden" class="form-control" name="documento" value="<?php echo $usuario; ?>">
                     </div>

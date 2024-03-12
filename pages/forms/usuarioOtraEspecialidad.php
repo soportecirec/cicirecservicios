@@ -48,7 +48,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
         <header class="main-header">
         <!-- Logo -->
-        <a href="http://fundacioncirec.org/cicirecservicios/index.php" class="logo">
+        <a href="http://192.168.0.122/cicirecservicios/index.php" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>CI</b>REC</span>
           <!-- logo for regular state and mobile devices -->
@@ -64,6 +64,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         </nav>
       </header>
       <!-- Left side column. contains the logo and sidebar -->
+<<<<<<< Updated upstream
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
@@ -124,6 +125,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     </section>
     <!-- /.sidebar -->
   </aside>
+=======
+      <?php include("../../layout.php"); ?>
+>>>>>>> Stashed changes
 
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
