@@ -20,16 +20,40 @@
 						<input type="hidden" class="form-control" name="nombresesion1" placeholder = "Sesion No. x" value="<?php echo $nombres; ?>">
 						
 					   
-					    <select name="nombresesion" class="form-control" required >
-                          <!--<option value="">Seleccione</option>-->
-                           <?php
-					    for($x=1;$x<=$cantidadprogramada;$x++){
-					    ?>
-                           <option value="Sesión No. <?php echo $x;?>">Sesión No. <?php echo $x;?></option>
+					    <select name="nombresesion" class="form-control" required>
                             <?php
-					    }
-					    ?>
+                            include_once "../../api/conexion.php"; 
+                        
+                            // Contar sesiones asistidas
+                            $contarSesionesAsistidasAhora = "SELECT COUNT(*) AS total_registros FROM agendaotras
+                            WHERE estado = 'asistio' AND documento = $documento AND autorizacion = $autorizacion";
+                        
+                            $resultContarSesionesAhora = mysqli_query($connection, $contarSesionesAsistidasAhora);
+                            $rowContarSesionesAhora = mysqli_fetch_array($resultContarSesionesAhora);
+                            $nroSesionesAsistidasAhora = $rowContarSesionesAhora['total_registros'];
+                        
+                            //echo "Total sesiones asistidas hasta ahora: " . $nroSesionesAsistidasAhora;
+                        
+                            // Mostrar solo las sesiones que no han sido registradas
+                            for ($x = 1; $x <= $cantidadprogramada; $x++) {
+                                $sesion = "Sesion No. $x";
+                                $consultaSesion = "SELECT * FROM agendaotras
+                                WHERE estado = 'asistio' AND documento = $documento AND autorizacion = $autorizacion AND nosesion = '$sesion'";
+                        
+                                $resultSesion = mysqli_query($connection, $consultaSesion);
+                                $sesionExiste = mysqli_num_rows($resultSesion) > 0;
+                        
+                            if (!$sesionExiste || $sesion != 'Sesion No. ' . $x) {
+                            ?>
+                            
+                            <option value="<?php echo $sesion; ?>">Sesión No. <?php echo $x; ?></option>
+                            
+                            <?php
+                                }//fin if
+                            }//fin while
+                            ?>
                         </select>
+
                        
 					
 					

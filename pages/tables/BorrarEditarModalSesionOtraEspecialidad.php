@@ -27,8 +27,8 @@
                           <select name="estadoactual" class="form-control" required >
                           <!--<option value="">Seleccione</option>-->
                            <option value="<?php echo $estado;?>"><?php echo $estado;?></option>
-                          <option value="Asistió">Asistió</option>
-                          <option value="No Asistio">No Asistió</option>                     
+                          <!-- <option value="Asistió">Asistió</option> -->
+                          <option value="Anulado">Anulado</option>                     
                           </select> 
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                           <option value="CALAMIDAD PERSONAL">CALAMIDAD PERSONAL</option>
                           <option value="AUTORIZACIÓN ERRADA">AUTORIZACIÓN ERRADA</option>
                           <option value="NO DESEA TOMAR EL SERVICIO">NO DESEA TOMAR EL SERVICIO</option>
-                          <option value="NO APLICA">NO APLICA</option>
+                          <option value="NO CUMPLE CON REQUISITOS">NO CUMPLE CON REQUISITOS</option>                          
                           </select>
                     
                     </div>
