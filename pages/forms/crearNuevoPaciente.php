@@ -111,7 +111,7 @@ include_once "../../api/conexion.php";
           <ul class="treeview-menu">          
 
             <li <?php isActive("boxed") ?>>
-              <a href="http://fundacioncirec.org/cicirecservicios/pages/tables/gestionUsuarios.php"><i class="fa fa-circle-o"></i> Gestión pacientes</a>
+              <a href="gestionUsuarios.php"><i class="fa fa-circle-o"></i> Gestión pacientes</a>
             </li>
 
             <!--<li <?php isActive("collapsed_sidebar") ?>>
@@ -134,19 +134,19 @@ include_once "../../api/conexion.php";
             
 
             <li <?php isActive("boxed") ?>>
-              <a href="http://fundacioncirec.org/cicirecservicios/pages/forms/usuarioOtraEspecialidad.php"><i class="fa fa-circle-o"></i> Buscar paciente</a>
+              <a href="../forms/usuarioOtraEspecialidad.php"><i class="fa fa-circle-o"></i> Buscar paciente</a>
             </li>
             
             <li <?php isActive("boxed") ?>>
-              <a href="http://fundacioncirec.org/cicirecservicios/pages/tables/masivoexcel.php"><i class="fa fa-circle-o"></i> Cargar Masivo</a>
+              <a href="../tables/masivoexcel.php"><i class="fa fa-circle-o"></i> Cargar Masivo</a>
             </li>
 
             <li <?php isActive("collapsed_sidebar") ?>>
-              <a href="http://fundacioncirec.org/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php"><i class="fa fa-circle-o"></i> Descargar Excel </a>
+              <a href="../forms/excelTodosOtrasEspecialidades.php"><i class="fa fa-circle-o"></i> Descargar Excel </a>
             </li>
           </ul>
         </li>        
-        <li><a href="http://fundacioncirec.org/cicirecservicios/logout.php"><i class="fa fa-book"></i> <span>Cerrar sesión</span></a></li>
+        <li><a href="../../logout.php"><i class="fa fa-book"></i> <span>Cerrar sesión</span></a></li>
 
       </ul>
     </section>

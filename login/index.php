@@ -89,96 +89,216 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
-<head><meta http-equiv="Content-Type" content="text/html; charset=gb18030">
-	
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>CICIREC SERVICIOS | Admin login</title>
-	<link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
-	<link type="text/css" href="css/theme.css" rel="stylesheet">
-	<link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
-	<link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>
-</head>
-<body>
 
-	<div class="navbar navbar-fixed-top">
-		<div class="navbar-inner">
-			<div class="container">
-				<a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-					<i class="icon-reorder shaded"></i>
-				</a>
+<head>
+<title>CICIREC SERVICIOS | Admin login</title>
+    <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 10]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+      <!-- Meta -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="description" content="Admindek Bootstrap admin template made using Bootstrap 5 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
+      <meta name="keywords" content="bootstrap, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
+      <meta name="author" content="colorlib" />
+      <!-- Favicon icon -->
 
-			  	<a class="brand" href="index.php">
-			  		CICIREC SERVICIOS | Admin
-			  	</a>
+      <link rel="icon" href="include_template/assets/images/favicon.ico" type="image/x-icon">
+      
+      <!-- Google font-->     
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet">
+      <!-- Required Fremwork -->
+      <link rel="stylesheet" type="text/css" href="include_template/bower_components/bootstrap/css/bootstrap.min.css">
+      <!-- waves.css -->
+      <link rel="stylesheet" href="include_template/assets/pages/waves/css/waves.min.css" type="text/css" media="all"><!-- feather icon --> <link rel="stylesheet" type="text/css" href="include_template/assets/icon/feather/css/feather.css">
+      <!-- themify-icons line icon -->
+      <link rel="stylesheet" type="text/css" href="include_template/assets/icon/themify-icons/themify-icons.css">
+      <!-- ico font -->
+      <link rel="stylesheet" type="text/css" href="include_template/assets/icon/icofont/css/icofont.css">
+      <!-- Font Awesome -->
+      <link rel="stylesheet" type="text/css" href="include_template/assets/icon/font-awesome/css/font-awesome.min.css">
+      <!-- Style.css -->
+      <link rel="stylesheet" type="text/css" href="include_template/assets/css/style.css"><link rel="stylesheet" type="text/css" href="include_template/assets/css/pages.css">
+  </head>
 
-				<div class="nav-collapse collapse navbar-inverse-collapse">
-				
-					<ul class="nav pull-right">
+  <body themebg-pattern="theme1">
+  <!-- Pre-loader start -->
+  <div class="theme-loader">
+      <div class="loader-track">
+          <div class="preloader-wrapper">
+              <div class="spinner-layer spinner-blue">
+                  <div class="circle-clipper left">
+                      <div class="circle"></div>
+                  </div>
+                  <div class="gap-patch">
+                      <div class="circle"></div>
+                  </div>
+                  <div class="circle-clipper right">
+                      <div class="circle"></div>
+                  </div>
+              </div>
+              <div class="spinner-layer spinner-red">
+                  <div class="circle-clipper left">
+                      <div class="circle"></div>
+                  </div>
+                  <div class="gap-patch">
+                      <div class="circle"></div>
+                  </div>
+                  <div class="circle-clipper right">
+                      <div class="circle"></div>
+                  </div>
+              </div>
+            
+              <div class="spinner-layer spinner-yellow">
+                  <div class="circle-clipper left">
+                      <div class="circle"></div>
+                  </div>
+                  <div class="gap-patch">
+                      <div class="circle"></div>
+                  </div>
+                  <div class="circle-clipper right">
+                      <div class="circle"></div>
+                  </div>
+              </div>
+            
+              <div class="spinner-layer spinner-green">
+                  <div class="circle-clipper left">
+                      <div class="circle"></div>
+                  </div>
+                  <div class="gap-patch">
+                      <div class="circle"></div>
+                  </div>
+                  <div class="circle-clipper right">
+                      <div class="circle"></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- Pre-loader end -->
+    <section class="login-block">
+        <!-- Container-fluid starts -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <!-- Authentication card start -->
+                    <form class="form-vertical" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                    
+                    <span style="color:red;" ><?php echo htmlentities($_SESSION['errmsg']); ?><?php echo htmlentities($_SESSION['errmsg']="");?></span>
 
-						
+                    <div class="text-center">
+                            <!-- <img src="include_template/assets/images/logo.png" alt="logo.png"> -->
+                            <h3>CICIREC SERVICIOS</h3>
+                        </div>
+                        <div class="auth-box card">
+                            <div class="card-block">
+                                <div class="row m-b-20">
+                                    <div class="col-md-12">
+                                        <!-- <h3 class="text-center txt-primary">Sign In</h3> -->
+                                        <img src = "img/CIREC-LOGO-COLOR-NEGRO-HORIZONTAL.png" width = "94%">
+                                    </div>
+                                </div>
 
-						
-
-						
-					</ul>
-				</div><!-- /.nav-collapse -->
-			</div>
-		</div><!-- /navbar-inner -->
-	</div><!-- /navbar -->
 
 
 
-	<div class="wrapper">
-		<div class="container">
-			<div class="row">
-				<div class="module module-login span4 offset4">
-				    <div class="module-head">
-							<h3>Inicio de Sesión</h3>
-						</div>
-				    
-				    <img src = "img/CIREC-LOGO-COLOR-NEGRO-HORIZONTAL.png" width = "95%">
-					<form class="form-vertical" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-						
-						<span style="color:red;" ><?php echo htmlentities($_SESSION['errmsg']); ?><?php echo htmlentities($_SESSION['errmsg']="");?></span>
-						<div class="module-body">
-							<div class="control-group">
-								<div class="controls row-fluid">
-									<input class="span12" type="text" id="inputEmail" name="username" placeholder="Usuario" value="<?php echo $username; ?>">
-									<span class="help-block"><?php echo $username_err; ?></span>
-								</div>
-							</div>
-							<div class="control-group form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-								<div class="controls row-fluid">
-						        <input class="span12" type="password" id="inputPassword" name="password" placeholder="Contraseña">
-						        <span class="help-block"><?php echo $password_err; ?></span>
-								</div>
-							</div>
-						</div>
-						<div class="module-foot">
-							<div class="control-group">
-								<div class="controls clearfix">
-									<button type="submit" class="btn btn-primary pull-right" name="signin" id="signin">Ingresar</button>
-									
-								</div>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div><!--/.wrapper-->
+                                <p class="text-muted text-center p-b-5">Usa una cuenta registrada para inciar sesión</p>
+                                <div class="form-group form-primary">
+                                    <input type="text" id="inputEmail" name="username" placeholder="Usuario" value="<?php echo $username; ?>" class="form-control" required="">
+                                    <span class="help-block"><?php echo $username_err; ?></span>
+                                    <!-- <label class="form-label float-label">Username</label> -->
+                                </div>
+                                <div class="form-group form-primary">
+                                    <input type="password" id="inputPassword" name="password" placeholder="Contraseña" class="form-control" required="">
+                                    <span class="help-block"><?php echo $password_err; ?></span>
+                                    <!-- <label class="form-label float-label">Password</label> -->
+                                </div>
 
-	<div class="footer">
-		<div class="container">
-			 
-
-			<b class="copyright">&copy; 2024 CIREC </b> Derechos Reservados -- Desarrolloado por el Departamento de Sistemas CIREC.
-		</div>
-	</div>
-	<script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
-	<script src="scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
-	<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+                                <div class="row m-t-30">
+                                    <div class="col-md-12">
+                                        <div class="d-grid">
+                                            <input type="submit" value="Ingresar" class="btn btn-primary btn-md waves-effect text-center m-b-20" name="signin" id="signin">
+                                        </div>
+                                    </div>
+                                </div>
+                                <b class="copyright">&copy; 2024 CIREC </b>
+                            </div>
+                        </div>
+                    </form>
+                        <!-- end of form -->
+                    </div>
+                    <!-- Authentication card end -->
+                </div>
+                <!-- end of col-sm-12 -->
+            </div>
+            <!-- end of row -->
+        </div>
+        <!-- end of container-fluid -->
+    </section>
+    <!-- Warning Section Starts -->
+    <!-- Older IE warning message -->
+    <!--[if lt IE 10]>
+<div class="ie-warning">
+    <h1>Warning!!</h1>
+    <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+    <div class="iew-container">
+        <ul class="iew-download">
+            <li>
+                <a href="http://www.google.com/chrome/">
+                    <img src="include_template/assets/images/browser/chrome.png" alt="Chrome">
+                    <div>Chrome</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.mozilla.org/en-US/firefox/new/">
+                    <img src="include_template/assets/images/browser/firefox.png" alt="Firefox">
+                    <div>Firefox</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.opera.com">
+                    <img src="include_template/assets/images/browser/opera.png" alt="Opera">
+                    <div>Opera</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.apple.com/safari/">
+                    <img src="include_template/assets/images/browser/safari.png" alt="Safari">
+                    <div>Safari</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                    <img src="include_template/assets/images/browser/ie.png" alt="">
+                    <div>IE (9 & above)</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <p>Sorry for the inconvenience!</p>
+</div>
+<![endif]-->
+<!-- Warning Section Ends -->
+<!-- Required Jquery -->
+<script type="text/javascript" src="/include_template/bower_components/jquery/js/jquery.min.js"></script>
+<script type="text/javascript" src="/include_template/bower_components/jquery-ui/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/include_template/bower_components/popper.js/js/popper.min.js"></script>
+<script type="text/javascript" src="/include_template/bower_components/bootstrap/js/bootstrap.min.js"></script>
+<!-- waves js -->
+<script src="/include_template/assets/pages/waves/js/waves.min.js"></script>
+<!-- jquery slimscroll js -->
+<script type="text/javascript" src="/include_template/bower_components/jquery-slimscroll/js/jquery.slimscroll.js"></script>
+<!-- modernizr js -->
+<script type="text/javascript" src="/include_template/bower_components/modernizr/js/modernizr.js"></script>
+<script type="text/javascript" src="/include_template/bower_components/modernizr/js/css-scrollbars.js"></script>
+<script type="text/javascript" src="/include_template/assets/js/common-pages.js"></script>
 </body>
+
+</html>

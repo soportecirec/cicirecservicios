@@ -1,5 +1,7 @@
 <?php
 	
+	session_start();
+	$sesion = $_SESSION["username"];
 	
 	include_once "../../api/conexion.php"; 
 
@@ -26,7 +28,7 @@
 			'$fechagenda',
 			'$documento',
 			'',
-			'$crear',
+			'$sesion',
 			'$estadoactual',
 			'$bitacora',
 			''
