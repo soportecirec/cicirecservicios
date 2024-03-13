@@ -76,7 +76,7 @@ include_once "../../api/conexion.php";
 
        <header class="main-header">
         <!-- Logo -->
-        <a href="http://fundacioncirec.org/cicirecservicios/index.php" class="logo">
+        <a href="http://192.168.0.122/cicirecservicios/index.php" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>CI</b>REC</span>
           <!-- logo for regular state and mobile devices -->
