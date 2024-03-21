@@ -48,7 +48,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
         <header class="main-header">
         <!-- Logo -->
-        <a href="http://fundacioncirec.org/cicirecservicios/index.php" class="logo">
+        <a href="http://192.168.0.122/cicirecservicios/index.php" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>CI</b>REC</span>
           <!-- logo for regular state and mobile devices -->
@@ -64,66 +64,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         </nav>
       </header>
       <!-- Left side column. contains the logo and sidebar -->
-  <aside class="main-sidebar">
-    <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar">
-     
-      <ul class="sidebar-menu">
-        <li class="header"><?php echo $sesion;?></li>        
-
-        <li class="treeview">
-          <!--
-            <a href="#">
-            <i class="fa fa-user"></i> <span>Pacientes</span>
-             <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>          
-            </a>
-            -->
-          <ul class="treeview-menu">          
-
-            <li <?php isActive("boxed") ?>>
-              <a href="http://fundacioncirec.org/cicirecservicios/pages/tables/gestionUsuarios.php"><i class="fa fa-circle-o"></i> Gestión pacientes</a>
-            </li>
-
-            <!--<li <?php isActive("collapsed_sidebar") ?>>
-              <a href="pages/forms/excelTodosParticular.php"><i class="fa fa-circle-o"></i> Descargar Excel </a>
-            </li>-->
-
-            
-
-          </ul>
-        </li>
-
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-users"></i> <span>Otras especialidades</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            
-
-            <li <?php isActive("boxed") ?>>
-              <a href="http://fundacioncirec.org/cicirecservicios/pages/forms/usuarioOtraEspecialidad.php"><i class="fa fa-circle-o"></i> Buscar paciente</a>
-            </li>
-            
-            <li <?php isActive("boxed") ?>>
-              <a href="http://fundacioncirec.org/cicirecservicios/pages/tables/masivoexcel.php"><i class="fa fa-circle-o"></i> Cargar Masivo</a>
-            </li>
-
-            <li <?php isActive("collapsed_sidebar") ?>>
-              <a href="http://fundacioncirec.org/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php"><i class="fa fa-circle-o"></i> Descargar Excel </a>
-            </li>
-          </ul>
-        </li>        
-        <li><a href="http://fundacioncirec.org/cicirecservicios/logout.php"><i class="fa fa-book"></i> <span>Cerrar sesión</span></a></li>
-
-      </ul>
-    </section>
-    <!-- /.sidebar -->
-  </aside>
+      <?php include("../../layout.php"); ?>
 
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
@@ -199,12 +140,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       <!-- /.row -->
     </section>
       </div><!-- /.content-wrapper -->
-     <footer class="main-footer">
-        <div class="pull-right hidden-xs">
-          <b>Version</b> 1.2.0
-        </div>
-        <strong>Copyright &copy; 2021 <a href=#>CIREC</a>.</strong> Desarrolloado por el Departamento de Sistemas CIREC..
-      </footer>
+
+      <!--Include footer -->
+        <?php include("../../footer.php"); ?>
+      <!-- /.Include footer -->
+
 
       <!-- Control Sidebar -->
       <aside class="control-sidebar control-sidebar-dark">

@@ -276,12 +276,12 @@
                   <td> 
 
 
-                    <a href='../forms/misResultados.php?id_auto=<?php echo $row[id];?>' class='btn-descargar-doc btn btn-info' role='button' ><i class='fa fa-upload bigfonts' aria-hidden='true'></i></a> 
+                    <a href='../forms/misResultados.php?id_auto=<?php echo $row['id'];?>' class='btn-descargar-doc btn btn-info' role='button' ><i class='fa fa-upload bigfonts' aria-hidden='true'></i></a> 
                      <?php
                       if($resultado!=""){
                       ?>
                         
-                    <a  class="btn-descargar-doc btn btn-default" href = "https://fundacioncirec.org/version2covid/pages/forms/<?php echo $resultado; ?>" target = "blank"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                    <a  class="btn-descargar-doc btn btn-default" href = "../forms/<?php echo $resultado; ?>" target = "blank"><i class="fa fa-eye" aria-hidden="true"></i></a>
                     <?php } else{
                     ?>
                     

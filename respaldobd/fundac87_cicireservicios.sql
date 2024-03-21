@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost:3306
--- Tiempo de generación: 29-02-2024 a las 09:10:44
--- Versión del servidor: 5.7.44
--- Versión de PHP: 8.1.27
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 21-03-2024 a las 17:11:31
+-- Versión del servidor: 10.4.21-MariaDB
+-- Versión de PHP: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -45,91 +45,53 @@ CREATE TABLE `agendaotras` (
 --
 
 INSERT INTO `agendaotras` (`id`, `nosesion`, `autorizacion`, `fechaagenda`, `documento`, `creacionagenda`, `gestiono`, `estado`, `bitacora`, `estadoagenda`) VALUES
-(130, 'Sesión No1', '123456', '23-05-2021 02:02:17', '80114616', '', 'alex.nino@cirec.org', 'Asistio', 'Sin novedad', ''),
-(131, 'Sesión No2', '123456', '23-05-2021 02:02:53', '80114616', '', 'alex.nino@cirec.org', 'No Asistio', 'sdasd', ''),
-(132, 'Sesión No3', '123456', '23-05-2021 02:03:17', '80114616', '', 'alex.nino@cirec.org', 'Asistio', 'ssad', ''),
-(138, '1', '12345', '16-06-2021 07:47:43', '1019075976', '', 'agente.cirec@cirec.org', 'Asistio', 'CALAMIDAD PERSONAL', ''),
-(139, '1', '2910', '16-06-2021 07:53:08', '1019075976', '', 'agente.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(145, 'SesiÃ³n No. 1', '7845878', '24-06-2021 12:44:47', '789', '', 'lider.cirec@cirec.org', 'Asistio', 'SALUD', ''),
-(146, 'SesiÃ³n No. 1', '7845878', '24-06-2021 12:44:53', '789', '', 'lider.cirec@cirec.org', 'No Asistio', 'TRANSPORTE', ''),
-(147, 'SesiÃ³n No. 4', '7845878', '24-06-2021 12:45:00', '789', '', 'lider.cirec@cirec.org', 'Asistio', 'CRUCE CON CITA EXTERNA', ''),
-(149, 'SesiÃ³n No. 1', '9999', '25-06-2021 07:01:09', '333966', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(150, 'SesiÃ³n No. 2', '9999', '25-06-2021 07:01:16', '333966', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(151, 'SesiÃ³n No. 1', '9999', '25-06-2021 07:01:25', '333966', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(152, 'SesiÃ³n No. 2', '2910', '25-06-2021 07:05:10', '1019075976', '', 'lider.cirec@cirec.org', 'Asistio', 'TRANSPORTE', ''),
-(153, 'SesiÃ³n No. 1', '5656', '14-07-2021 04:29:19', '2910', '', 'agente.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(155, 'SesiÃ³n No. 1', '15545SSASDFS', '09-08-2021 04:13:57', '1022392399', '', 'agente.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(156, 'SesiÃ³n No. 1', '1256585', '21-07-2023 11:19:38', '4444', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(157, 'SesiÃ³n No. 1', '585945', '03-08-2023 08:43:58', '111111', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(158, 'SesiÃ³n No. 2', '585945', '03-08-2023 08:44:16', '111111', '', 'lider.cirec@cirec.org', 'No Asistio', 'TRANSPORTE', ''),
-(159, 'SesiÃ³n No. 3', '585945', '03-08-2023 08:44:36', '111111', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(160, 'SesiÃ³n No. 1', '12522', '03-08-2023 10:12:41', '1019075976', '', 'lider.cirec@cirec.org', 'Asistio', 'TRANSPORTE', ''),
-(162, 'SesiÃ³n No. 1', '8285', '03-08-2023 10:33:09', '1023941774', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(163, 'SesiÃ³n No. 2', '8285', '03-08-2023 10:33:22', '1023941774', '', 'lider.cirec@cirec.org', 'No Asistio', 'CALAMIDAD PERSONAL', ''),
-(164, 'SesiÃ³n No. 3', '8285', '03-08-2023 10:33:57', '1023941774', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(167, 'SesiÃ³n No. 1', '7879965', '03-08-2023 10:44:19', '1023941774', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(168, 'SesiÃ³n No. 1', '7879965', '03-08-2023 10:44:44', '1023941774', '', 'lider.cirec@cirec.org', 'No Asistio', 'ORDEN PUBLICO', ''),
-(169, 'SesiÃ³n No. 3', '7879965', '03-08-2023 10:45:25', '1023941774', '', 'lider.cirec@cirec.org', 'Asistio', 'ORDEN PUBLICO', ''),
-(170, 'SesiÃ³n No. 4', '7879965', '03-08-2023 10:45:32', '1023941774', '', 'lider.cirec@cirec.org', 'Asistio', 'ORDEN PUBLICO', ''),
-(171, 'SesiÃ³n No. 5', '7879965', '03-08-2023 10:45:38', '1023941774', '', 'lider.cirec@cirec.org', 'Asistio', 'ORDEN PUBLICO', ''),
-(172, 'SesiÃ³n No. 6', '7879965', '03-08-2023 10:45:49', '1023941774', '', 'lider.cirec@cirec.org', 'Asistio', 'ORDEN PUBLICO', ''),
-(173, 'SesiÃ³n No. 7', '7879965', '03-08-2023 10:45:54', '1023941774', '', 'lider.cirec@cirec.org', 'Asistio', 'TRANSPORTE', ''),
-(174, 'SesiÃ³n No. 8', '7879965', '03-08-2023 10:46:01', '1023941774', '', 'lider.cirec@cirec.org', 'Asistio', 'TRANSPORTE', ''),
-(175, 'SesiÃ³n No. 9', '7879965', '03-08-2023 10:46:11', '1023941774', '', 'lider.cirec@cirec.org', 'Asistio', 'TRANSPORTE', ''),
-(176, 'SesiÃ³n No. 10', '7879965', '03-08-2023 10:46:17', '1023941774', '', 'lider.cirec@cirec.org', 'Asistio', 'CALAMIDAD PERSONAL', ''),
-(177, 'SesiÃ³n No. 1', '333', '25-08-2023 03:27:13', '1018453370', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(178, 'SesiÃ³n No. 2', '333', '25-08-2023 03:27:57', '1018453370', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(179, 'SesiÃ³n No. 1', '99999', '29-08-2023 11:03:48', '1018453370', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(180, 'SesiÃ³n No. 1', '1111111', '18-09-2023 12:29:39', '1018453370', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(181, 'SesiÃ³n No. 2', '1111111', '18-09-2023 12:29:55', '1018453370', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(182, 'SesiÃ³n No. 3', '1111111', '18-09-2023 12:32:11', '1018453370', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(183, 'SesiÃ³n No. 4', '1111111', '18-09-2023 12:35:07', '1018453370', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(184, 'SesiÃ³n No. 5', '1111111', '18-09-2023 12:35:14', '1018453370', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(185, 'SesiÃ³n No. 1', '987654', '02-10-2023 03:54:05', '1018453370', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(186, 'SesiÃ³n No. 2', '987654', '02-10-2023 03:54:58', '1018453370', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(187, 'SesiÃ³n No. 1', '1111', '05-10-2023 02:57:12', '1018453370', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(188, 'SesiÃ³n No. 5', '223333', '22-02-2024 07:34:49', '333966', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(189, 'SesiÃ³n No. 5', '223333', '22-02-2024 10:32:57', '333966', '', 'lider.cirec@cirec.org', 'Asistio', 'ORDEN PUBLICO', ''),
-(190, 'SesiÃ³n No. 4', '223333', '22-02-2024 10:46:51', '333966', '', 'lider.cirec@cirec.org', 'AsistiÃ³', 'CALAMIDAD PERSONAL', ''),
-(191, 'SesiÃ³n No. 1', '589652', '22-02-2024 02:41:34', '1002710209', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(192, 'SesiÃ³n No. 2', '589652', '22-02-2024 02:41:51', '1002710209', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(193, 'SesiÃ³n No. 3', '589652', '22-02-2024 02:42:08', '1002710209', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(194, 'SesiÃ³n No. 4', '589652', '22-02-2024 02:42:17', '1002710209', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(195, 'SesiÃ³n No. 5', '589652', '22-02-2024 02:42:25', '1002710209', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(196, 'SesiÃ³n No. 6', '589652', '22-02-2024 02:42:32', '1002710209', '', 'lider.cirec@cirec.org', 'No Asistio', 'NO APLICA', ''),
-(197, 'SesiÃ³n No. 7', '589652', '22-02-2024 02:43:14', '1002710209', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(198, 'SesiÃ³n No. 1', '420202', '27-02-2024 08:43:05', '27022024', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(199, 'SesiÃ³n No. 2', '420202', '27-02-2024 08:45:37', '27022024', '', 'lider.cirec@cirec.org', 'No Asistio', 'ORDEN PUBLICO', ''),
-(200, 'SesiÃ³n No. 3', '420202', '27-02-2024 08:45:53', '27022024', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(201, 'SesiÃ³n No. 4', '420202', '27-02-2024 08:46:06', '27022024', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(202, 'SesiÃ³n No. 1', '809', '27-02-2024 09:14:20', '852123', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(203, 'SesiÃ³n No. 2', '809', '27-02-2024 09:18:29', '852123', '', 'lider.cirec@cirec.org', 'AsistiÃ³', 'CALAMIDAD PERSONAL', ''),
-(204, 'SesiÃ³n No. 3', '809', '27-02-2024 09:38:49', '852123', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(205, 'SesiÃ³n No. 1', '852', '27-02-2024 10:36:42', '963369', '', 'lider.cirec@cirec.org', 'Asistio', 'NO APLICA', ''),
-(207, 'SesiÃ³n No. 3', '852', '27-02-2024 10:38:51', '963369', '', 'lider.cirec@cirec.org', 'Asistio', 'TRANSPORTE', ''),
-(209, 'SesiÃ³n No. 3', '852', '27-02-2024 10:52:57', '963369', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(210, 'SesiÃ³n No. 9', '852', '27-02-2024 10:53:11', '963369', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(211, 'SesiÃ³n No. 1', '753', '27-02-2024 04:43:21', '8787', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(212, 'SesiÃ³n No. 2', '753', '27-02-2024 04:43:33', '8787', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(213, 'SesiÃ³n No. 1', '753', '27-02-2024 06:02:00', '8787', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(214, 'SesiÃ³n No. 7', '753', '27-02-2024 06:02:20', '8787', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(215, 'SesiÃ³n No. 1', '2802', '28-02-2024 08:33:53', '1213456789', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(216, 'SesiÃ³n No. 1', '123456789', '28-02-2024 09:30:17', '1002710208', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(217, 'SesiÃ³n No. 2', '123456789', '28-02-2024 09:41:03', '1002710208', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(218, 'SesiÃ³n No. 1', '963', '28-02-2024 10:31:50', '1002710208', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(219, 'SesiÃ³n No. 1', '852369', '28-02-2024 11:08:41', '1002710208', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(220, 'SesiÃ³n No. 1', '878787', '28-02-2024 11:15:08', '1002710208', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(221, 'SesiÃ³n No. 2', '878787', '28-02-2024 11:15:20', '1002710208', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(223, 'SesiÃ³n No. 1', '6789', '28-02-2024 03:39:34', '88552222', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(224, 'SesiÃ³n No. 2', '6789', '28-02-2024 03:39:39', '88552222', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(225, 'SesiÃ³n No. 3', '6789', '28-02-2024 03:39:50', '88552222', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(226, 'SesiÃ³n No. 4', '6789', '28-02-2024 03:39:58', '88552222', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(227, 'SesiÃ³n No. 5', '6789', '28-02-2024 03:40:05', '88552222', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(228, 'SesiÃ³n No. 1', '96', '28-02-2024 03:53:52', '12365', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(229, 'SesiÃ³n No. 2', '96', '29-02-2024 06:53:56', '12365', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(230, 'SesiÃ³n No. 3', '96', '29-02-2024 06:54:02', '12365', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(231, 'SesiÃ³n No. 4', '96', '29-02-2024 06:54:10', '12365', '', 'lider.cirec@cirec.org', 'Asistio', '', ''),
-(232, 'SesiÃ³n No. 1', '7878', '29-02-2024 07:25:39', '12365', '', 'agente.cirec@cirec.org', 'Asistio', '', '');
+(1, 'Sesion No. 1', '228196870', '15-03-2024 07:39:30', '20482350', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(2, 'Sesion No. 2', '228196870', '15-03-2024 07:39:37', '20482350', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(3, 'Sesion No. 3', '228196870', '15-03-2024 07:39:42', '20482350', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(4, 'Sesion No. 4', '228196870', '15-03-2024 07:39:46', '20482350', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(5, 'Sesion No. 5', '228196870', '15-03-2024 07:39:49', '20482350', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(6, 'Sesion No. 6', '228196870', '15-03-2024 07:39:53', '20482350', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(7, 'Sesion No. 7', '228196870', '15-03-2024 07:39:57', '20482350', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(8, 'Sesion No. 8', '228196870', '15-03-2024 07:40:01', '20482350', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(9, 'Sesion No. 9', '228196870', '15-03-2024 07:40:05', '20482350', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(10, 'Sesion No. 10', '228196870', '15-03-2024 07:40:10', '20482350', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(11, 'Sesion No. 11', '228196870', '15-03-2024 07:40:14', '20482350', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(12, 'Sesion No. 12', '228196870', '15-03-2024 07:40:18', '20482350', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(13, 'Sesion No. 1', '229048307', '15-03-2024 08:00:40', '17056024', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(14, 'Sesion No. 2', '229048307', '15-03-2024 08:00:44', '17056024', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(15, 'Sesion No. 3', '229048307', '15-03-2024 08:00:48', '17056024', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(16, 'Sesion No. 4', '229048307', '15-03-2024 08:00:52', '17056024', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(17, 'Sesion No. 5', '229048307', '15-03-2024 08:00:55', '17056024', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(18, 'Sesion No. 1', '80552447', '15-03-2024 08:18:24', '1013278445', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(19, 'Sesion No. 2', '80552447', '15-03-2024 08:18:29', '1013278445', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(20, 'Sesion No. 3', '80552447', '15-03-2024 08:18:33', '1013278445', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(21, 'Sesion No. 1', '3000711236', '15-03-2024 08:21:10', '80073788', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(22, 'Sesion No. 2', '3000711236', '15-03-2024 08:21:14', '80073788', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(23, 'Sesion No. 3', '3000711236', '15-03-2024 08:21:18', '80073788', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(24, 'Sesion No. 4', '3000711236', '15-03-2024 08:21:21', '80073788', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(25, 'Sesion No. 5', '3000711236', '15-03-2024 08:21:25', '80073788', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(26, 'Sesion No. 6', '3000711236', '15-03-2024 08:21:28', '80073788', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(27, 'Sesion No. 7', '3000711236', '15-03-2024 08:21:32', '80073788', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(28, 'Sesion No. 8', '3000711236', '15-03-2024 08:21:36', '80073788', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(29, 'Sesion No. 9', '3000711236', '15-03-2024 08:21:40', '80073788', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(30, 'Sesion No. 10', '3000711236', '15-03-2024 08:21:44', '80073788', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(31, 'Sesion No. 11', '3000711236', '15-03-2024 08:21:48', '80073788', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(32, 'Sesion No. 12', '3000711236', '15-03-2024 08:21:51', '80073788', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(33, 'Sesion No. 13', '3000711236', '15-03-2024 08:21:56', '80073788', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(34, 'Sesion No. 14', '3000711236', '15-03-2024 08:22:04', '80073788', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(35, 'Sesion No. 15', '3000711236', '15-03-2024 08:22:12', '80073788', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(36, 'Sesion No. 1', '8020317657', '15-03-2024 08:24:47', '23560185', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(37, 'Sesion No. 2', '8020317657', '15-03-2024 08:24:51', '23560185', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(38, 'Sesion No. 3', '8020317657', '15-03-2024 08:24:55', '23560185', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(39, 'Sesion No. 4', '8020317657', '15-03-2024 08:25:00', '23560185', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(40, 'Sesion No. 5', '8020317657', '15-03-2024 08:25:03', '23560185', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(41, 'Sesion No. 6', '8020317657', '15-03-2024 08:25:06', '23560185', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(42, 'Sesion No. 7', '8020317657', '15-03-2024 08:25:10', '23560185', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(43, 'Sesion No. 8', '8020317657', '15-03-2024 08:25:16', '23560185', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(44, 'Sesion No. 9', '8020317657', '15-03-2024 08:25:20', '23560185', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(45, 'Sesion No. 10', '8020317657', '15-03-2024 08:25:25', '23560185', '', 'modulo7@cirec.org', 'Asistio', '', ''),
+(46, 'Sesion No. 1', '40290787', '19-03-2024 10:20:43', '52435384', '', 'modulo6@cirec.org', 'Asistio', '', ''),
+(47, 'Sesion No. 2', '40290787', '19-03-2024 10:20:48', '52435384', '', 'modulo6@cirec.org', 'Asistio', '', '');
 
 -- --------------------------------------------------------
 
@@ -147,6 +109,7 @@ CREATE TABLE `app_cargue` (
   `nombre` varchar(200) NOT NULL,
   `telefono` varchar(200) NOT NULL,
   `entidad` varchar(200) NOT NULL,
+  `codEntidad` varchar(100) NOT NULL,
   `fechaautorizacion` varchar(200) NOT NULL,
   `tipodocumento` varchar(100) NOT NULL,
   `valorautorizado` varchar(100) NOT NULL,
@@ -164,14 +127,6 @@ CREATE TABLE `app_cargue` (
   `gestiono` varchar(300) NOT NULL,
   `estadocargue` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `app_cargue`
---
-
-INSERT INTO `app_cargue` (`id`, `documento`, `autorizacion`, `codigoServicio`, `numCodServ`, `fechasolicitud`, `nombre`, `telefono`, `entidad`, `fechaautorizacion`, `tipodocumento`, `valorautorizado`, `identificador`, `especialidad`, `cantidadautorizada`, `cantidadprogramada`, `fechalimiteejecucion`, `estadogeneral`, `bitacoraasitio`, `bitacoranoasistio`, `fechacontacto`, `fechanocontacto`, `solicitudespecial`, `gestiono`, `estadocargue`) VALUES
-(13, 'documento', 'autorizacion', 'Noimbreservicio', 'Codservicio', 'fechasolicitud', 'nombre', 'telefono', 'entidad', 'fechaautorizacion', 'tipodocumento', 'valorautorizado', 'identificador', 'especialidad', 'cantidadautorizada', 'cantidadprogramada', 'fechalimiteejecucion', 'estadogeneral', 'bitacoraasitio', 'bitacoranoasistio', 'fechacontacto', 'fechanocontacto', 'solicitudespecial', 'lider.cirec@cirec.org', 'subido'),
-(14, '432', '2', 'TERAPIA FISICA INTEGRAL', '931001', '29-02-2024', 'Salome perez', '3232775808', 'POSITIVA', '29-02-2024', 'CC', '', '', '', '8', '4', '', 'AUTORIZADO', '', '', '', '', '', 'lider.cirec@cirec.org', 'subido');
 
 -- --------------------------------------------------------
 
@@ -217,74 +172,6 @@ CREATE TABLE `app_mensajes_prueba` (
   `fecha_cargue` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `app_mensajes_prueba`
---
-
-INSERT INTO `app_mensajes_prueba` (`id`, `fechasolicitud`, `gestiono`, `entidad`, `tipodocumento`, `documento`, `nombre`, `telefono`, `email`, `ciudad`, `estadocargue`, `estado_mensaje`, `fecha_cargue`) VALUES
-(30, '11/03/2021 16:58', 'lider.cirec@cirec.org', 'tres', 'cc', '333966', 'cirec1', '444', 'ingealex11@gmail.com', 'bogo', 'subido', 'Sin Enviar', '2023-08-24 15:59:17'),
-(31, '16/06/2021 19:44', 'lider.cirec@cirec.org', 'tres', 'CC', '1019075976', 'cirec2', '3105553380', '', 'BOGOTA', 'subido', 'Sin Enviar', '2023-08-24 15:59:17'),
-(32, '25/06/2021 07:37', 'lider.cirec@cirec.org', 'tres', 'CC', 'trt', 'cirec3', 'ert', '', 'BogotÃ¡', 'subido', 'Sin Enviar', '2023-08-24 15:59:17'),
-(33, '14/07/2021 16:27', 'lider.cirec@cirec.org', 'tres', 'CC', '2910', 'cirec4', '4901086', '', 'BogotÃ¡', 'subido', 'Sin Enviar', '2023-08-24 15:59:17'),
-(34, '11/03/2021 16:58', 'lider.cirec@cirec.org', 'tres', 'cc', '333966', 'cirec1', '444', 'ingealex11@gmail.com', 'bogo', 'subido', 'Sin Enviar', '2023-08-24 16:53:00'),
-(35, '16/06/2021 19:44', 'lider.cirec@cirec.org', 'tres', 'CC', '1019075976', 'cirec2', '3105553380', '', 'BOGOTA', 'subido', 'Sin Enviar', '2023-08-24 16:53:00'),
-(36, '25/06/2021 07:37', 'lider.cirec@cirec.org', 'tres', 'CC', 'trt', 'cirec3', 'ert', '', 'BogotÃ¡', 'subido', 'Sin Enviar', '2023-08-24 16:53:00'),
-(37, '14/07/2021 16:27', 'lider.cirec@cirec.org', 'tres', 'CC', '2910', 'cirec4', '4901086', '', 'BogotÃ¡', 'subido', 'Sin Enviar', '2023-08-24 16:53:00'),
-(38, '08/24/2023', 'lider.cirec@cirec.org', 'Nueva Eps', 'CC', '1018453370', 'Yesid Ortiz', '3145167485', 'tizid92@gmail.com', 'Bogota', 'subido', 'Sin Enviar', '2023-08-24 16:53:00'),
-(39, '11/03/2021 16:58', 'lider.cirec@cirec.org', 'tres', 'cc', '333966', 'cirec1', '444', 'ingealex11@gmail.com', 'bogo', 'subido', 'Sin Enviar', '2023-08-24 20:40:30'),
-(40, '16/06/2021 19:44', 'lider.cirec@cirec.org', 'tres', 'CC', '1019075976', 'cirec2', '3105553380', '', 'BOGOTA', 'subido', 'Sin Enviar', '2023-08-24 20:40:30'),
-(41, '25/06/2021 07:37', 'lider.cirec@cirec.org', 'tres', 'CC', 'trt', 'cirec3', 'ert', '', 'BogotÃ¡', 'subido', 'Sin Enviar', '2023-08-24 20:40:30'),
-(42, '14/07/2021 16:27', 'lider.cirec@cirec.org', 'tres', 'CC', '2910', 'cirec4', '4901086', '', 'BogotÃ¡', 'subido', 'Sin Enviar', '2023-08-24 20:40:30'),
-(43, '08/24/2023', 'lider.cirec@cirec.org', 'Nueva Eps', 'CC', '1018453370', 'Yesid Ortiz', '3145167485', 'tizid92@gmail.com', 'Bogota', 'subido', 'Sin Enviar', '2023-08-24 20:40:30'),
-(44, 'Andrea Bernal', '237125', '3245956', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:42'),
-(45, 'Andrea Arango Ruiz', '125850', '3542249', 'Particular', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:42'),
-(46, 'Andrea Carolina Garcia Torres', '339259', '6466043', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:42'),
-(47, 'Andrea del Mar Romero', '842952', '2953246', 'Compensar', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:42'),
-(48, 'Andrea del Pilar Moreno Barbosa', '634882', '5809118', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:42'),
-(49, 'Andrea Duque Caicedo', '331889', '9035474', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:42'),
-(50, 'Andrea Duran', '655353', '6733915', 'Compensar', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:42'),
-(51, 'Andrea Elizabeth Suspe Garcia', '359920', '5938339', 'Particular', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:42'),
-(52, 'Andrea Esperanza Camargo Bautista', '256850', '1869758', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:42'),
-(53, 'Andres Camilo Castro Lemus', '454897', '8234289', 'Particular', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:42'),
-(54, 'Andres PeÃ±a', '606681', '9950841', 'Compensar', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:42'),
-(55, 'Andres Raul Silva Alzate', '821726', '8169804', 'Compensar', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:42'),
-(56, 'Andrea Bernal', '237125', '3245956', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:47'),
-(57, 'Andrea Arango Ruiz', '125850', '3542249', 'Particular', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:47'),
-(58, 'Andrea Carolina Garcia Torres', '339259', '6466043', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:47'),
-(59, 'Andrea del Mar Romero', '842952', '2953246', 'Compensar', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:47'),
-(60, 'Andrea del Pilar Moreno Barbosa', '634882', '5809118', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:47'),
-(61, 'Andrea Duque Caicedo', '331889', '9035474', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:47'),
-(62, 'Andrea Duran', '655353', '6733915', 'Compensar', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:47'),
-(63, 'Andrea Elizabeth Suspe Garcia', '359920', '5938339', 'Particular', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:47'),
-(64, 'Andrea Esperanza Camargo Bautista', '256850', '1869758', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:47'),
-(65, 'Andres Camilo Castro Lemus', '454897', '8234289', 'Particular', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:47'),
-(66, 'Andres PeÃ±a', '606681', '9950841', 'Compensar', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:47'),
-(67, 'Andres Raul Silva Alzate', '821726', '8169804', 'Compensar', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:47'),
-(68, 'Andrea Bernal', '237125', '3245956', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:54'),
-(69, 'Andrea Arango Ruiz', '125850', '3542249', 'Particular', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:54'),
-(70, 'Andrea Carolina Garcia Torres', '339259', '6466043', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:54'),
-(71, 'Andrea del Mar Romero', '842952', '2953246', 'Compensar', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:54'),
-(72, 'Andrea del Pilar Moreno Barbosa', '634882', '5809118', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:54'),
-(73, 'Andrea Duque Caicedo', '331889', '9035474', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:54'),
-(74, 'Andrea Duran', '655353', '6733915', 'Compensar', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:54'),
-(75, 'Andrea Elizabeth Suspe Garcia', '359920', '5938339', 'Particular', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:54'),
-(76, 'Andrea Esperanza Camargo Bautista', '256850', '1869758', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:54'),
-(77, 'Andres Camilo Castro Lemus', '454897', '8234289', 'Particular', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:54'),
-(78, 'Andres PeÃ±a', '606681', '9950841', 'Compensar', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:54'),
-(79, 'Andres Raul Silva Alzate', '821726', '8169804', 'Compensar', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:22:54'),
-(80, 'Andrea Bernal', '237125', '3245956', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:23:26'),
-(81, 'Andrea Arango Ruiz', '125850', '3542249', 'Particular', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:23:26'),
-(82, 'Andrea Carolina Garcia Torres', '339259', '6466043', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:23:26'),
-(83, 'Andrea del Mar Romero', '842952', '2953246', 'Compensar', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:23:26'),
-(84, 'Andrea del Pilar Moreno Barbosa', '634882', '5809118', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:23:26'),
-(85, 'Andrea Duque Caicedo', '331889', '9035474', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:23:26'),
-(86, 'Andrea Duran', '655353', '6733915', 'Compensar', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:23:26'),
-(87, 'Andrea Elizabeth Suspe Garcia', '359920', '5938339', 'Particular', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:23:26'),
-(88, 'Andrea Esperanza Camargo Bautista', '256850', '1869758', 'Nueva Eps', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:23:26'),
-(89, 'Andres Camilo Castro Lemus', '454897', '8234289', 'Particular', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:23:26'),
-(90, 'Andres PeÃ±a', '606681', '9950841', 'Compensar', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:23:26'),
-(91, 'Andres Raul Silva Alzate', '821726', '8169804', 'Compensar', 'Bogota', '', '', '', '', 'sinsubir', 'Sin Enviar', '2023-09-06 08:23:26');
-
 -- --------------------------------------------------------
 
 --
@@ -325,7 +212,92 @@ CREATE TABLE `contacto` (
 --
 
 INSERT INTO `contacto` (`id`, `autorizacion`, `fecha`, `bitacora`, `gestiono`, `tiposeguimiento`) VALUES
-(1, '96', '28-02-2024 03:54:18', 'ATIENDE FAMILIAR Y ENTIENDE LA INFORMACION', 'lider.cirec@cirec.org', 'Usuario Contactado');
+(1, '228196870', '15-03-2024 07:40:36', 'ENTREGADO AL AREA DE FACTURACION', 'modulo7@cirec.org', 'Entregado al area de facturacion'),
+(2, '229048307', '15-03-2024 08:01:10', 'ENTREGADO AL AREA DE FACTURACION', 'modulo7@cirec.org', 'Entregado al area de facturacion'),
+(3, '80552447', '15-03-2024 08:18:44', 'ENTREGADO AL AREA DE FACTURACION', 'modulo7@cirec.org', 'Entregado al area de facturacion'),
+(4, '3000711236', '15-03-2024 08:22:24', 'ENTREGADO AL AREA DE FACTURACION', 'modulo7@cirec.org', 'Entregado al area de facturacion'),
+(5, '8020317657', '15-03-2024 08:25:35', 'ENTREGADO AL AREA DE FACTURACION', 'modulo7@cirec.org', 'Entregado al area de facturacion');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `facturacion`
+--
+
+CREATE TABLE `facturacion` (
+  `id` int(11) NOT NULL,
+  `numerofactura` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `fechafactura` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `autorizacion` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `documento` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `valor` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `sesion` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `cuotamoderadora` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `copago` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `estado` varchar(100) COLLATE utf8_spanish2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `facturacion`
+--
+
+INSERT INTO `facturacion` (`id`, `numerofactura`, `fechafactura`, `autorizacion`, `documento`, `valor`, `sesion`, `cuotamoderadora`, `copago`, `estado`) VALUES
+(100, 'FE147', '03-19-24', '228196870', '20482350', '604800', 'karem.ruiz@cirec.org', '5100', '0', 'sinsubir'),
+(101, 'FE258', '03-19-24', '229048307', '17056024', '252000', 'karem.ruiz@cirec.org', '0', '3200', 'sinsubir'),
+(102, 'FE369', '03-19-24', '3000711236', '80073788', '255000', 'karem.ruiz@cirec.org', '0', '0', 'sinsubir'),
+(103, 'FE789', '03-19-24', '8020317657', '23560185', '170000', 'karem.ruiz@cirec.org', '5400', '0', 'sinsubir');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `facturacion_cargue`
+--
+
+CREATE TABLE `facturacion_cargue` (
+  `id` int(11) NOT NULL,
+  `numerofactura` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `fechafactura` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `autorizacion` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `documento` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `valor` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `sesion` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `cuotamoderadora` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `copago` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `estado` varchar(100) COLLATE utf8_spanish2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `informacionasistencial`
+--
+
+CREATE TABLE `informacionasistencial` (
+  `id` int(11) NOT NULL,
+  `grupo` varchar(100) COLLATE utf8_spanish2_ci DEFAULT NULL,
+  `intensidadsemana` varchar(100) COLLATE utf8_spanish2_ci DEFAULT NULL,
+  `min` varchar(100) COLLATE utf8_spanish2_ci DEFAULT NULL,
+  `dxcodigo` varchar(100) COLLATE utf8_spanish2_ci DEFAULT NULL,
+  `ciclo` varchar(100) COLLATE utf8_spanish2_ci DEFAULT NULL,
+  `mesactual` varchar(100) COLLATE utf8_spanish2_ci DEFAULT NULL,
+  `mes` varchar(100) COLLATE utf8_spanish2_ci DEFAULT NULL,
+  `frecuencia` varchar(100) COLLATE utf8_spanish2_ci DEFAULT NULL,
+  `tiempo` varchar(100) COLLATE utf8_spanish2_ci DEFAULT NULL,
+  `documento` varchar(100) COLLATE utf8_spanish2_ci DEFAULT NULL,
+  `autorizacion` varchar(100) COLLATE utf8_spanish2_ci DEFAULT NULL,
+  `diagnostico` varchar(300) COLLATE utf8_spanish2_ci DEFAULT NULL,
+  `id_otraespecialidad` varchar(100) COLLATE utf8_spanish2_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `informacionasistencial`
+--
+
+INSERT INTO `informacionasistencial` (`id`, `grupo`, `intensidadsemana`, `min`, `dxcodigo`, `ciclo`, `mesactual`, `mes`, `frecuencia`, `tiempo`, `documento`, `autorizacion`, `diagnostico`, `id_otraespecialidad`) VALUES
+(5, 'AFECTACION DE 2 O MAS SEGMENTOS CORPORALES', '123', '123', '123', '2', '3', '2', '1', '30 min', '17056024', '229048307', 'Diagnosticooo por terapeuta val 1', '2'),
+(6, 'COLUMNA LUMBAR O MIEMBRO INFERIOR', '', '', '', '2', '2', '2', '5', '60 min', '20482350', '228196870', 'CAIDA NO ESPECIFICA EN ESCUELAS Y OTRA INSTITES Y AREAS ADMI', '1'),
+(7, 'COLUMNA LUMBAR O MIEMBRO INFERIOR', '', '', '', '2', '3', '3', '4', '60 min', '52435384', '40290787', 'Diagnostico gestor seguimiento', '6'),
+(8, 'MANO Y CODO', '', '', '', '', '', '', '2', '30 min', '20482350', '23333333', 'SALTO O ZAMBULLIDA DENTRO AGUA QUE CAUSA OTRO TRAUMA SIN SUM', '8');
 
 -- --------------------------------------------------------
 
@@ -349,14 +321,15 @@ CREATE TABLE `nocontacto` (
 
 CREATE TABLE `otrasespecialidades` (
   `id` int(11) NOT NULL,
-  `documento` varchar(100) NOT NULL,
-  `autorizacion` varchar(100) NOT NULL,
-  `codigoServicio` varchar(200) NOT NULL,
+  `documento` varchar(100) DEFAULT NULL,
+  `autorizacion` varchar(100) DEFAULT NULL,
+  `codigoServicio` varchar(200) DEFAULT NULL,
   `numCodServ` varchar(100) DEFAULT NULL,
   `fechasolicitud` varchar(100) DEFAULT NULL,
-  `nombre` varchar(200) NOT NULL,
-  `telefono` varchar(200) NOT NULL,
-  `entidad` varchar(200) NOT NULL,
+  `nombre` varchar(200) DEFAULT NULL,
+  `telefono` varchar(200) DEFAULT NULL,
+  `entidad` varchar(200) DEFAULT NULL,
+  `codEntidad` varchar(100) DEFAULT NULL,
   `fechaautorizacion` varchar(200) DEFAULT NULL,
   `tipodocumento` varchar(100) DEFAULT NULL,
   `valorautorizado` varchar(100) DEFAULT NULL,
@@ -366,11 +339,11 @@ CREATE TABLE `otrasespecialidades` (
   `cantidadprogramada` varchar(100) DEFAULT NULL,
   `fechalimiteejecucion` varchar(100) DEFAULT NULL,
   `estadogeneral` varchar(100) DEFAULT NULL,
-  `bitacoraasitio` longtext,
-  `bitacoranoasistio` longtext,
+  `bitacoraasitio` longtext DEFAULT NULL,
+  `bitacoranoasistio` longtext DEFAULT NULL,
   `fechacontacto` varchar(200) DEFAULT NULL,
   `fechanocontacto` varchar(200) DEFAULT NULL,
-  `solicitudespecial` longtext,
+  `solicitudespecial` longtext DEFAULT NULL,
   `gestiono` varchar(300) DEFAULT NULL,
   `estadocargue` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -379,12 +352,15 @@ CREATE TABLE `otrasespecialidades` (
 -- Volcado de datos para la tabla `otrasespecialidades`
 --
 
-INSERT INTO `otrasespecialidades` (`id`, `documento`, `autorizacion`, `codigoServicio`, `numCodServ`, `fechasolicitud`, `nombre`, `telefono`, `entidad`, `fechaautorizacion`, `tipodocumento`, `valorautorizado`, `identificador`, `especialidad`, `cantidadautorizada`, `cantidadprogramada`, `fechalimiteejecucion`, `estadogeneral`, `bitacoraasitio`, `bitacoranoasistio`, `fechacontacto`, `fechanocontacto`, `solicitudespecial`, `gestiono`, `estadocargue`) VALUES
-(2, '12365', '96', 'TERAPIA FISICA INTEGRAL', '931001', '29-02-2024', 'Mateo Kawak', '3232775808', 'POSITIVA', '29-02-2024', 'CC', '', '', '', '8', '4', '', 'EN PROCESO', '', '', '', '', '', 'lider.cirec@cirec.org', 'sinsubir'),
-(3, '12365', '7878', 'TERAPIA OCUPACIONAL INTEGRAL', '938303', '28-02-2024', 'Mateo Kawak', '3232775808', 'POSITIVA', '2024-02-28', 'CC', '', '123', 'NULL', '20', '10', 'NULL', 'AUTORIZADO', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'lider.cirec@cirec.org', 'NULL '),
-(5, 'documento', 'autorizacion', 'Noimbreservicio', 'Codservicio', 'fechasolicitud', 'nombre', 'telefono', 'entidad', 'fechaautorizacion', 'tipodocumento', 'valorautorizado', 'identificador', 'especialidad', 'cantidadautorizada', 'cantidadprogramada', 'fechalimiteejecucion', 'estadogeneral', 'bitacoraasitio', 'bitacoranoasistio', 'fechacontacto', 'fechanocontacto', 'solicitudespecial', 'lider.cirec@cirec.org', 'sinsubir'),
-(6, '5555', '96', 'TERAPIA FISICA INTEGRAL', '931001', '29-02-2024', 'Salome perez', '3232775808', 'POSITIVA', '29-02-2024', 'CC', '', '', '', '8', '4', '', 'AUTORIZADO', '', '', '', '', '', 'lider.cirec@cirec.org', 'sinsubir'),
-(13, 'documento', 'autorizacion', 'Noimbreservicio', 'Codservicio', 'fechasolicitud', 'nombre', 'telefono', 'entidad', 'fechaautorizacion', 'tipodocumento', 'valorautorizado', 'identificador', 'especialidad', 'cantidadautorizada', 'cantidadprogramada', 'fechalimiteejecucion', 'estadogeneral', 'bitacoraasitio', 'bitacoranoasistio', 'fechacontacto', 'fechanocontacto', 'solicitudespecial', 'lider.cirec@cirec.org', 'sinsubir');
+INSERT INTO `otrasespecialidades` (`id`, `documento`, `autorizacion`, `codigoServicio`, `numCodServ`, `fechasolicitud`, `nombre`, `telefono`, `entidad`, `codEntidad`, `fechaautorizacion`, `tipodocumento`, `valorautorizado`, `identificador`, `especialidad`, `cantidadautorizada`, `cantidadprogramada`, `fechalimiteejecucion`, `estadogeneral`, `bitacoraasitio`, `bitacoranoasistio`, `fechacontacto`, `fechanocontacto`, `solicitudespecial`, `gestiono`, `estadocargue`) VALUES
+(1, '20482350', '228196870', 'TERAPIA MODALIDADES HIDRAULICAS E HIDRICAS SOD', '933300', '15-03-2024', 'JULIA BOBADILLA PARDO', '3045305982', 'NUEVA EPS', 'NE', '2024-01-31', 'CC', '', '123', 'NULL', '12', '12', '2024-07-25', 'FACTURADO', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'lideradmi@cirec.org', 'NULL '),
+(2, '17056024', '229048307', 'TERAPIA MODALIDADES HIDRAULICAS E HIDRICAS SOD', '933300', '15-03-2024', 'RAFAEL VARELA ', '3125322704', 'NUEVA EPS', 'NE', '2024-02-09', 'CC', '', '123', 'NULL', '5', '5', '2024-08-02', 'FINALIZADO SIN FACTURAR', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'lideradmi@cirec.org', 'NULL '),
+(3, '1013278445', '80552447', 'PRUEBA DE COEFICIENTE INTELECTUAL', 'F940102', '15-03-2024', 'ESTEBAN DIAZ VARGAS', '3112941574', 'EPS  FAMISANAR SAS', 'FA', '2024-03-06', 'TI', '', '123', 'NULL', '3', '3', '2024-05-25', 'FINALIZADO SIN FACTURAR', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'lideradmi@cirec.org', 'NULL '),
+(4, '80073788', '3000711236', 'TERAPIA FISICA INTEGRAL', '931001', '15-03-2024', 'JUAN RUIZ NIETO', '3162492182', 'ALIANSALUD EPS', 'AE', '2023-12-14', 'CC', '', '123', 'NULL', '15', '15', '2024-06-11', 'FINALIZADO SIN FACTURAR', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'lideradmi@cirec.org', 'NULL '),
+(5, '23560185', '8020317657', 'TERAPIA FISICA INTEGRAL', '931001', '15-03-2024', 'MARIA MORENO RUIZ', '3136343694', 'ALIANSALUD EPS', 'AE', '2024-01-16', 'CC', '', '123', 'NULL', '10', '10', '2024-07-17', 'FACTURADO', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'lideradmi@cirec.org', 'NULL '),
+(6, '52435384', '40290787', 'TERAPIA MODALIDADES HIDRAULICAS E HIDRICAS SOD', '933300', '19-03-2024', 'SANDRA GUEVARA RONCANCIO', '3145316053', 'NUEVA EPS', 'NE', '2024-03-12', 'CC', '', '123', 'NULL', '5', '5', '2024-06-12', 'AUTORIZADO', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'lider.cirec@cirec.org', 'NULL '),
+(7, '23560185', '25235685', 'TERAPIA FISICA INTEGRAL', '931001', '20-03-2024', 'MARIA MORENO RUIZ', '3136343694', 'ALIANSALUD EPS', 'AE', '2024-02-20', 'CC', '', '123', 'NULL', '5', '5', '2024-08-02', 'AGENDADO', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'agente4.callcenter@cirec.org', 'NULL '),
+(8, '20482350', '23333333', 'TERAPIA MODALIDADES HIDRAULICAS E HIDRICAS SOD', '933300', '20-03-2024', 'JULIA BOBADILLA PARDO', '3045305982', 'NUEVA EPS', 'NE', '2024-03-06', 'CC', '', '123', 'NULL', '10', '2', '2024-08-01', 'AUTORIZADO', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'agente5.callcenter@cirec.org', 'NULL ');
 
 -- --------------------------------------------------------
 
@@ -415,7 +391,7 @@ CREATE TABLE `paciente` (
 --
 
 CREATE TABLE `procesos_activo` (
-  `id` int(11) NOT NULL DEFAULT '0',
+  `id` int(11) NOT NULL DEFAULT 0,
   `nombre` varchar(250) NOT NULL,
   `tipoDocumento` varchar(20) NOT NULL,
   `documento` varchar(200) NOT NULL,
@@ -448,7 +424,7 @@ CREATE TABLE `servicios` (
 --
 
 INSERT INTO `servicios` (`id`, `codigoServicio`, `nombreServicio`, `Entidad`) VALUES
-(1, '890502', 'Participación en Junta Médica o equipo interdisciplinario por medicina especializada y caso (paciente) ', '   '),
+(1, '890502', 'Participacion en Junta Medica o equipo interdisciplinario por medicina especializada y caso (paciente) ', '   '),
 (2, '931001', 'Terapia Fisica Integral', '   '),
 (3, '938303', 'Terapia Ocupacional Integral', ' '),
 (4, '937000', 'Terapia Fonoaudiológica Integral', '  '),
@@ -524,7 +500,6 @@ INSERT INTO `servicios` (`id`, `codigoServicio`, `nombreServicio`, `Entidad`) VA
 (74, '839600', 'Inyección de sustancia terapeutica dentro de bursa', ' '),
 (75, '48201', 'Inyección de anestésico en nervio periférico sod incluye: para analgesia o anestesia', ' '),
 (76, '861401', 'Infiltracion punto Gatillo por punto', ' '),
-(77, '933300', 'Terapia modalidades hidráulicas o hídricas ', ' '),
 (78, 'VINHTA', 'Valoración Integral Hidroterapeutica', ' '),
 (79, 'MAIHAG', 'Modelo Atención Integral Hidroterapeutica Agudo', ' '),
 (80, 'MAIHSU', 'Modelo Atención Integral Hidroterapeutica Subagudo', ' '),
@@ -595,7 +570,7 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `correo` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  `created_at` datetime DEFAULT current_timestamp(),
   `nombres` varchar(100) NOT NULL,
   `tipodocumento` varchar(100) NOT NULL,
   `documento` varchar(100) NOT NULL,
@@ -612,7 +587,40 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `correo`, `password`, `created_at`, `nombres`, `tipodocumento`, `documento`, `telefono`, `direccion`, `convenio`, `sintomas`, `contacto`) VALUES
 (41, 'lider.cirec@cirec.org', '$2y$10$VpeP3UP.WFQk7gBpKiCW3.PyHXOeIdWvYHKeIqqKxjcQAik1ruRmq', '2020-10-23 08:44:41', 'alex nino', 'CC', '80114616', '311449965', 'carrera 125 85 32', 'Paciente Particular', 'administrador', ''),
-(74, 'agente.cirec@cirec.org', '$2y$10$VpeP3UP.WFQk7gBpKiCW3.PyHXOeIdWvYHKeIqqKxjcQAik1ruRmq', '2020-10-23 08:44:41', 'alex nino', 'CC', '80114616', '311449965', 'carrera 125 85 32', 'Paciente Particular', 'admisiones', '');
+(74, 'auxadmisiones@cirec.org', '$2y$10$VpeP3UP.WFQk7gBpKiCW3.PyHXOeIdWvYHKeIqqKxjcQAik1ruRmq', '2020-10-23 08:44:41', 'alex nino', 'CC', '80114616', '311449965', 'carrera 125 85 32', 'Paciente Particular', 'auxadmisiones', ''),
+(75, 'agentecall@cirec.org', '$2y$10$VpeP3UP.WFQk7gBpKiCW3.PyHXOeIdWvYHKeIqqKxjcQAik1ruRmq', '2020-10-23 08:44:41', 'alex nino', 'CC', '80114616', '311449965', 'carrera 125 85 32', 'Paciente Particular', 'agentecall', ''),
+(76, 'lideradmi@cirec.org', '$2y$10$VpeP3UP.WFQk7gBpKiCW3.PyHXOeIdWvYHKeIqqKxjcQAik1ruRmq', '2020-10-23 08:44:41', 'alex nino', 'CC', '80114616', '311449965', 'carrera 125 85 32', 'Paciente Particular', 'lideradmisiones', ''),
+(77, 'comercial@cirec.org', '$2y$10$VpeP3UP.WFQk7gBpKiCW3.PyHXOeIdWvYHKeIqqKxjcQAik1ruRmq', '2020-10-23 08:44:41', 'alex nino', 'CC', '80114616', '311449965', 'carrera 125 85 32', 'Paciente Particular', 'comercial', ''),
+(78, 'lidercall@cirec.org', '$2y$10$VpeP3UP.WFQk7gBpKiCW3.PyHXOeIdWvYHKeIqqKxjcQAik1ruRmq', '2020-10-23 08:44:41', 'alex nino', 'CC', '80114616', '311449965', 'carrera 125 85 32', 'Paciente Particular', 'lidercall', ''),
+(79, 'jefe.experienciausuario@cirec.org', '$2y$10$VpeP3UP.WFQk7gBpKiCW3.PyHXOeIdWvYHKeIqqKxjcQAik1ruRmq', '2020-10-23 08:44:41', 'alex nino', 'CC', '80114616', '311449965', 'carrera 125 85 32', 'Paciente Particular', 'jefeexperiencia', ''),
+(80, 'seguimientocirec@cirec.org', '$2y$10$VpeP3UP.WFQk7gBpKiCW3.PyHXOeIdWvYHKeIqqKxjcQAik1ruRmq', '2020-10-23 08:44:41', 'alex nino', 'CC', '80114616', '311449965', 'carrera 125 85 32', 'Paciente Particular', 'gestorseguimiento', ''),
+(81, 'lider.rehabilitacion@cirec.org', '$2y$10$VpeP3UP.WFQk7gBpKiCW3.PyHXOeIdWvYHKeIqqKxjcQAik1ruRmq', '2020-10-23 08:44:41', 'alex nino', 'CC', '80114616', '311449965', 'carrera 125 85 32', 'Paciente Particular', 'liderrehabilitacion', ''),
+(82, 'factuhhhhhracion@cirec.org', '$2y$10$VpeP3UP.WFQk7gBpKiCW3.PyHXOeIdWvYHKeIqqKxjcQAik1ruRmq', '2020-10-23 08:44:41', 'alex nino', 'CC', '80114616', '311449965', 'carrera 125 85 32', 'Paciente Particular', 'facturacion', ''),
+(83, 'karem.ruiz@cirec.org', '$2y$10$VpeP3UP.WFQk7gBpKiCW3.PyHXOeIdWvYHKeIqqKxjcQAik1ruRmq', '2020-10-23 08:44:41', 'alex nino', 'CC', '80114616', '311449965', 'carrera 125 85 32', 'Paciente Particular', 'facturacion', ''),
+(84, 'sandra.ovalle@cirec.org', '$2y$10$VpeP3UP.WFQk7gBpKiCW3.PyHXOeIdWvYHKeIqqKxjcQAik1ruRmq', '2020-10-23 08:44:41', 'alex nino', 'CC', '80114616', '311449965', 'carrera 125 85 32', 'Paciente Particular', 'facturacion', ''),
+(85, 'sanchezy@cirec.org', '$2y$10$VpeP3UP.WFQk7gBpKiCW3.PyHXOeIdWvYHKeIqqKxjcQAik1ruRmq', '2020-10-23 08:44:41', 'alex nino', 'CC', '80114616', '311449965', 'carrera 125 85 32', 'Paciente Particular', 'facturacion', ''),
+(86, 'camila.rivera@cirec.org', '$2y$10$VpeP3UP.WFQk7gBpKiCW3.PyHXOeIdWvYHKeIqqKxjcQAik1ruRmq', '2020-10-23 08:44:41', 'alex nino', 'CC', '80114616', '311449965', 'carrera 125 85 32', 'Paciente Particular', 'facturacion', ''),
+(87, 'agente1.callcenter@cirec.org', '$2y$10$VpeP3UP.WFQk7gBpKiCW3.PyHXOeIdWvYHKeIqqKxjcQAik1ruRmq', '2020-10-23 08:44:41', 'alex nino', 'CC', '80114616', '311449965', 'carrera 125 85 32', 'Paciente Particular', 'agentecall', ''),
+(88, 'agente3.callcenter@cirec.org', '$2y$10$VpeP3UP.WFQk7gBpKiCW3.PyHXOeIdWvYHKeIqqKxjcQAik1ruRmq', '2020-10-23 08:44:41', 'alex nino', 'CC', '80114616', '311449965', 'carrera 125 85 32', 'Paciente Particular', 'agentecall', ''),
+(89, 'agente4.callcenter@cirec.org', '$2y$10$VpeP3UP.WFQk7gBpKiCW3.PyHXOeIdWvYHKeIqqKxjcQAik1ruRmq', '2020-10-23 08:44:41', 'alex nino', 'CC', '80114616', '311449965', 'carrera 125 85 32', 'Paciente Particular', 'agentecall', ''),
+(90, 'agente5.callcenter@cirec.org', '$2y$10$VpeP3UP.WFQk7gBpKiCW3.PyHXOeIdWvYHKeIqqKxjcQAik1ruRmq', '2020-10-23 08:44:41', 'alex nino', 'CC', '80114616', '311449965', 'carrera 125 85 32', 'Paciente Particular', 'agentecall', ''),
+(91, 'agente6.callcenter@cirec.org', '$2y$10$VpeP3UP.WFQk7gBpKiCW3.PyHXOeIdWvYHKeIqqKxjcQAik1ruRmq', '2020-10-23 08:44:41', 'alex nino', 'CC', '80114616', '311449965', 'carrera 125 85 32', 'Paciente Particular', 'agentecall', ''),
+(92, 'agente7.callcenter@cirec.org', '$2y$10$VpeP3UP.WFQk7gBpKiCW3.PyHXOeIdWvYHKeIqqKxjcQAik1ruRmq', '2020-10-23 08:44:41', 'alex nino', 'CC', '80114616', '311449965', 'carrera 125 85 32', 'Paciente Particular', 'agentecall', ''),
+(93, 'programaderehabilitacion@cirec.org', '$2y$10$VpeP3UP.WFQk7gBpKiCW3.PyHXOeIdWvYHKeIqqKxjcQAik1ruRmq', '2020-10-23 08:44:41', 'alex nino', 'CC', '80114616', '311449965', 'carrera 125 85 32', 'Paciente Particular', 'agentecall', ''),
+(94, 'gestorback.callcenter@cirec.org', '$2y$10$VpeP3UP.WFQk7gBpKiCW3.PyHXOeIdWvYHKeIqqKxjcQAik1ruRmq', '2020-10-23 08:44:41', 'alex nino', 'CC', '80114616', '311449965', 'carrera 125 85 32', 'Paciente Particular', 'agentecall', ''),
+(95, 'gloria.pinilla@cirec.org', '$2y$10$VpeP3UP.WFQk7gBpKiCW3.PyHXOeIdWvYHKeIqqKxjcQAik1ruRmq', '2020-10-23 08:44:41', 'alex nino', 'CC', '80114616', '311449965', 'carrera 125 85 32', 'Paciente Particular', 'lidercall', ''),
+(96, 'modulo1@cirec.org', '$2y$10$VpeP3UP.WFQk7gBpKiCW3.PyHXOeIdWvYHKeIqqKxjcQAik1ruRmq', '2020-10-23 08:44:41', 'alex nino', 'CC', '80114616', '311449965', 'carrera 125 85 32', 'Paciente Particular', 'auxadmisiones', ''),
+(97, 'modulo2@cirec.org', '$2y$10$VpeP3UP.WFQk7gBpKiCW3.PyHXOeIdWvYHKeIqqKxjcQAik1ruRmq', '2020-10-23 08:44:41', 'alex nino', 'CC', '80114616', '311449965', 'carrera 125 85 32', 'Paciente Particular', 'auxadmisiones', ''),
+(98, 'modulo3@cirec.org', '$2y$10$VpeP3UP.WFQk7gBpKiCW3.PyHXOeIdWvYHKeIqqKxjcQAik1ruRmq', '2020-10-23 08:44:41', 'alex nino', 'CC', '80114616', '311449965', 'carrera 125 85 32', 'Paciente Particular', 'auxadmisiones', ''),
+(99, 'modulo4@cirec.org', '$2y$10$VpeP3UP.WFQk7gBpKiCW3.PyHXOeIdWvYHKeIqqKxjcQAik1ruRmq', '2020-10-23 08:44:41', 'alex nino', 'CC', '80114616', '311449965', 'carrera 125 85 32', 'Paciente Particular', 'auxadmisiones', ''),
+(100, 'modulo5@cirec.org', '$2y$10$VpeP3UP.WFQk7gBpKiCW3.PyHXOeIdWvYHKeIqqKxjcQAik1ruRmq', '2020-10-23 08:44:41', 'alex nino', 'CC', '80114616', '311449965', 'carrera 125 85 32', 'Paciente Particular', 'auxadmisiones', ''),
+(101, 'modulo6@cirec.org', '$2y$10$VpeP3UP.WFQk7gBpKiCW3.PyHXOeIdWvYHKeIqqKxjcQAik1ruRmq', '2020-10-23 08:44:41', 'alex nino', 'CC', '80114616', '311449965', 'carrera 125 85 32', 'Paciente Particular', 'auxadmisiones', ''),
+(102, 'modulo7@cirec.org', '$2y$10$VpeP3UP.WFQk7gBpKiCW3.PyHXOeIdWvYHKeIqqKxjcQAik1ruRmq', '2020-10-23 08:44:41', 'alex nino', 'CC', '80114616', '311449965', 'carrera 125 85 32', 'Paciente Particular', 'auxadmisiones', ''),
+(103, 'terapeutavalht1@cirec.org', '$2y$10$VpeP3UP.WFQk7gBpKiCW3.PyHXOeIdWvYHKeIqqKxjcQAik1ruRmq', '2020-10-23 08:44:41', 'alex nino', 'CC', '80114616', '311449965', 'carrera 125 85 32', 'Paciente Particular', 'terapeutaval', ''),
+(104, 'ValHT1.callcenter@cirec.org', '$2y$10$VpeP3UP.WFQk7gBpKiCW3.PyHXOeIdWvYHKeIqqKxjcQAik1ruRmq', '2020-10-23 08:44:41', 'alex nino', 'CC', '80114616', '311449965', 'carrera 125 85 32', 'Paciente Particular', 'terapeutaval', ''),
+(105, 'ValHT2.callcenter@cirec.org', '$2y$10$VpeP3UP.WFQk7gBpKiCW3.PyHXOeIdWvYHKeIqqKxjcQAik1ruRmq', '2020-10-23 08:44:41', 'alex nino', 'CC', '80114616', '311449965', 'carrera 125 85 32', 'Paciente Particular', 'terapeutaval', ''),
+(106, 'ValHT3.callcenter@cirec.org', '$2y$10$VpeP3UP.WFQk7gBpKiCW3.PyHXOeIdWvYHKeIqqKxjcQAik1ruRmq', '2020-10-23 08:44:41', 'alex nino', 'CC', '80114616', '311449965', 'carrera 125 85 32', 'Paciente Particular', 'terapeutaval', ''),
+(107, 'ValHT4.callcenter@cirec.org', '$2y$10$VpeP3UP.WFQk7gBpKiCW3.PyHXOeIdWvYHKeIqqKxjcQAik1ruRmq', '2020-10-23 08:44:41', 'alex nino', 'CC', '80114616', '311449965', 'carrera 125 85 32', 'Paciente Particular', 'terapeutaval', '');
 
 --
 -- Índices para tablas volcadas
@@ -652,6 +660,24 @@ ALTER TABLE `autorizacion_prueba`
 -- Indices de la tabla `contacto`
 --
 ALTER TABLE `contacto`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `facturacion`
+--
+ALTER TABLE `facturacion`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `facturacion_cargue`
+--
+ALTER TABLE `facturacion_cargue`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `informacionasistencial`
+--
+ALTER TABLE `informacionasistencial`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -698,13 +724,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `agendaotras`
 --
 ALTER TABLE `agendaotras`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=233;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT de la tabla `app_cargue`
 --
 ALTER TABLE `app_cargue`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35453;
 
 --
 -- AUTO_INCREMENT de la tabla `app_cargue_copia`
@@ -716,7 +742,7 @@ ALTER TABLE `app_cargue_copia`
 -- AUTO_INCREMENT de la tabla `app_mensajes_prueba`
 --
 ALTER TABLE `app_mensajes_prueba`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `autorizacion_prueba`
@@ -728,7 +754,25 @@ ALTER TABLE `autorizacion_prueba`
 -- AUTO_INCREMENT de la tabla `contacto`
 --
 ALTER TABLE `contacto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `facturacion`
+--
+ALTER TABLE `facturacion`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+
+--
+-- AUTO_INCREMENT de la tabla `facturacion_cargue`
+--
+ALTER TABLE `facturacion_cargue`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+
+--
+-- AUTO_INCREMENT de la tabla `informacionasistencial`
+--
+ALTER TABLE `informacionasistencial`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `nocontacto`
@@ -740,7 +784,7 @@ ALTER TABLE `nocontacto`
 -- AUTO_INCREMENT de la tabla `otrasespecialidades`
 --
 ALTER TABLE `otrasespecialidades`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `paciente`
@@ -758,7 +802,7 @@ ALTER TABLE `servicios`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

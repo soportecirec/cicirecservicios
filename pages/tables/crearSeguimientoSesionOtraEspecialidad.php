@@ -16,8 +16,10 @@
                     <div class="col-sm-8">
                         <input type="hidden" class="form-control" name="autorizacion" value="<?php echo $autorizacion; ?>" readonly>
                         <input type="hidden" class="form-control" name="documento" value="<?php echo $documento; ?>" readonly>
-
-                        <input type="hidden" class="form-control" name="crear" value="<?php echo $sesion;?>" >  
+                        <?php
+                        $session = $_SESSION["username"];
+                        ?>
+                        <input type="hidden" class="form-control" name="crear" value="<?php echo $session;?>" >  
                         <input type="text" class="form-control" name="fecharegistro" placeholder = "Sesion No. x" value="<?php echo $fechasesion; ?>" readonly>
                     </div>
                 </div>                
@@ -31,7 +33,9 @@
                           <option value="Usuario Contactado">Usuario Contactado</option>
                           <option value="Usuario no Contactado">Usuario no Contactado</option>
                           <option value="Solicitud Especial">Solicitud Especial</option>                       
-                          </select> 
+                          <option value="Entregado al area de facturacion">Entregado al área de facturación</option> 
+                          <option value="Devolución documentos a admisiones">Devolución documentos a admisiones</option>   
+                        </select> 
                     </div>
                 </div>
                 
@@ -53,7 +57,16 @@
                           <option value="CELULAR APAGADO SE ENVIA MENSAJE DE TEXTO">CELULAR APAGADO SE ENVIA MENSAJE DE TEXTO </option>
                           <option value="CELULAR NO CORESPONDE AL PACIENTE">CELULAR NO CORESPONDE AL PACIENTE </option>
                           <option value="PACIENTE INFORMA NO DESEA TOMAR EL SERVICIO">PACIENTE INFORMA NO DESEA TOMAR EL SERVICIO </option>
-                                           
+                          <option value="ENTREGADO AL AREA DE FACTURACION">ENTREGADO AL AREA DE FACTURACION</option>
+                          <option value="Sin Copago o Incompleto">Sin Copago o Incompleto</option>
+                          <option value="Informacion del paciente presenta inconsistencia">Informacion del paciente presenta inconsistencia</option>    
+                          <option value="Soportes Ilegibles o Incompletos">Soportes Ilegibles o Incompletos</option>  
+                          <option value="Autorización Vencida o duplicada">Autorización Vencida o duplicada</option>
+                          <option value="Autorización remitida a otro prestador">Autorización remitida a otro prestador</option> 
+                          <option value="Servicio no corresponde con lo autorizado">Servicio no corresponde con lo autorizado</option>
+                          <option value="Soportes con enmendadura">Soportes con enmendadura</option>
+                          <option value="Fecha de prestación con inconsistencia">Fecha de prestación con inconsistencia</option>
+
                           </select> 
                     </div>
                 </div>

@@ -25,7 +25,25 @@ include_once "../../api/conexion.php";
         $tipodocumento = $row['tipodocumento'];       
         $telefono = $row['telefono'];
         $entidad = $row['entidad'];
+       
         
+
+        //conexión a servinte
+
+        try {
+
+          $usuario = "BDCIREC";
+          $password = "C1r3c2020";
+          $nombredb = "SCSE";
+      
+      
+          //para oracle el tipo es oci
+          $conn = new PDO("oci:dbname" . $nombredb, $usuario, $password);
+      
+          $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+          echo "Error: " . $e->getMessage();
+        }
         
 
 ?>
@@ -88,7 +106,7 @@ include_once "../../api/conexion.php";
 
         <header class="main-header">
         <!-- Logo -->
-        <a href="http://fundacioncirec.org/cicirecservicios/index.php" class="logo">
+        <a href="http://192.168.0.122/cicirecservicios/index.php" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>CI</b>REC</span>
           <!-- logo for regular state and mobile devices -->
@@ -106,62 +124,7 @@ include_once "../../api/conexion.php";
       <!-- Left side column. contains the logo and sidebar -->
  <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar">
-     
-      <ul class="sidebar-menu">
-        <li class="header"><?php echo $sesion;?></li>        
-
-        <li class="treeview">
-          <!--
-            <a href="#">
-            <i class="fa fa-user"></i> <span>Pacientes</span>
-             <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>          
-            </a>
-            -->
-          <ul class="treeview-menu">          
-
-            <li <?php isActive("boxed") ?>>
-              <a href="http://fundacioncirec.org/cicirecservicios/pages/tables/gestionUsuarios.php"><i class="fa fa-circle-o"></i> Gestión pacientes</a>
-            </li>
-
-            <!--<li <?php isActive("collapsed_sidebar") ?>>
-              <a href="pages/forms/excelTodosParticular.php"><i class="fa fa-circle-o"></i> Descargar Excel </a>
-            </li>-->
-
-            
-
-          </ul>
-        </li>
-
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-users"></i> <span>Otras especialidades</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            
-
-            <li <?php isActive("boxed") ?>>
-              <a href="http://fundacioncirec.org/cicirecservicios/pages/forms/usuarioOtraEspecialidad.php"><i class="fa fa-circle-o"></i> Buscar paciente</a>
-            </li>
-            
-            <li <?php isActive("boxed") ?>>
-              <a href="http://fundacioncirec.org/cicirecservicios/pages/tables/masivoexcel.php"><i class="fa fa-circle-o"></i> Cargar Masivo</a>
-            </li>
-
-            <li <?php isActive("collapsed_sidebar") ?>>
-              <a href="http://fundacioncirec.org/cicirecservicios/pages/forms/excelTodosOtrasEspecialidades.php"><i class="fa fa-circle-o"></i> Descargar Excel </a>
-            </li>
-          </ul>
-        </li>        
-        <li><a href="http://fundacioncirec.org/cicirecservicios/logout.php"><i class="fa fa-book"></i> <span>Cerrar sesión</span></a></li>
-
-      </ul>
-    </section>
+    <?php include("../../layout.php"); ?>
     <!-- /.sidebar -->
   </aside>
 
@@ -237,19 +200,91 @@ include_once "../../api/conexion.php";
                   <label for="inputEmail3" class="col-sm-2 control-label">Entidad:</label>
 
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" id = "entidad_usuario" name = "entidad" value = "<?php echo $entidad;?>" readonly >
-                  </div>
+
+                  <input list="entidades" class="form-control" name="entidad" id="entidad_usuario" oninput="actualizarCodigoEntidad()">
+
+                        
+                        <datalist id="entidades">
+                        <?php
+                        //buscar entidad
+                        $consultaEntidad = "select * from intar";
+                        $resultEntidad = $conn->query($consultaEntidad);
+
+                        while($rowEntidad = $resultEntidad->fetch()){
+
+                        $codigoEntidad = $rowEntidad['TARCOD'];
+                        $nombreEntidad = $rowEntidad['TARNOM'];
+                        ?>
+                          <option value="<?php echo $nombreEntidad;?>" data-codigo="<?php echo $codigoEntidad; ?>"><?php echo $codigoEntidad;?></option>
+                          <?php
+                        }
+                        ?>
+                        </datalist>
+
+                        <input type='hidden' name="codigoEntidadSeleccionado" id="codigoEntidadSeleccionado">
+                    
+                    <script>
+                      //FUNCIÓN PARA AGREGAR EL CODIGO EN EL INPUT OCULTO
+                        function actualizarCodigoEntidad() {
+                            var input = document.getElementById('entidad_usuario');
+                            var codigoInput = document.getElementById('codigoEntidadSeleccionado');
+                            var option = document.querySelector('#entidades option[value="' + input.value + '"]');
+                            if (option) {
+                                codigoInput.value = option.getAttribute('data-codigo');
+                            } else {
+                                codigoInput.value = '';
+                            }
+                        }
+                    </script>
+
+                </div>
                 </div> 
                  
                 <!-- nuevos camnpos -->
+                
 
                 <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Autorización No:</label>
-
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="ciudad_usuario" name = "autorizacion" >
-                  </div>
+                    <label for="autorizacion" class="col-sm-2 control-label">Autorización No:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="autorizacion" name="autorizacion" onChange="validarAutorizacion()">
+                    </div>
                 </div>
+                
+                <script>
+                    function validarAutorizacion() {
+                        var autorizacionInput = document.getElementById("autorizacion");
+                        var autorizacion = autorizacionInput.value;
+                    
+                        // Realizar la validación mediante una petición AJAX
+                        var xhr = new XMLHttpRequest();
+                        xhr.onreadystatechange = function() {
+                            if (this.readyState == 4 && this.status == 200) {
+                                var response = JSON.parse(this.responseText);
+                                if (response.existe) {
+                                    autorizacionInput.style.borderColor = "red";
+                    
+                                    // Mostrar modal de SweetAlert
+                                    swal({
+                                        title: "Autorización existente",
+                                        text: "La autorización ya existe en la base de datos.",
+                                        type: "error",
+                                        confirmButtonText: "Continuar"
+                                    }, function() {
+                                        // Limpiar el input de autorización
+                                        autorizacionInput.value = "";
+                                        autorizacionInput.style.borderColor = "";
+                                    });
+                                } else {
+                                    autorizacionInput.style.borderColor = "green";
+                                }
+                            }
+                        };
+                        xhr.open("POST", "validar_autorizacion.php", true);
+                        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                        xhr.send("autorizacion=" + autorizacion);
+                    }
+
+                </script>
                 
                 
                 <div class="form-group">
@@ -262,6 +297,7 @@ include_once "../../api/conexion.php";
                       <input list="browsers" id="myBrowser" name="servicios" class="form-control" oninput="actualizarCodigoServicio()">
                     <datalist id="browsers">
                         <?php
+                        //SE LLEVA EL CODIGO EN UN INPUT OCULTO
                         $sqlLista = "SELECT * FROM servicios";
                         $resultlista = mysqli_query($connection, $sqlLista);
                     
@@ -275,6 +311,7 @@ include_once "../../api/conexion.php";
                     <input type='hidden' name="codigoServicioSeleccionado" id="codigoServicioSeleccionado">
                     
                     <script>
+                      //FUNCIÓN PARA AGREGAR EL CODIGO EN EL INPUT OCULTO
                         function actualizarCodigoServicio() {
                             var input = document.getElementById('myBrowser');
                             var codigoInput = document.getElementById('codigoServicioSeleccionado');
@@ -295,6 +332,15 @@ include_once "../../api/conexion.php";
 
                   <div class="col-sm-10">
                     <input type="date" class="form-control"  name = "fechaautorizacion" >
+                  </div>
+                
+                </div>
+
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 control-label">Fecha máxima ejecución:</label>
+
+                  <div class="col-sm-10">
+                    <input type="date" class="form-control"  name = "fechalimiteejecucion" >
                   </div>
                 
                 </div>
@@ -385,7 +431,8 @@ include_once "../../api/conexion.php";
                                 $sesion= $_POST['sesion'];
                                 $servicios= $_POST['servicios'];
                                 $codigoServicioSeleccionado = $_POST['codigoServicioSeleccionado'];
-                                
+                                $codigoEntidadSeleccionado = $_POST['codigoEntidadSeleccionado'];
+                                $fechalimiteejecucion = $_POST['fechalimiteejecucion'];
                                 
                                 $consutar= "SELECT autorizacion from otrasespecialidades where documento = '$documento' and autorizacion = '$autorizacion'";
                                 $result = mysqli_query($connection, $consutar);
@@ -422,9 +469,11 @@ include_once "../../api/conexion.php";
                                 else{
                             
                                  
-                                  $insertarpaciente = "INSERT INTO `otrasespecialidades` (`id`, `documento`, `autorizacion`, `codigoServicio`, `numCodServ`, `fechasolicitud`, `nombre`, `telefono`, `entidad`, `fechaautorizacion`, `tipodocumento`, `valorautorizado`, `identificador`, `especialidad`, `cantidadautorizada`, `cantidadprogramada`, `fechalimiteejecucion`, `estadogeneral`, `bitacoraasitio`, `bitacoranoasistio`, `fechacontacto`, `fechanocontacto`, `solicitudespecial`, `gestiono`, `estadocargue`) VALUES (NULL, '$documento', '$autorizacion', '$servicios', '$codigoServicioSeleccionado', '$fechasolicitud', '$nombres', '$telefono', '$entidad', '$fechaautorizacion', '$tipodocumento', '$valorautorizado', '123', 'NULL', '$cantidad', '$cantidad_programada', 'NULL', 'AUTORIZADO', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '$sesion', 'NULL ');";
+                                  $insertarpaciente = "INSERT INTO `otrasespecialidades` (`id`, `documento`, `autorizacion`, `codigoServicio`, `numCodServ`, `fechasolicitud`, `nombre`, `telefono`, `entidad`, `codEntidad`, `fechaautorizacion`, `tipodocumento`, `valorautorizado`, `identificador`, `especialidad`, `cantidadautorizada`, `cantidadprogramada`, `fechalimiteejecucion`, `estadogeneral`, `bitacoraasitio`, `bitacoranoasistio`, `fechacontacto`, `fechanocontacto`, `solicitudespecial`, `gestiono`, `estadocargue`) VALUES (NULL, '$documento', '$autorizacion', '$servicios', '$codigoServicioSeleccionado', '$fechasolicitud', '$nombres', '$telefono', '$entidad', '$codigoEntidadSeleccionado', '$fechaautorizacion', '$tipodocumento', '$valorautorizado', '123', 'NULL', '$cantidad', '$cantidad_programada', '$fechalimiteejecucion', 'AUTORIZADO', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '$sesion', 'NULL ');";
                                  
-                                   mysqli_query($connection, $insertarpaciente);
+                                  mysqli_query($connection, $insertarpaciente);
+
+                                  //echo $insertarpaciente;
 
                                            
                                             
@@ -437,7 +486,7 @@ include_once "../../api/conexion.php";
                                                 confirmButtonText: "Continuar" },
                                                 function () {
 
-                                                 window.location.href = '../tables/seguimientoOtraEspecialidad.php?criterio=<?php echo $autorizacion ?>&autorizacion=<?php echo $autorizacion ?>';
+                                                 window.location.href = '../tables/usuarioOtraEspecialidadBuscar.php?criterio=<?php echo $documento;?>';
                                                  });
 
                                             </script>
@@ -465,12 +514,11 @@ include_once "../../api/conexion.php";
     </section>
 
       </div><!-- /.content-wrapper -->
-      <footer class="main-footer">
-        <div class="pull-right hidden-xs">
-          <b>Version</b> 1.2.0
-        </div>
-        <strong>Copyright &copy; 2023 <a href=#>CIREC</a>.</strong> Desarrolloado por el Departamento de Sistemas CIREC..
-      </footer>
+
+      
+      <!--Include footer -->
+      <?php include("../../footer.php"); ?>
+      <!-- /.Include footer -->
 
       <!-- Control Sidebar -->
      
